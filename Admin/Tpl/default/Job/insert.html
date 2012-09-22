@@ -1,0 +1,185 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                title: "required",
+                content: "fckeditor",
+                number: {
+                    required: true,
+                    number: true
+                },
+                end_time: {
+                    required: true,
+                    dateISO: true
+                },
+                view_count: {
+                    required: true,
+                    number: true
+                },
+                display_order: {
+                    required: true,
+                    number: true
+                }
+            },
+            messages: {
+                title: "招聘职位必须填写",
+                content: "详细要求必须填写",
+                number: {
+                    required: "招聘人数必须填写",
+                    number: '招聘人数必须为整数'
+                },
+                end_time: {
+                    required: "结束时间必须填写",
+                    dateISO: '结束时间格式不正确'
+                },
+                view_count: {
+                    required: "浏览次数必须填写",
+                    number: '浏览次数必须为数字'
+                },
+                display_order: {
+                    required: "排序必须填写",
+                    number: '排序必须为数字'
+                }
+            }
+        });
+    });
+</script>
+<div class="mainarea">
+<div class="maininner">
+<div class="block style4">
+  <table cellspacing="3" cellpadding="3">
+    <tr>
+      <th style="width:50px; text-align:center"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+帮助</a></th>
+      <td><li>招聘人数必须填写，若不限制人数，则填写数字0</li>
+        <li>基本要求必须填写，简单描述此岗位        </li>
+        <li>有效期限类型如果是限时招聘，则需要选择到期时间，否则默认即可</li>
+        <li>如果有多个模板文件可自由选择，否则留保持默认</li></td>
+    </tr>
+  </table>
+</div>
+<form method="post" action="{:U("Job/doInsert")}" enctype="multipart/form-data" id="mainFrom">
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">返回列表</a> |<a href="{:U("Job/resume")}"> 应聘管理</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:8em;">岗位名称</th>
+		<td><input name="title" id="title" value="{$vo.title}" size="60"></td></tr>
+		 <tr>
+           <th style="width:8em;">标题样式</th>
+          <td><div style=" display:block; float:left" title="点击取颜色" class="color_picker" id="color_picker" onclick="colorPicker()">&nbsp;</div>颜色<input class="input" type="hidden" value="#ffffff" name="style_color" id="style_color" size="10"/>&nbsp;
+             <input name="style_bold" type="checkbox" id="style_bold" value="bold" />
+             加粗<input name="style_underline" type="checkbox" id="style_underline" value="underline" />
+           下划线</td>
+         </tr>
+        <tr>
+		  <th style="width:8em;">招聘人数</th>
+		<td><input name="number" type="text"  id="number" value="0" size="5" />
+人</td></tr>
+        
+        <tr>
+		  <th style="width:8em;">有效期限</th>
+		<td><label>
+		  <select name="time_type" id="time_type">
+		    <option value="1" selected="selected">长期招聘</option>
+		    <option value="0">限时招聘</option>
+		    </select>
+		  </label>		  <input name="end_time" type="text" class="Wdate" id="end_time" style="width:160px"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false,readOnly:true,isShowToday:true,minDate:'<?php echo date('Y-m-d',time())?>'})" value="<?php echo date('Y-m-d',time()+2592000)?>"/></td></tr>
+        <tr>
+          <th style="width:8em;">基本要求</th>
+          <td><textarea name="description" cols="60" rows="8"  id="description">{$vo.description}</textarea></td>
+        </tr>
+       
+		  <th style="width:8em;">详细要求</th>
+		<td> </td></tr>
+        
+        <tr>
+		  <th colspan="2" >
+		   <textarea name="content" cols="50" rows="4" id="content">{$vo.content}</textarea>
+<script src="__PUBLIC__/Admin/js/FCKeditor/fckeditor.js"></script>
+<script>
+	var oFCKeditor = new FCKeditor('content') ;
+	oFCKeditor.BasePath = '__PUBLIC__/Admin/js/FCKeditor/';
+	oFCKeditor.Width = '100%';
+	oFCKeditor.Height = '400';
+	oFCKeditor.ToolbarSet = 'Default';
+	oFCKeditor.ReplaceTextarea();
+</script></th>
+		</tr>
+        
+         <tr>
+		  <th colspan="2" style="width:8em;">选填内容</th>
+		</tr>
+        
+         <tr>
+           <th style="width:8em;">模　　板</th>
+           <td><input name="template" id="template" value="" />没定义请留空，默认为 detail 不需要填写<span style="color:#F00">.html</span></td>
+         </tr>
+         <tr>
+           <th style="width:8em;">标　　签</th>
+           <td><input name="tags" id="tags" size="50" />
+            标签之间用 ，隔开</td>
+         </tr>
+         <tr>
+		  <th style="width:8em;">关 键 字</th>
+		<td><input name="keyword" id="keyword" size="60"></td></tr>
+        
+       
+         <tr>
+		  <th style="width:8em;">外链地址</th>
+		<td><input name="link_url" id="link_url" size="60"></td></tr>
+        
+        <tr>
+		  <th style="width:8em;">来　　源</th>
+		<td><input name="copy_from" id="copy_from"></td></tr>
+        <tr>
+		  <th style="width:8em;">来源链接</th>
+		<td><input name="from_link" id="from_link" size="60"></td></tr>
+         <tr>
+		  <th style="width:8em;">上传附件</th>
+		<td> <input name="attach_file" type="file" id="attach_file" /></td></tr>
+        
+        <tr>
+		
+		<tr>
+		  <th >其它参数</th>
+		  <td ><select name="status" id="status">
+		    <option value="0" selected="selected">正常招聘</option>
+		    <option value="1">暂不招聘</option>
+		    </select>
+		    
+		   <select name="istop" id="istop">
+				          <option value="0">默认不置顶</option>
+				          <option value="1">置顶</option>
+              </select> 浏览
+		    <input name="view_count" type="text" id="view_count" value="0" size="5" maxlength="12"  />
+		    排序
+		    <input name="display_order" type="text" id="display_order" value="0" size="5" maxlength="12"  /></td>
+		  </tr>
+        <tr>
+		  <th style="width:8em;">录入时间</th>
+		  <td><input name="create_time" type="text" class="Wdate" id="create_time" style="width:160px"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false,readOnly:true,isShowToday:true})" value="<?php echo date('Y-m-d ')?>"/></td>
+		  </tr>
+		
+		
+		<td></td>
+		</tr>
+		
+		</tbody>
+		
+		</table>
+	</div>
+	<div class="foot_action">
+		<input type="submit" name="submit" value="提交录入" class="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+	</div>
+	</form>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

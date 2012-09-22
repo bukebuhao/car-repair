@@ -1,0 +1,61 @@
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                content: "required"
+            },
+            messages: {
+                content: '模板内容不能为空'
+            }
+        });
+    });
+</script>	
+<form method="post" action="{:U("Theme/doTemplateModify")}" enctype="multipart/form-data" id="mainFrom">
+	
+	<div class="body_content">
+		
+		<div class="top_action"><a href="__URL__">返回列表</a> </div>
+		
+	<table cellspacing="0" cellpadding="0" class="formtable" id="maintable">
+		<tr>
+		  <th style="width:8em;">当前文件</th>
+		<td><input name="fileName" id="fileName" value="{$file}" size="50" readonly="readonly"/></td></tr>
+        
+		<tr>
+		  <th style="width:8em;">模板内容</th>
+		  <td><textarea name="content" id="content" style="width:95%; height:400px">{$content}</textarea></td></tr>
+		<tr>
+		  <th style="width:8em;">文件尺寸</th>
+		  <td>{$fileSize}</td>
+		  </tr>
+		<tr>
+		  <th style="width:8em;">最近修改</th>
+		  <td style="color:#00F">{$fileMtime}</td>
+		  </tr>
+		
+		<td></td>
+		  </tr>
+		
+		</tbody>
+		
+		</table>
+	</div>
+		
+	<div class="foot_action">
+	<input type="submit" name="submit" value="提交更新" class="submit">
+    <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+    <input name="id" type="hidden" value="{$vo.id}" />
+	</div>
+	
+	</form>
+
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

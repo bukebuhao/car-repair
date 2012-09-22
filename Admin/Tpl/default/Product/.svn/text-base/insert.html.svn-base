@@ -1,0 +1,189 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                title: "required",
+                description: "required",
+                content: "fckeditor",
+                sale_price: {
+                    required: true,
+                    number: true
+                },
+                market_price: {
+                    required: true,
+                    number: true
+                },
+                shop_price: {
+                    required: true,
+                    number: true
+                },
+                view_count: {
+                    required: true,
+                    number: true
+                },
+                display_order: {
+                    required: true,
+                    number: true
+                }
+            },
+            messages: {
+                title: "产品名称必须填写",
+                description: "描述必须填写",
+                content: "详细描述必须填写",
+                sale_price: {
+                    required: "销售价必须填写",
+                    number: '销售价必须为数字'
+                },
+                market_price: {
+                    required: "市场价必须填写",
+                    number: '市场价必须为数字'
+                },
+                shop_price: {
+                    required: "商场价必须填写",
+                    number: '市场价必须为数字'
+                },
+                view_count: {
+                    required: "浏览数必须填写",
+                    number: '浏览数必须为数字'
+                },
+                display_order: {
+                    required: "排序必须填写",
+                    number: '排序必须为数字'
+                }
+            }
+        });
+        colorPicker();
+    });
+</script>
+<div class="mainarea">
+<div class="maininner">
+<form method="post" action="{:U("Product/doInsert")}"  enctype="multipart/form-data"  id="mainFrom">
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">返回列表</a> | <a href="{:U("Category/index")}">类别管理</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:8em;"><label for="title">产品名称</label></th>
+		<td><input name="title" id="title" size="40"></td></tr>
+        <tr>
+		  <th style="width:8em;">标题样式</th>
+		<td><div style=" display:block; float:left" title="点击取颜色" class="color_picker" id="color_picker" onclick="colorPicker()">&nbsp;</div>颜色<input class="input" type="hidden" value="#ffffff" name="style_color" id="style_color" size="10"/>&nbsp;
+             <input name="style_bold" type="checkbox" id="style_bold" value="bold" />
+             加粗<input name="style_underline" type="checkbox" id="style_underline" value="underline" />
+           下划线</td></tr>
+        <tr>
+          <th style="width:8em;"><label for="category_id">类别名称</label></th>
+          <td><select name="category_id"  id="select"  >
+                 {$category|buildSelect=$parentId}
+                </select></td></tr>
+       
+          <tr>
+		  <th style="width:8em;"><label for="standard">产品规格</label></th>
+		<td><input name="standard" id="standard">
+		  <span style=" font-weight:bold">产品型号</span>
+		  <input name="number" id="number" />
+		</td></tr>
+		
+          <th style="width:8em;">销 售 价</th>
+  <td><input name="sale_price" id="sale_price" value="0" size="10">
+     <span style=" font-weight:bold">市 场 价</span>
+      <input name="market_price" id="market_price" value="0" size="10" />
+      <span style=" font-weight:bold">商 场 价</span>
+      <input name="shop_price" id="shop_price" value="0" size="10" />
+只能填写数字(单位:元)</td></tr>
+        
+        
+        <tr>
+          <th style="width:8em;"><label for="attach_file">产品图片</label></th>
+          <td> <input name="attach_file" type="file" id="attach_file" /></td></tr>
+         <tr>
+		  <th style="width:8em;"><label for="description">简单描述</label></th>
+		<td><textarea name="description" cols="60" rows="5"  id="description"></textarea></td></tr>
+        
+        <tr>
+		  <th style="width:8em;"><label for="content">详细描述</label></th>
+		<td> </td></tr>
+        
+        <tr>
+		  <th colspan="2" >
+		  <textarea name="content" cols="50" rows="4" id="content">{$vo.content}</textarea>
+<script src="__PUBLIC__/Admin/js/FCKeditor/fckeditor.js"></script>
+<script>
+	var oFCKeditor = new FCKeditor('content') ;
+	oFCKeditor.BasePath = '__PUBLIC__/Admin/js/FCKeditor/';
+	oFCKeditor.Width = '100%';
+	oFCKeditor.Height = '400';
+	oFCKeditor.ToolbarSet = 'Default';
+	oFCKeditor.ReplaceTextarea();
+</script>
+</th>
+		</tr>
+        
+         <tr>
+		  <th colspan="2" style="width:8em;">以下为选填内容</th>
+		</tr>
+          <tr>
+           <th style="width:8em;"><label for="template">模　　板</label></th>
+           <td><input name="template" id="template" value="" />没定义请留空，默认为 detail 不需要填写<span style="color:#F00">.html</span></td>
+         </tr>
+         <tr>
+           <th style="width:8em;"><label for="tags">标　　签</label></th>
+           <td><input name="tags" id="tags" size="50" />
+            标签之间用 ，隔开</td>
+         </tr>
+         <tr>
+		  <th style="width:8em;"><label for="keyword">关 键 字</label></th>
+		<td><input name="keyword" id="keyword" size="60"></td></tr>
+        
+       
+         <tr>
+		  <th style="width:8em;"><label for="link_url">外链地址</label></th>
+		<td><input name="link_url" id="link_url" size="60"></td></tr>
+        
+        <tr>
+		  <th style="width:8em;"><label for="copy_from">来　　源</label></th>
+		<td><input name="copy_from" id="copy_from"></td></tr>
+        <tr>
+		  <th style="width:8em;"><label for="from_link">来源链接</label></th>
+		<td><input name="from_link" id="from_link" size="60"></td></tr>
+        
+		<tr>
+        <th style="width:8em;">其它参数</th>
+		  <td><select name="recommend" id="recommend">
+					      <option value="0" selected="selected">默认不推荐</option>
+					      <option value="1">推荐</option>
+				        </select><select name="status" id="status">
+				          <option value="0" selected="selected">默认显示</option>
+				          <option value="1">隐藏</option>
+                        </select><select name="istop" id="istop">
+				          <option value="0">默认不置顶</option>
+				          <option value="1">置顶</option>
+              </select><label for="view_count">浏览</label>
+<input name="view_count" type="text" id="view_count" value="0" size="5" maxlength="12"  />
+<label for="display_order">排序</label>
+<input name="display_order" type="text" id="display_order" value="0" size="5" maxlength="12"  /></td>
+		</tr>
+		<tr>
+		  <th style="width:8em;"><label for="create_time">录入时间</label></th>
+		  <td><input name="create_time" type="text" class="Wdate" id="create_time" style="width:160px"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false,readOnly:true,isShowToday:true})" value="<?php echo date('Y-m-d ')?>"/></td>
+		  </tr>
+		<td></td>
+		</tr>
+		
+		</tbody>
+		
+		</table>
+	</div>
+	<div class="foot_action">
+		<input type="submit" name="submit" value="提交录入" class="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+	</div>
+	</form>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

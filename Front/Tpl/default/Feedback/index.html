@@ -1,0 +1,26 @@
+<include file="Public:header" />
+  <!-- leftstat -->
+  <div class="dt_page_left">
+    <ul class="dt_page_left_bt font14px fontbold">栏目</ul>
+    <ul>
+      <li><a href="{:U('Feedback/new')}">我要留言</a></li>
+      <li><a href="{:U('Feedback/index')}">留言列表</a></li>
+    </ul>
+  </div>
+  <!-- leftend -->
+  <!-- prostart -->
+  <div class="dt_page_right">
+    <ul class="dt_page_right_bt">
+      <li class="font14px fontbold dt_page_right_zt">留言列表</li>
+    </ul>
+    <ul class="dt_page_right_con">
+      <volist name="dataContentList" id="row">
+       <li class="dt_page_right_list"><a href="{:U('Feedback/detail', array('id'=>$row['id']))}" title="{$row.title}" target="_blank">{$row.title}</a>&nbsp;&nbsp;<span class="font12px font999">{:date('Y-m-d', $row['create_time'])}</span></li>
+      </volist>
+    </ul>
+    <ul class="fenye">
+    {$pageContentBar}
+    </ul>
+  </div>
+  <!-- proend -->
+<include file="Public:footer" />

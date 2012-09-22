@@ -1,0 +1,76 @@
+<include file="Public:header" />
+  <!-- leftstat -->
+  <div class="dt_page_left">
+    <ul class="dt_page_left_bt font14px fontbold">产品分类</ul>
+    <ul>
+         <volist name="productCategory" id="row">
+		 <li class="{$Think.get.category|selected=$row['id'], 'current',''}">{$row.str_repeat}<a href="{:U('Product/index', array('category' => $row['id']))}">{$row.title}</a></li>
+		 </volist>
+    </ul>
+  </div>
+  <!-- leftend -->
+  <!-- prostart -->
+  <div class="dt_page_right">
+    <ul class="dt_page_right_bt1">您现在的位置：<a href="index.html">首页</a> > <a href="{:U('Product/index')}" title="产品中心">产品中心</a> > <a href="{:U('News/index', array('category' => $contentDetail['category_id']))}" title="{$contentDetail.categoryName}">{$contentDetail.categoryName}</a> > 正文</li></ul>
+    <ul class="dt_page_right_con">
+<!-- product view start -->
+<div class="product_view">
+  <ul class="product_view_left">
+  <li><img src="__UPLOAD__/{$contentDetail.attach_image}" alt="{$contentDetail.title}" width="100px" height="100px"/></li>
+  <li class="product_view_big"><a href="__UPLOAD__/{$contentDetail.attach_thumb}"><span class="font12px">查看大图</span></a></li>
+  </ul>
+  <ul class="product_view_right">
+    <li class="view_line">品名: <span class="font14px fontbold font333">{$contentDetail.title}</span></li>
+    <li class="view_line">货号: <span class="font14px font333">{$contentDetail.number}</span></li>
+    <li class="view_line">规格: <span class="font14px font333">{$contentDetail.standard}</span></li>
+    <li class="view_line">销售价格: <span class="font14px fontred fontbold">{$contentDetail.sale_price}元</span></li>
+    <li class="view_line">市场价格: <span class="font14px fontred fontbold">{$contentDetail.market_price}元</span></li>
+    <li class="view_line">商场价格: <span class="font14px fontred fontbold">{$contentDetail.shop_price}元</span></li>
+  </ul>
+  <div class="clr"></div>
+</div>
+<!-- product view end -->
+<!-- Product Description start -->
+<div class="view_xx">
+  <ul class="font14px fontbold">产品介绍</ul>
+  <ul class="font666">
+  {$contentDetail.content}
+  </ul>
+</div>
+<!-- Product Description end -->
+<!-- contact start -->
+<div class="company_right1">
+  <ul>
+   <li class="company_contact_left">公司名称:</li>
+   <li class="company_contact_right">{$sysConfig.site_name} </li>
+  </ul>
+  <ul>
+   <li class="company_contact_left">联系人:</li>
+   <li class="company_contact_right">{$sysConfig.contact_name} </li>
+  </ul>
+  <ul>
+   <li class="company_contact_left">手机:</li>
+   <li class="company_contact_right">{$sysConfig.mobile_telephone}  </li>
+  </ul>
+  <ul>
+   <li class="company_contact_left">邮箱:</li>
+   <li class="company_contact_right"> {$sysConfig.email} </li>
+  </ul>
+  <ul>
+   <li class="company_contact_left">网址:</li>
+   <li class="company_contact_right"><a href="{$sysConfig.site_url}">{$sysConfig.site_url}</a></li>
+  </ul>
+  <ul>
+   <li class="company_contact_left">所在地址:</li>
+   <li class="company_contact_right">{$sysConfig.address} </li>
+  </ul>
+  <ul>
+   <li class="company_contact_left">邮编:</li>
+   <li class="company_contact_right">{$sysConfig.zipcode}</li>
+  </ul>
+</div> 
+<!-- contact end -->
+    </ul>
+  </div>
+  <!-- proend -->
+<include file="Public:footer" />

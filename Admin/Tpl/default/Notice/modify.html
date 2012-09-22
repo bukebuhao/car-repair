@@ -1,0 +1,123 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                title: "required",
+                content: "fckeditor"
+            },
+            messages: {
+                title: "标题必须填写",
+                content: "内容必须填写""
+            }
+        });
+        colorPicker();
+    });
+</script>
+<div class="mainarea">
+<div class="maininner">
+    <form action="{:U("Notice/doModify")}" method="post" enctype="multipart/form-data" id="mainFrom">
+    
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">返回列表</a> | <a href="{:U("Notice/insert")}">录入公告</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:8em;"><label for="title">标　　题</label></th>
+		<td><input name="title" id="title" value="{$vo.title}" size="60"></td></tr>
+          <tr>
+		  <th style="width:8em;">标题样式</th>
+		<td><div style=" display:block; float:left" title="点击取颜色" class="color_picker" id="color_picker" onclick="colorPicker()">&nbsp;</div>颜色<input class="input" type="hidden" value="{$vo.title_style_serialize|styleSelected='color'}" name="style_color" id="style_color" size="10"/>&nbsp;
+             <input name="style_bold" type="checkbox" id="style_bold" value="bold" {$vo.title_style_serialize|styleSelected='bold'}/>
+             加粗<input name="style_underline" type="checkbox" id="style_underline" value="underline" {$vo.title_style_serialize|styleSelected='underline'}/>
+           下划线</td></tr>
+        
+        <tr>
+          <th style="width:8em;">公告内容</th>
+          <td> </td></tr>
+        
+        <tr>
+		  <th colspan="2" >
+		   <textarea name="content" cols="50" rows="4" id="content">{$vo.content}</textarea>
+<script src="__PUBLIC__/Admin/js/FCKeditor/fckeditor.js"></script>
+<script>
+	var oFCKeditor = new FCKeditor('content') ;
+	oFCKeditor.BasePath = '__PUBLIC__/Admin/js/FCKeditor/';
+	oFCKeditor.Width = '100%';
+	oFCKeditor.Height = '400';
+	oFCKeditor.ToolbarSet = 'Default';
+	oFCKeditor.ReplaceTextarea();
+</script>
+</th>
+		</tr>
+        
+         <tr>
+		  <th colspan="2" style="width:8em;">选填内容</th>
+		</tr>
+        <tr>
+           <th style="width:8em;">模　　板</th>
+           <td><input name="template" id="template" value="{$vo.template}" /></td>
+         </tr>
+         <tr>
+           <th style="width:8em;">上传附件</th>
+           <td><label>
+             <input type="file" name="attach_file" id="attach_file" />
+           </label></td>
+         </tr>
+         <tr>
+		  <th style="width:8em;">关 键 字</th>
+		<td><input name="keyword" id="keyword" value="{$vo.keyword}" size="60"></td></tr>
+        <tr>
+          <th style="width:8em;">来　　源</th>
+          <td><input name="come_from" id="come_from" value="{$vo.come_from|default='本站'}" /></td>
+        </tr>
+         <tr>
+           <th style="width:8em;">来源地址</th>
+          <td><input name="come_from_url" id="come_from_url" value="{$vo.come_from_url}" size="60"></td>
+          </tr>
+         <tr>
+           <th style="width:8em;">外链地址</th>
+          <td><input name="link_url" id="link_url" value="{$vo.link_url}" size="60"></td>
+          </tr>
+          
+		<tr>
+		  <th >其它参数</th>
+		  <td ><select name="status" id="status">
+		    <option value="0" {$vo.status|selected=0}>正常显示</option>
+		    <option value="1"  {$vo.status|selected=1}>暂时隐藏</option>
+          </select>
+		    浏览
+            <input name="view_count" type="text" id="view_count" value="{$vo.view_count}" size="5" maxlength="12"  />
+排序
+<input name="display_order" type="text" id="display_order" value="{$vo.display_order}" size="5"  /></td>
+		  </tr>
+        <tr>
+		  <th >起止时间</th>
+		  <td ><input name="start_time" type="text" class="Wdate" id="start_time" style="width:160px"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false,readOnly:true})" value="{$vo.start_time|date="Y-m-d",###}"/>
+	        -
+            <input name="end_time" type="text" class="Wdate" id="end_time" style="width:160px"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false,readOnly:true})" value="{$vo.end_time|date="Y-m-d",###}"/></td>
+		  </tr>
+        
+		
+		
+		<td></td>
+		</tr>
+		
+		</tbody>
+		
+		</table>
+	</div>
+	<div class="foot_action">
+	<input type="submit" name="submit" value="提交记录" class="submit">
+    <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+	<input name="id" type="hidden" id="id" value="{$vo.id}" />
+	<input name="old_file" type="hidden" id="old_file" value="{$vo.attach_file}" />
+	</div>
+	</form>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

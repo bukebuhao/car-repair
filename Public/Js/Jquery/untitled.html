@@ -1,0 +1,19 @@
+<html>
+　　<head>
+　　　　<script src="jquery-1.2.js"></script>
+　　　　<script>
+　　　　　　$(document).ready(
+　　　　　　　　function () {
+　　　　　　　　　　$.ajax({
+　　　　　　　　　　　　url: "ajax.error.php",
+　　　　　　　　　　　　timeout: 1000,
+　　　　　　　　　　　　error: function (xmlHttpRequest, error) {
+　　　　　　　　　　　　　　console.info(xmlHttpRequest, error);
+　　　　　　　　　　　　}
+　　　　　　　　　　});
+　　　　　　　　}
+　　　　　　);
+　　　　</script>
+　　</head>
+</html>
+

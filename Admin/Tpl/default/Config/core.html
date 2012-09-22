@@ -1,0 +1,143 @@
+<include file="Public:header" />
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#mainFrom").validate({
+		rules: {
+			site_name: "required",
+			company_name: "required",
+			run_system: "required",
+			attach_size: "required",
+			attach_suffix: "required",
+			link_category: "required",
+			global_category: "required"
+		},
+		messages: {
+			site_name: "网站名称须填写",
+			company_name: "公司名称必须填写",
+			run_system: "运行平台(下载)必须填写",
+			attach_size: "允许附件大小必须填写",
+			attach_suffix: "允许附件类型必须指定",
+			link_category: "友情链接类型必须指定，格式如：普通链接=1|合作伙伴=2|其它链接=3",
+			global_category: "模型类别必须指定，格式如：新闻模块=News|产品模块=Product "
+		}
+	});
+});
+
+
+</script>
+<div class="mainarea">
+<div class="maininner">
+	<div class="block style4">
+		
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+		 <th style="width:50px; text-align:center"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+帮助</a></th>
+		  <td>请谨慎配置</td>
+		  </tr>
+		</table>
+	</div>
+	<form method="post" action="{:U("Config/doCore")}" id="mainFrom" >
+	<div class="body_content">
+	
+	<div class="title">
+		<h3><a href="{:U('Config/index')}" class="text_bg">系统配置</a> | 	<a href="{:U('Config/core')}" class="text_bg">内核配置</a></h3>
+	</div>
+
+	<table id="maintable" class="formtable">
+	<tr>
+		<th style="width:12em;">调试模式</th>
+		<td><select name="APP_DEBUG" id="APP_DEBUG">
+		  <option value="true" {$APP_DEBUG|selected=1}>开启</option>
+		  <option value="false" {$APP_DEBUG|selected=0}>关闭</option>
+        </select></td>
+	</tr>
+	<tr>
+		<th>路由模式</th>
+		<td><select name="URL_ROUTER_ON" id="URL_ROUTER_ON">
+		  <option value="true" {$URL_ROUTER_ON|selected=1}>开启</option>
+		  <option value="false" {$URL_ROUTER_ON|selected=0}>关闭</option>
+		  </select></td>
+	</tr>
+	<tr>
+		<th>Dispatcher</th>
+		<td><select name="URL_DISPATCH_ON" id="URL_DISPATCH_ON">
+		 <option value="true" {$URL_DISPATCH_ON|selected=1}>开启</option>
+		  <option value="false" {$URL_DISPATCH_ON|selected=0}>关闭</option>
+		  </select></td>
+	</tr>
+	<tr>
+		<th>URL访问模式</th>
+		<td><select name="URL_MODEL" id="URL_MODEL">
+		  <option value="0" {$URL_MODEL|selected=0}>普通模式 (m=module&a=action&id=1)</option>
+		  <option value="1" {$URL_MODEL|selected=1}>PATHINFO模式(Index_index_id_1)</option>
+        </select></td>
+	</tr>
+	<tr>
+		<th>PATHINFO模式参数</th>
+		<td><select name="URL_PATHINFO_MODEL" id="URL_PATHINFO_MODEL">
+		  <option value="1" {$URL_PATHINFO_MODEL|selected=1}>普通模式 (参数无序对)</option>
+		  <option value="2" {$URL_PATHINFO_MODEL|selected=2}>PATHINFO模式(参数有序对)</option>
+        </select></td>
+	</tr>
+	
+	<tr>
+	  <th>参数分割符</th>
+	  <td><input name="URL_PATHINFO_DEPR" type="text" id="URL_PATHINFO_DEPR" value="{$URL_PATHINFO_DEPR}" size="50" /></td>
+	  </tr>
+	<tr>
+		<th>URL伪静态后缀</th>
+		<td><input name="URL_HTML_SUFFIX" type="text" id="URL_HTML_SUFFIX" value="{$URL_HTML_SUFFIX}"></td>
+	</tr>
+	<tr>
+	  <th>默认模板</th>
+	  <td><select name="TMPL_CACHE_ON" id="TMPL_CACHE_ON">
+	    <option value="true" selected="selected">开启</option>
+	    <option value="false">关闭</option>
+	    </select></td>
+	  </tr>
+	<tr>
+		<th>令牌验证</th>
+		<td><select name="TOKEN_ON" id="TOKEN_ON">
+		  <option value="true" {$TOKEN_ON|selected=1}>开启</option>
+		  <option value="false" {$TOKEN_ON|selected=0}>关闭</option>
+		  </select></td>
+	</tr>
+	<tr>
+		<th>令牌表单字段</th>
+		<td><input name="TOKEN_NAME" type="text" id="TOKEN_NAME" value="{$TOKEN_NAME}">
+		
+		</td>
+	</tr>
+	<tr>
+		<th>模板编译缓存</th>
+		<td><select name="TMPL_CACHE_ON" id="TMPL_CACHE_ON">
+		 <option value="true" {$TMPL_CACHE_ON|selected=1}>开启</option>
+		  <option value="false" {$TMPL_CACHE_ON|selected=0}>关闭</option>
+        </select></td>
+	</tr>
+	<tr>
+		<th>模板缓存有效期</th>
+		<td><input name="TMPL_CACHE_TIME" type="text" id="TMPL_CACHE_TIME" value="{$TMPL_CACHE_TIME}"> </td>
+	</tr>
+	
+	</table>
+    
+<br />
+
+	</div>
+	
+	<div class="foot_action">
+			<input type="submit" name="submit" value="提交更新" class="submit" id="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+	</div>
+	
+	</form>
+</div>
+</div>
+
+<div class="side">
+	<include file="Public:sider" />
+</div>
+
+<include file="Public:footer" />

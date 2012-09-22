@@ -1,0 +1,1 @@
+{"0":"id","1":"name","_autoinc":true,"_pk":"id","_type":{"id":"smallint(3)","name":"varchar(50)"}}

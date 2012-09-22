@@ -1,0 +1,90 @@
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+	<form method="get" action="__URL__" enctype="application/x-www-form-urlencoded">
+	<div class="block style4">
+		
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+		  <th>用户名</th><td><input type="text" name="username" id="username"></td>
+		  <th>或用户ID</th>
+		  <td><input type="text" name="userId" id="userId" /></td>
+		  <th>或IP</th>
+		  <td><input type="text" name="ip" id="ip" /></td>
+		  </tr>
+		<tr><th>结果排序</th>
+		  <td colspan="5">
+		    <select name="orderBy" id="orderBy">
+		      <option value="id" selected="selected">默认排序</option>
+		      <option value="username">用户名</option>
+		      </select>
+		    <select name="orderType" id="orderType">
+		      <option value="DESC">递减</option>
+		      <option value="ASC">递增</option>
+		      </select>
+		    <select name="pageSize" id="pageSize">
+		      <option value="20">每页显示20个</option>
+		      <option value="50">每页显示50个</option>
+		      <option value="100">每页显示100个</option>
+		      </select>
+		    <input type="submit" name="submit" value="搜索" class="submit" id="submit">
+  <script type="text/javascript">
+    /*
+	设定选择值
+*/
+    $("#username").val('{$Think.get.username|formatQuery}');
+    $("#userId").val('{$Think.get.userId}');
+    $("#orderType").val('{$Think.get.orderType}');
+    $("#orderBy").val('{$Think.get.orderBy}');
+    $("#pageSize").val('{$Think.get.pageSize}');
+</script>
+</td>
+		  </tr>
+		</table>
+	</div>
+	</form>
+<present name="dataList">
+	<form method="post" action="{:U("AdminLog/doCommand")}">
+	<div class="body_content">
+    <div class="top_action" style="display:none"><a href="{:U("Ad/insert")}">录入广告</a></div>
+	<table cellspacing="0" cellpadding="0" class="formtable" id="maintable">
+		<tr>
+        <th class="th-id">&nbsp;</th>
+		 <th>操作</th>
+         <th style="width:15%; text-align:center">用户</th>
+         <th style="width:20%">记录时间</th>
+		</tr>
+		<volist name="dataList" id="vo">
+		<tr>
+		<td><input type="checkbox" name="id[]" value="{$vo.id}">{$vo.id}</td>
+        <td>{$vo.action}<br />
+IP:{$vo.ip}</td>
+        <td style="text-align:center">{$vo.username}</td>
+        <td>{$vo.create_time|date="Y-m-d H:i:s",###}</td>
+		</tr>
+		</volist>
+		</table>
+	</div>
+	<div class="foot_action">
+    <div class="bat">
+	 <input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'id')">全选
+		<select name="operate" id="operate">
+<option value="delete" selected="selected">删除</option>
+              </select> 
+		<input type="submit" name="submit" value="提交操作" class="confirmSubmit submit">
+        </div>
+	  	<div class="pages">{$pageBar}</div>
+	</div>
+	</form>
+<else />
+	<div class="body_content">
+		<p>指定条件下还没有数据</p>
+	</div>
+</present>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

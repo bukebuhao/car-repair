@@ -1,0 +1,14 @@
+<table cellspacing="0" cellpadding="0" class="formtable" id="maintable">
+		<tr style="background:#69BA26; color:#FFF">
+        <volist name="fields" id="field">
+         <th style="width:150px">{$field}</th>
+        </volist>
+		</tr>
+		<volist name="dataList" id="vo">
+		<tr>
+            <volist name="fields" id="f">
+            <td>{$vo[$f]|default=' '}</td>
+           </volist>
+		</tr>
+		</volist>
+</table>

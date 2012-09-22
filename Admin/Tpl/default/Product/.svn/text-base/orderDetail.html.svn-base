@@ -1,0 +1,80 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+<form method="post" action="{:U("Product/orderModify")}" enctype="multipart/form-data">
+	<div class="body_content">
+		<div class="top_action"><a href="{:U("Product/order")}">返回订单</a> | <a href="{:U("Product/index")}">返回产品</a> | <a href="{:U("Product/insert")}">录入产品</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:8em;">产品名称</th>
+		<td><input name="title" type="text"  id="title" value="{$vo.title}" size="60" readonly="readonly"></td></tr>
+		
+        <tr>
+		  <th style="width:8em;">真实姓名</th>
+		<td><input name="realname" type="text"  id="realname" value="{$vo.realname}"  /></td></tr>
+        <tr>
+          <th style="width:8em;">详细描述</th>
+          <td><label>
+            <textarea name="introduction" id="contents" cols="80" rows="8">{$vo.introduction}</textarea>
+            </label></td>
+        </tr>
+        <tr>
+		  <th colspan="2" style="width:8em;">联系方式</th>
+		</tr>
+        
+        <tr>
+		  <th style="width:8em;">电　　话</th>
+		<td> <input name="telephone" type="text" id="telephone" value="{$vo.telephone}" />
+		  传真
+		    <input name="fax" type="text" id="fax" value="{$vo.fax}" /></td></tr>
+        
+        <tr>
+          <th style="width:8em;">邮　　箱</th>
+          <td><input name="email" type="text" id="email" value="{$vo.email}" /> 
+            邮编
+            <input name="zipcode" type="text" id="zipcode" value="{$vo.zipcode}" /></td></tr>
+        
+         <tr>
+           <th style="width:8em;">详细地址</th>
+           <td><input name="address" type="text" id="address" value="{$vo.address}" size="60" /></td>
+         </tr>
+         <tr>
+		  <th style="width:8em;">提交 IP</th>
+		<td><input name="ip" type="text" id="ip" value="{$vo.ip}" readonly="readonly" class="input-nostyle"/></td></tr>
+        
+         <tr>
+		  <th colspan="2" style="width:8em; color:#00F">订单备注</th>
+		</tr>
+        
+        <tr>
+		  <th style="width:8em;">&nbsp;</th>
+		<td><label>
+		  <textarea name="remark" id="remark" cols="80" rows="8">{$vo.remark}</textarea>
+		  </label></td></tr>
+        <tr>
+          <th style="width:8em;">状　态</th>
+          <td><select name="status" id="status">
+            <option value="1" {$vo.status|selected=1}>状态选择</option>
+            <option value="2" {$vo.status|selected=2}>已经处理</option>
+           </select></td>
+        </tr>
+        
+		<td></td>
+		  </tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="foot_action">
+	<input type="submit" name="submit" value="提交更新" class="submit">
+	<input type="reset" name="reset" value="还原重填" class="submit" id="reset" />
+	<input name="id" type="hidden" id="id" value="{$vo.id}" />
+	</div>
+	</form>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

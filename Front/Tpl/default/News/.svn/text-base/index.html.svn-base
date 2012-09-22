@@ -1,0 +1,40 @@
+<include file="Public:header"/>
+  <!-- leftstat -->
+  <div class="dt_page_left">
+    <ul class="dt_page_left_bt font14px fontbold">栏目</ul>
+    <ul>
+    <volist name="newsCategory" id="row">
+	<li class="{$Think.get.category|selected=$row['id'], 'current',''}">{$row.str_repeat}<img src="__ROOT__/Public/Front/icon_arrow04.gif" /> <a href="{:U('News/index', array('category' => $row['id']))}">{$row.title}</a></li>
+	</volist>
+    </ul>
+  </div>
+  <!-- leftend -->
+  <!-- prostart -->
+  <div class="dt_page_right">
+    <form action="{:U('News/index')}" method="get">
+    <ul class="dt_page_right_bt">
+      <li class="font14px fontbold dt_page_right_zt"><a href="{:U('News/index')}" title="资讯">资讯列表</a></li>
+      <li class="dt_page_right_search">关键字：
+        <label>
+        <input type="text" name="keyword" id="keyword" size="16" maxlength="20" value="{$Think.get.keyword}"/>
+        </label>
+        <label>
+        <input type="submit" name="button" id="button" value="搜索" />
+        </label>
+      </li>
+    </ul>
+    </form>
+    <ul class="dt_page_right_con">
+      <volist name="dataContentList" id="row">
+       <li class="dt_page_right_list">
+       <if condition="$row['link_url'] neq ''"><a href="{$row.link_url}" target="_blank" style="{$row.title_style}" title="{$row.title}">{$row.title}</a><else/><a href="{:U('News/detail',array('id'=>$row['id']))}" target="_blank" style="{$row.title_style}" title="{$row.title}">{$row.title}</a></if>
+       <span class="font12px font999">({$row.create_time|date="Y-m-d",###})</span>
+       </li>
+      </volist>
+    </ul>
+    <ul class="fenye">
+    {$pageContentBar}
+    </ul>
+  </div>
+  <!-- proend -->
+  <include file="Public:footer" />

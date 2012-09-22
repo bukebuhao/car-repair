@@ -1,0 +1,120 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                title: "required",
+                content: "fckeditor"
+            },
+            messages: {
+                title: "标题必须填写",
+                content: "内容必须填写""
+            }
+        });
+        colorPicker();
+    });
+</script>
+<div class="mainarea">
+    <div class="maininner">
+    <form method="post" action="{:U("Notice/doInsert")}" enctype="multipart/form-data" id="mainFrom">
+        <div class="body_content">
+            <div class="top_action"><a href="__URL__">返回列表</a></div>
+            <table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+            <tr>
+              <th style="width:8em;"><label for="title">标　　题</label></th>
+            <td><input name="title" id="title" value="{$vo.title}" size="60"></td></tr>
+            <tr>
+               <th style="width:8em;">标题样式</th>
+               <td><div style=" display:block; float:left" title="点击取颜色" class="color_picker" id="color_picker" onclick="colorPicker()">&nbsp;</div>颜色<input class="input" type="hidden" value="#ffffff" name="style_color" id="style_color" size="10"/>&nbsp;
+             <input name="style_bold" type="checkbox" id="style_bold" value="bold" />
+             加粗<input name="style_underline" type="checkbox" id="style_underline" value="underline" />
+           下划线</td>
+             </tr>
+            <tr>
+              <th style="width:8em;">公告内容</th>
+              <td> </td></tr>
+            
+            <tr>
+              <th colspan="2" >
+               		   
+<textarea name="content" cols="50" rows="4" id="content"></textarea>
+<script src="__PUBLIC__/Admin/js/FCKeditor/fckeditor.js"></script>
+<script>
+	var oFCKeditor = new FCKeditor('content') ;
+	oFCKeditor.BasePath = '__PUBLIC__/Admin/js/FCKeditor/';
+	oFCKeditor.Width = '100%';
+	oFCKeditor.Height = '400';
+	oFCKeditor.ToolbarSet = 'Default';
+	oFCKeditor.ReplaceTextarea();
+</script>
+</th>
+            </tr>
+            
+             <tr>
+              <th colspan="2" style="width:8em;">选填内容</th>
+            </tr>
+            <tr>
+           <th style="width:8em;">模　　板</th>
+           <td><input name="template" id="template" value="" />没定义请留空，默认为 detail 不需要填写<span style="color:#F00">.html</span></td>
+         </tr>
+            <tr>
+               <th style="width:8em;"><label for="attach_file">上传附件</label></th>
+               <td>
+                 <input type="file" name="attach_file" id="attach_file" /></td>
+             </tr>
+             <tr>
+              <th style="width:8em;"><label for="keyword">关 键 字</label></th>
+            <td><input name="keyword" id="keyword" size="60"></td></tr>
+            <tr>
+          <th style="width:8em;">来　　源</th>
+          <td><input name="come_from" id="come_from" /></td>
+        </tr>
+         <tr>
+           <th style="width:8em;">来源地址</th>
+          <td><input name="come_from_url" id="come_from_url" size="60"></td>
+          </tr>
+             <tr>
+               <th style="width:8em;"><label for="link_url">外链地址</label></th>
+              <td><input name="link_url" id="link_url" size="60"></td></tr>
+            
+            <tr>
+              <th >其它参数</th>
+              <td ><select name="status" id="status">
+                <option value="0" selected="selected">正常显示</option>
+                <option value="1">暂时隐藏</option>
+                </select>
+              <label for="view_count">  浏览</label>
+                <input name="view_count" type="text" id="view_count" value="0" size="5" maxlength="12"  />
+    <label for="display_order">排序</label>
+    <input name="display_order" type="text" id="display_order" value="0" size="5" maxlength="12"  /></td>
+              </tr>
+            <tr>
+		  <th >起止时间</th>
+		  <td ><input name="start_time" type="text" class="Wdate" id="start_time" style="width:160px"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false,readOnly:true})" value="<?php echo date('Y-m-d',time())?>"/>
+	        -
+            <input name="end_time" type="text" class="Wdate" id="end_time" style="width:160px"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false,readOnly:true})" value="<?php echo date('Y-m-d',time()+2592000)?>"/></td>
+		  </tr>
+        
+            
+            
+            
+            <td></td>
+            </tr>
+            
+            </tbody>
+            
+            </table>
+        </div>
+        <div class="foot_action">
+            <input type="submit" name="submit" value="提交记录" class="submit">
+            <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+        </div>
+        </form>
+    </div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

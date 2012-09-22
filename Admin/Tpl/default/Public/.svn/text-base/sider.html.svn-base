@@ -1,0 +1,32 @@
+	<div class="block style1">
+		<h2>常规设置</h2>
+		<ul class="folder">
+        <li class="Index"><a href="{:U("Index/index")}">后台首页</a></li>
+		<li class="Config"><a href="{:U("Config/index")}">系统配置</a></li>
+        <li class="Module"><a href="{:U("Module/index")}">系统模块</a></li>
+        <li class="Theme"><a href="{:U("Theme/index")}">风格模板</a></li>
+        <li class="Admin"><a href="{:U("Admin/index")}">管理员管理</a></li>
+        <li class="AdminRole"><a href="{:U("AdminRole/index")}">角色管理</a></li>
+		</ul>
+	</div>
+
+	<div class="block style1">
+		<h2>模块管理</h2>
+		<ul class="folder" style="overflow-y:auto;height:280px;">
+            <volist name="modualSider" id="lb">
+                <li class="{$lb['module_name']}"><a href='{:U($lb['module_name']."/index")}'>{$lb.module_title}</a></li>
+			</volist>
+		</ul>
+	</div>
+	
+
+	<div class="block style1">
+		<h2>高级应用</h2>
+		<ul class="folder">
+        <li class="Tools"><a href="{:U("Tools/index")}">工具箱</a></li>
+        <li class="AdminLog"><a href="{:U("AdminLog/index")}">操作日志</a></li>
+        <!--  <li class="Label"><a href="{:U("Label/index")}">数据调用</a></li>
+		<li class="Database"><a href="{:U("Database/index")}">数据库管理</a></li>
+        <li><a href="http://www.tengzhiinfo.com" target="_blank">帮助中心</a></li>-->
+		</ul>
+	</div>

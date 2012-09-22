@@ -1,0 +1,155 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                title: "required"
+                /*,
+			code_body: "required"*/
+            },
+            messages: {
+                title: "广告标题必须填写"
+                /*,
+			code_body: "广告代码必须填写"*/
+            }
+        });
+    });
+    function style_show(theobj) {
+        var styles, key;
+        styles = new Array('html', 'flash', 'image', 'text');
+        for (key in styles) {
+            var obj = $doc('style_' + styles[key]);
+            obj.style.display = styles[key] == theobj.options[theobj.selectedIndex].value ? '': 'none';
+        }
+    }
+</script>
+
+
+<div class="block style4">
+		
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+		  <th style="width:50px; text-align:center"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+帮助</a></th>
+		<td>根据类型填写对应的项目。只有在广告类型为图片时，需要填写附件链接地址；<br />
+若未上传且片未图填写外链地址，则图片广告只显示广告标题</td>
+		  </tr>
+		</table>
+	</div>
+<form method="post" action="{:U("Ad/doInsert")}" enctype="multipart/form-data" id="mainFrom" >
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">返回列表</a> | <a href="{:U("Ad/insert")}">录入广告</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		
+		<tr>
+        <th style="width:8em;"><label for="title">广告标题</label></th>
+		<td><input name="title" id="title" size="50"></td>
+		</tr>
+		
+		<tbody id="style_system" style="display:none">
+		</tbody>
+
+		<tr>
+		  <th>广告类型</th>
+		  <td><select name="category_id"id="category_id">
+          <volist name="link_category" id="row">
+		    <option value="{$row.id}">{$row.title}</option>
+		    </volist>
+		    </select></td>
+		  </tr>
+		<tr><th><label for="category_id">广告方式</label></th><td>
+		<select name="ad_type" onchange="style_show(this)" id="ad_type">
+		<option value="html">代码</option>
+		<option value="flash">flash</option>
+		<option value="image">图片</option>
+		<option value="text">文本</option>
+		</select>
+		</td></tr>
+		<tbody id="style_html" style="display:block">
+		<tr>
+		<th><label for="code_body">广告代码(必填)</label></th>
+		<td><textarea rows="6" style="width:60%;" name="code_body" id="code_body"></textarea></td>
+		</tr>
+		</tbody>
+	
+		<tbody id="style_flash" style="display:none">
+		<tr>
+		<th><label for="height">高度(必填)</label></th>
+		<td><input name="height" id="height" value="0" size="5"></td>
+		</tr>
+		<tr>
+		<th><label for="width">宽度(必填)</label></th>
+		<td><input name="width" id="width" value="0" size="5"></td>
+		</tr>
+		</tbody>
+		
+		<tbody id="style_image" style="display:none">
+		
+		<tr>
+		  <th><label for="attach_alt">图片替换文字(选填)</label></th>
+		  <td><input name="attach_alt" maxlength="255" id="attach_alt"></td>
+		  </tr>
+		</tbody>
+	
+		<tbody id="style_text" style="display:none">
+		<tr>
+		<th><label for="text_body">文字内容(必填)</label></th>
+		<td><input name="text_body" size="50" maxlength="255" id="text_body"></td>
+		</tr>
+		<tr>
+		  <th><label for="font_size">文字大小(选填)</label></th>
+		  <td><input name="font_size" value="12px" size="20" id="font_size"></td>
+		  </tr>
+		</tbody>
+         <tbody >  
+         <tr>
+          <th colspan="2" style="width:8em;">其它内容</th>
+        </tr>
+        <tr>
+          <th style="width:8em;"><label for="attach_file">附件上传</label></th>
+          <td> <input name="attach_file" type="file" id="attach_file" />
+          (图片)swf,png,gif,jpg,rar,zip,pdf,doc</td></tr>
+         <tr>
+           <th style="width:8em;">文字样式</th>
+           <td><div style=" display:block; float:left" title="点击取颜色" class="color_picker" id="color_picker" onclick="colorPicker()">&nbsp;</div>颜色<input class="input" type="hidden" value="#ffffff" name="style_color" id="style_color" size="10"/>&nbsp;<input type="checkbox" name="checkbox" id="checkbox" />加粗<input type="checkbox" name="checkbox" id="checkbox" />
+             下划线　(只对文字广告有效)</td>
+         </tr>
+         
+         <tr>
+           <th style="width:8em;"><label for="status">状　　态</label> </th>
+           <td><select name="status" id="status">
+             <option value="0">有效</option>
+             <option value="1">无效</option>
+           </select></td></tr>
+        
+         <tr>
+           <th style="width:8em;"><label for="display_order">排　　序</label></th>
+           <td><input name="display_order" id="display_order" value="0" size="10" /></td>
+         </tr>
+        <tr>
+		  <th><label for="link_url">链　　接</label></th>
+		  <td><input name="link_url" id="adcolink_url" size="60" maxlength="255">
+		    广告方式为图片、文本状态有效</td>
+		  </tr>
+         <tr>
+		  <th style="width:8em;"><label for="description">备　　注</label></th>
+		<td><textarea name="description" cols="60" rows="5" style="width:60%;" id="description"></textarea></td></tr>
+        </tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="foot_action">
+		<input type="submit" name="submit" value="提交录入" class="submit">
+        <input type="reset" name="button" value="还原重填" class="submit" id="resetFrom"/>
+	</div>
+	</form>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

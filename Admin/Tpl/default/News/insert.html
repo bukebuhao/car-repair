@@ -1,0 +1,152 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                title: "required",
+                content: "fckeditor",
+                view_count: {
+                    required: true,
+                    number: true
+                },
+                display_order: {
+                    required: true,
+                    number: true
+                }
+            },
+            messages: {
+                title: "标题必须填写",
+                content: "内容必须填写",
+                view_count: {
+                    required: "浏览次数必须填写",
+                    number: '浏览次数必须为数字'
+                },
+                display_order: {
+                    required: "排序必须填写",
+                    number: '排序必须为数字'
+                }
+            }
+        });
+        colorPicker();
+    });
+</script>
+<div class="mainarea">
+<div class="maininner">
+
+
+<form method="post" action="{:U("News/doInsert")}" enctype="multipart/form-data" id="mainFrom">
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">浏览新闻</a> | <a href="{:U("Category/index")}">分类管理</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:8em;"><label for="title">新闻标题</label></th>
+		<td><input name="title" id="title" size="60" ></td></tr>
+		
+        <tr>
+		  <th style="width:8em;">标题样式</th>
+		<td><div style=" display:block; float:left" title="点击取颜色" class="color_picker" id="color_picker" onclick="colorPicker()">&nbsp;</div>颜色<input class="input" type="hidden" value="#ffffff" name="style_color" id="style_color" size="10"/>&nbsp;
+             <input name="style_bold" type="checkbox" id="style_bold" value="bold" />
+             加粗<input name="style_underline" type="checkbox" id="style_underline" value="underline" />
+           下划线</td></tr>
+        
+        <tr>
+		  <th style="width:8em;"><label for="category_id">新闻类别</label></th>
+		<td><select name="category_id"  id="select"  >
+                 {$category|buildSelect=$parentId}
+            
+                </select></td></tr>
+        
+        <tr>
+		  <th style="width:8em;"><label for="attach_file">新闻图片</label></th>
+		<td> <input name="attach_file" type="file" id="attach_file" /></td></tr>
+          <tr>
+		  <th style="width:8em;"><label for="description">内容摘要</label></th>
+		<td><textarea name="description" cols="60" rows="5"  id="description"></textarea></td></tr>
+        
+        <tr>
+		  <th style="width:8em;">新闻内容</th>
+		<td> </td></tr>
+        
+        <tr>
+		  <th colspan="2" >
+		   
+<textarea name="content" cols="50" rows="4" id="content">{$vo.content}</textarea>
+<script src="__PUBLIC__/Admin/js/FCKeditor/fckeditor.js"></script>
+<script>
+	var oFCKeditor = new FCKeditor('content') ;
+	oFCKeditor.BasePath = '__PUBLIC__/Admin/js/FCKeditor/';
+	oFCKeditor.Width = '100%';
+	oFCKeditor.Height = '400';
+	oFCKeditor.ToolbarSet = 'Default';
+	oFCKeditor.ReplaceTextarea();
+</script>
+
+           </th>
+		</tr>
+        
+         <tr>
+		  <th colspan="2" style="width:8em;">以下为选填内容</th>
+		</tr>
+        
+         <tr>
+           <th style="width:8em;">模　　板</th>
+           <td><input name="template" id="template" value="" />没定义请留空，默认为 detail 不需要填写<span style="color:#F00">.html</span></td>
+         </tr>
+         <tr>
+           <th style="width:8em;">标　　签</th>
+           <td><input name="tags" id="tags" size="50" />
+            标签之间用 ，隔开</td>
+         </tr>
+         <tr>
+		  <th style="width:8em;">关 键 字</th>
+		<td><input name="keyword" id="keyword" size="60"></td></tr>
+        
+       
+         <tr>
+		  <th style="width:8em;">外链地址</th>
+		<td><input name="link_url" id="link_url" size="60"></td></tr>
+        
+        <tr>
+		  <th style="width:8em;">来　　源</th>
+		<td><input name="copy_from" id="copy_from"></td></tr>
+        <tr>
+		  <th style="width:8em;">来源链接</th>
+		<td><input name="from_link" id="from_link" size="60"></td></tr>
+        
+		<tr>
+        <th style="width:8em;">其它参数</th>
+		  <td><select name="recommend" id="recommend">
+					      <option value="0" selected="selected">默认不推荐</option>
+					      <option value="1">推荐</option>
+				        </select><select name="status" id="status">
+				          <option value="0" selected="selected">默认显示</option>
+				          <option value="1">隐藏</option>
+                        </select><select name="istop" id="istop">
+				          <option value="0">默认不置顶</option>
+				          <option value="1">置顶</option>
+              </select>浏览
+<input name="view_count" type="text" id="view_count" value="0" size="5" maxlength="12"  />
+排序
+<input name="display_order" type="text" id="display_order" value="0" size="5" maxlength="12"  /></td>
+		</tr>
+		<tr>
+		  <th style="width:8em;">录入时间</th>
+		  <td><input name="create_time" type="text" class="Wdate" id="create_time" style="width:160px"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false,readOnly:true,isShowToday:true})" value="<?php echo date('Y-m-d ')?>"/></td>
+		  </tr>
+		<td></td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="foot_action">
+		<input type="submit" name="submit" value="提交录入" class="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+	</div>
+	</form>
+</div>
+</div>
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

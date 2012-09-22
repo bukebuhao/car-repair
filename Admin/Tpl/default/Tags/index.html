@@ -1,0 +1,99 @@
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+	<form method="get" action="__URL__">
+	<div class="block style4">
+		
+		<table cellspacing="3" cellpadding="3" id="searcharea">
+		<tr>
+		  <th>名称</th>
+          <td><input type="text" name="tagName" id="tagName"></td>
+		  </tr>
+		<tr>
+		  <th>模块</th>
+		  <td><select name="module" id="module">
+		    <option value="" selected="selected">默认</option>
+		    <option value="News">新闻</option>
+		    <option value="Product">产品</option>
+		    <option value="Download">下载</option>
+          </select></td>
+		  </tr>
+		<tr><th>结果排序</th>
+		<td>
+		<select name="orderBy" id="orderBy">
+		  <option value="id" selected="selected">默认排序</option>
+		  <option value="module">模块</option>
+          <option value="titleCount">内容数</option>
+        </select>
+		<select name="orderType" id="orderType">
+		<option value="DESC">递减</option>
+		<option value="ASC">递增</option>
+		</select>
+		<select name="pageSize" id="pageSize">
+		<option value="20">每页显示20个</option>
+		<option value="50">每页显示50个</option>
+		<option value="100">每页显示100个</option>
+		<option value="1000">一次处理1000个</option>
+		</select>
+		<input type="submit" name="submit" value="搜索" class="submit" id="submit">
+		<a href="__URL__" > 默认</a>
+<script type="text/javascript">
+    /*
+	设定选择值
+*/
+    $("#title").val('{$Think.get.title}');
+    $("#module").val('{$Think.get.module}');
+    $("#orderBy").val('{$Think.get.orderBy}');
+    $("#orderType").val('{$Think.get.orderType}');
+    $("#pageSize").val('{$Think.get.pageSize}');
+</script>
+
+		</td>
+		</tr>
+		</table>
+	</div>
+	</form>
+<present name="dataList">
+	<form method="post" action="{:u("Tags/doCommand")}">
+	<div class="body_content">
+    <div class="top_action" style="display:none"><a href="{:U("Tags/insert")}">录入广告</a></div>
+	<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+        <th class="th-id">&nbsp;</th>
+		 <th>名称</th>
+		 <th width="150">记录数</th>
+              <th width="150">模块</th>
+            </tr>
+		<volist name="dataList" id="vo">
+		<tr>
+		<td><input type="checkbox" name="id[]" value="{$vo.id}">{$vo.id}</td>
+        <td>{$vo.tag_name}</td>
+        <td>{$vo.total_count}</td>
+        <td>{$vo.module|moduleTitle}</td>
+        </tr>
+		</volist>
+		</table>
+	</div>
+	<div class="foot_action">
+    <div class="bat">
+	 <input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'id')">全选
+		<select name="operate" id="operate">
+        <option value="" selected="selected">选择操作</option>
+        <option value="delete" >删除</option>
+              </select> 
+		<input type="submit" name="submit" value="提交操作" class="confirmSubmit submit"></div>
+	  <div class="pages">{$pageBar}</div>
+	</div>
+	</form>
+<else />
+	<div class="body_content">
+		<p>指定条件下还没有数据</p>
+	</div>
+</present>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

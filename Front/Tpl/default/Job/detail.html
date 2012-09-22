@@ -1,0 +1,75 @@
+<include file="Public:header" />
+  <!-- prostart -->
+  <div class="dt_page_right">
+    <ul class="dt_page_right_bt1">您现在的位置：<a href="index.html">首页</a> > <a href="{:U('Job/index')}">招贤纳士</a> > 正文</li></ul>
+    <ul class="dt_page_right_con">
+      <li class="news_detail_bt font16px fontbold">{$contentDetail.title}</li>
+      <li class="news_detail_data font999">发布时间：{$contentDetail.create_time|date="Y-m-d",###}&nbsp;&nbsp;&nbsp;&nbsp;来源：<if condition="$contentDetail['from_link'] eq ''">{$contentDetail.copy_from|default='本站'}<else/><a href="{$contentDetail.from_link}" target="_blank"> {$contentDetail.copy_from|default='本站'}</a></if>&nbsp;&nbsp;&nbsp;&nbsp;查看次数：{$contentDetail.view_count}
+    </ul>
+    <ul class="dt_page_right_con">
+    {$contentDetail.content}
+    </ul>
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Js/Jquery/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Js/Jquery/jquery.validate.js"></script>
+<script type="text/javascript">
+
+</script>
+<h3 class="title">应聘岗位(*为必须填写项目)</h3>
+<div class="con">
+<form action="{:U('Job/doResume')}" method="post" enctype="multipart/form-data" onsubmit="return false">
+  
+  <label>姓　　名：
+    <input type="text" name="realname" id="realname" />
+    * </label>
+     <br />
+     <label>性　　别：
+       <select name="sex" id="sex">
+         <option value="1" selected="selected">男</option>
+         <option value="0">女</option>
+       </select>
+     </label>
+*<br />
+  <label>婚　　否：
+    <select name="marray" id="marray">
+      <option value="已婚" {$vo.sex|selected='已婚'}>已婚</option>
+      <option value="未婚" {$vo.sex|selected='未婚'}>未婚</option>
+    </select>  </label>
+   *<br />  
+<label>出生日期：
+<input type="text" name="brithday" id="brithday" />
+  </label>
+ 
+  <br />
+  <label>学　　历：
+    <input type="text" name="degree" id="degree" />
+  </label>
+  <br />
+  <label>毕业时间：
+    <input type="text" name="gradyear" id="gradyear" /></label>
+ <label> 毕业学校：
+    <input type="text" name="school" id="school" /></label>
+  
+  <br />
+  <label>电　　话：
+    <input type="text" name="telephone" id="telephone" />
+  </label>
+    <br />
+  <label>详细介绍：
+      <br />
+      <textarea name="introduction" cols="50" rows="7" id="introduction"></textarea>
+  </label>
+  *<br />
+  上传附件：
+  <input name="attach_file" type="file" id="attach_file" />
+  可以上传简历或照片,支持格式zip,rar,jpg,gif,png(2M以内)
+<br />
+  验 证 码：
+   <input name="verifyCode" type="text" class="t_input" id="verifyCode" style="margin-right:5px;width:55px;" value="" maxlength="4" /><img src="{:U('Index/verify')}" align="absmiddle" class="checkcode" title="如果您无法识别验证码，请点图片更换" id="verifyImage"/> 
+ <input name="job_id" type="hidden" value="{$contentDetail.id}" />  <input type="submit" name="button" id="button" value="提交应聘" />
+</form>
+</div>
+    
+    
+  </div>
+  <!-- proend -->
+<include file="Public:footer" />

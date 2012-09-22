@@ -1,0 +1,60 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+<form method="post" action="{:U("Comment/doModify")}" enctype="multipart/form-data">
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">返回列表</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		
+        <tr>
+		  <th style="width:8em;">真实姓名</th>
+		<td><input name="username" type="text"  id="username" value="{$vo.username}"  /></td></tr>
+        <tr>
+          <th style="width:8em;">留言内容</th>
+          <td><label>
+            <textarea name="content" id="contents" cols="80" rows="8">{$vo.content}</textarea>
+            </label></td>
+        </tr>
+        
+         <tr>
+           <th colspan="2" style="width:8em;">回复评论</th>
+         </tr>
+        
+        <tr>
+		  <th style="width:8em;">&nbsp;</th>
+		<td><label>
+		  <textarea name="reply_content" id="reply_content" cols="80" rows="8">{$vo.reply_content}</textarea>
+		  </label></td></tr>
+       <tr>
+		  <th style="width:8em;">留言IP</th>
+		<td><input name="title" type="text"  id="title" value="{$vo.ip}"></td></tr>
+		
+        <tr>
+          <th style="width:8em;">前台显示</th>
+          <td>  <select name="status" id="status">
+            <option value="0" {$vo.status|selected=0}>显示</option>
+            <option value="1" {$vo.status|selected=1}>隐藏</option>
+          </select></td></tr>
+        
+		<td></td>
+		  </tr>
+		
+		</tbody>
+		
+		</table>
+	</div>
+	<div class="foot_action">
+	<input type="submit" name="submit" value="提交更新" class="submit">
+	<input type="reset" name="reset" value="还原重填" class="submit" id="reset" />
+	<input name="id" type="hidden" id="id" value="{$vo.id}" />
+	<input name="title_id" type="hidden" id="title_id" value="{$vo.title_id}" />
+	</div>
+	</form>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

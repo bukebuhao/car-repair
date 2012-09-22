@@ -1,0 +1,1035 @@
+[ 2012-09-19T22:10:08+08:00 ] 127.0.0.1 /4s/admin.php/Public/login/jumpUri/.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001448s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001573s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001135s ]
+NOTIC: [8] Undefined index: jumpUri E:\phpworkspace\companycms\Admin\Lib\Action\PublicAction.class.php 第 31 行.
+NOTIC: [8] Undefined variable: string E:\phpworkspace\companycms\company\common\HttpUtils.php 第 28 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.027570s ]
+INFO: [ view_template ] --END-- [ RunTime:0.066919s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.094566s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031022s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.125659s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.126565s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.127516s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.128368s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004376s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.130180s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001806s ]
+
+[ 2012-09-19T22:10:08+08:00 ] 127.0.0.1 /4s/admin.php/Public/verify.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.002092s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002209s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001808s ]
+
+[ 2012-09-19T22:23:53+08:00 ] 127.0.0.1 /4s/admin.php/Public/verify.html?t=0.23175337282009423
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001601s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001719s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001395s ]
+
+[ 2012-09-19T22:24:01+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:24:01+08:00 ] 127.0.0.1 /4s/admin.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001433s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001549s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000768s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001216s ]
+SQL: SHOW COLUMNS FROM `companycms_module` [ RunTime:0.010740s ]
+SQL: SELECT * FROM `companycms_module` WHERE ( `left_menu` = 1 ) AND ( `status` = 0 ) ORDER BY display_order DESC,id ASC   [ RunTime:0.000681s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: select version() [ RunTime:0.014329s ]
+NOTIC: [8] Undefined variable: string E:\phpworkspace\companycms\company\common\HttpUtils.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_admin` [ RunTime:0.008386s ]
+SQL: SELECT * FROM `companycms_admin` WHERE id=1 LIMIT 1   [ RunTime:0.000456s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\IndexAction.class.php on line 45 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007368s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.083609s ]
+INFO: [ view_template ] --END-- [ RunTime:0.058755s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\8036b6ce8dcda916f02254a7b19498b1.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\8036b6ce8dcda916f02254a7b19498b1.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\8036b6ce8dcda916f02254a7b19498b1.php 第 36 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.142455s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.195756s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.338242s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.339253s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.340308s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.341017s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003756s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.342120s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001182s ]
+
+[ 2012-09-19T22:24:08+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:24:08+08:00 ] 127.0.0.1 /4s/admin.php/Config/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001606s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001732s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000949s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001163s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_config` [ RunTime:0.118257s ]
+SQL: SELECT * FROM `companycms_config` WHERE id=1 LIMIT 1   [ RunTime:0.001038s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\ConfigAction.class.php on line 33 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007144s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.175367s ]
+INFO: [ view_template ] --END-- [ RunTime:0.018667s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\25ffad8b1333df45988848fdab8dbe42.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\25ffad8b1333df45988848fdab8dbe42.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\25ffad8b1333df45988848fdab8dbe42.php 第 36 行.
+NOTIC: [8] Undefined variable: moduleName E:\phpworkspace\companycms\Admin\Runtime\Cache\25ffad8b1333df45988848fdab8dbe42.php 第 72 行.
+NOTIC: [8] Undefined index: other_im E:\phpworkspace\companycms\Admin\Runtime\Cache\25ffad8b1333df45988848fdab8dbe42.php 第 135 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.194070s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.075625s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.269754s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.271283s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.272870s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.273995s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005781s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.275683s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001921s ]
+
+[ 2012-09-19T22:24:09+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:24:09+08:00 ] 127.0.0.1 /4s/admin.php/Module/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001814s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001948s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001540s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_module` [ RunTime:0.008447s ]
+NOTIC: [8] Undefined variable: condition E:\phpworkspace\companycms\Admin\Lib\Action\ModuleAction.class.php 第 31 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_module` LIMIT 1   [ RunTime:0.000319s ]
+NOTIC: [8] Undefined variable: condition E:\phpworkspace\companycms\Admin\Lib\Action\ModuleAction.class.php 第 32 行.
+SQL: SELECT * FROM `companycms_module` ORDER BY id DESC  [ RunTime:0.000749s ]
+NOTIC: [8] Undefined variable: disble E:\phpworkspace\companycms\Admin\Lib\Action\ModuleAction.class.php 第 44 行.
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\ModuleAction.class.php on line 46 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.008853s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.065257s ]
+INFO: [ view_template ] --END-- [ RunTime:0.099501s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\e82d4e778e9fae13ea3e79352e5d1d87.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\e82d4e778e9fae13ea3e79352e5d1d87.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\e82d4e778e9fae13ea3e79352e5d1d87.php 第 36 行.
+NOTIC: [8] Undefined variable: moduleName E:\phpworkspace\companycms\Admin\Runtime\Cache\e82d4e778e9fae13ea3e79352e5d1d87.php 第 45 行.
+NOTIC: [8] Undefined variable: disble E:\phpworkspace\companycms\Admin\Runtime\Cache\e82d4e778e9fae13ea3e79352e5d1d87.php 第 88 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.164812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063974s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.228840s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.230579s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.232167s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.233311s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006279s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.235245s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001772s ]
+
+[ 2012-09-19T22:24:10+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:24:10+08:00 ] 127.0.0.1 /4s/admin.php/Theme/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001704s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001824s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000810s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001617s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+NOTIC: [2] htmlspecialchars() expects parameter 1 to be string, array given E:\phpworkspace\companycms\Admin\Lib\Action\ThemeAction.class.php 第 32 行.
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\ThemeAction.class.php on line 59 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007557s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.051533s ]
+INFO: [ view_template ] --END-- [ RunTime:0.022600s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\d7cb1a242385039a5c8d3e187533cc97.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\d7cb1a242385039a5c8d3e187533cc97.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\d7cb1a242385039a5c8d3e187533cc97.php 第 36 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.074224s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031613s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.105888s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.107239s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.108536s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.109883s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005396s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.111418s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001576s ]
+
+[ 2012-09-19T22:24:10+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:24:10+08:00 ] 127.0.0.1 /4s/admin.php/Admin/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001837s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001958s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001600s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_admin` [ RunTime:0.008848s ]
+NOTIC: [8] Undefined index: username E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 31 行.
+NOTIC: [8] Undefined index: userId E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 32 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 33 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_admin` LIMIT 1   [ RunTime:0.000294s ]
+SQL: SELECT a.*,b.role_name as role_name FROM companycms_admin a LEFT JOIN companycms_admin_role b on a.role_id=b.id LIMIT 0,15   [ RunTime:0.000564s ]
+NOTIC: [8] Undefined variable: adminRoleList E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 45 行.
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php on line 49 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007878s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.069397s ]
+INFO: [ view_template ] --END-- [ RunTime:0.034517s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 36 行.
+NOTIC: [8] Undefined index: username E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 78 行.
+NOTIC: [8] Undefined index: userId E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 79 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 80 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 81 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 82 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.097742s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038549s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.136347s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.137752s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.139100s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.140472s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005643s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.142103s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001593s ]
+
+[ 2012-09-19T22:24:11+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:24:11+08:00 ] 127.0.0.1 /4s/admin.php/AdminRole/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001715s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001831s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000798s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001560s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_role` [ RunTime:0.007362s ]
+NOTIC: [8] Undefined variable: condition E:\phpworkspace\companycms\Admin\Lib\Action\AdminRoleAction.class.php 第 30 行.
+SQL: SELECT * FROM `companycms_admin_role` ORDER BY id DESC  [ RunTime:0.000450s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\AdminRoleAction.class.php on line 35 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.008657s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.060678s ]
+INFO: [ view_template ] --END-- [ RunTime:0.024879s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\472fb801930b76d5ae2ef4c9e71d576a.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\472fb801930b76d5ae2ef4c9e71d576a.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\472fb801930b76d5ae2ef4c9e71d576a.php 第 36 行.
+NOTIC: [8] Undefined variable: moduleName E:\phpworkspace\companycms\Admin\Runtime\Cache\472fb801930b76d5ae2ef4c9e71d576a.php 第 45 行.
+NOTIC: [8] Undefined variable: pageBar E:\phpworkspace\companycms\Admin\Runtime\Cache\472fb801930b76d5ae2ef4c9e71d576a.php 第 84 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.085601s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031287s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.116985s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.118754s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.120121s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.121282s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005745s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.122811s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001799s ]
+
+[ 2012-09-19T22:24:12+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:24:12+08:00 ] 127.0.0.1 /4s/admin.php/Menu/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001753s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001872s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001495s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_menu` [ RunTime:0.009389s ]
+NOTIC: [8] Undefined variable: data E:\phpworkspace\companycms\Admin\Lib\Action\MenuAction.class.php 第 30 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_menu` LIMIT 1   [ RunTime:0.000384s ]
+NOTIC: [8] Undefined variable: data E:\phpworkspace\companycms\Admin\Lib\Action\MenuAction.class.php 第 33 行.
+SQL: SELECT * FROM `companycms_menu` ORDER BY id DESC LIMIT 0,15   [ RunTime:0.000449s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\MenuAction.class.php on line 40 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.008369s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.063884s ]
+INFO: [ view_template ] --END-- [ RunTime:0.043157s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\5162534bf68be385b5224970ab92a2fb.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\5162534bf68be385b5224970ab92a2fb.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\5162534bf68be385b5224970ab92a2fb.php 第 36 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.107101s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046983s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.154136s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.155520s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.156874s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.157964s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005201s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.159452s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001648s ]
+
+[ 2012-09-19T22:24:14+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:24:14+08:00 ] 127.0.0.1 /4s/admin.php/Category/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001720s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001837s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001522s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_module` [ RunTime:0.008873s ]
+SQL: SELECT * FROM `companycms_module` ORDER BY id  [ RunTime:0.000726s ]
+SQL: SHOW COLUMNS FROM `companycms_category` [ RunTime:0.095720s ]
+SQL: SELECT * FROM `companycms_category` ORDER BY display_order DESC,id DESC  [ RunTime:0.000586s ]
+NOTIC: [2] Missing argument 2 for getCategory(), called in E:\phpworkspace\companycms\Admin\Lib\Action\CategoryAction.class.php on line 40 and defined E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 158 行.
+NOTIC: [2] Missing argument 4 for getCategoryTree(), called in E:\phpworkspace\companycms\company\common\HtmlUtils.php on line 163 and defined E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 175 行.
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\CategoryAction.class.php on line 45 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007494s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.189872s ]
+INFO: [ view_template ] --END-- [ RunTime:0.031961s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\ef5aacde02030de23b6a00edc592530c.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\ef5aacde02030de23b6a00edc592530c.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\ef5aacde02030de23b6a00edc592530c.php 第 36 行.
+NOTIC: [8] Undefined variable: moduleName E:\phpworkspace\companycms\Admin\Runtime\Cache\ef5aacde02030de23b6a00edc592530c.php 第 46 行.
+NOTIC: [8] Undefined variable: pageBar E:\phpworkspace\companycms\Admin\Runtime\Cache\ef5aacde02030de23b6a00edc592530c.php 第 91 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.221881s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045566s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.267507s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.268702s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.271354s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.272139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005638s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.273274s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001194s ]
+
+[ 2012-09-19T22:24:18+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:24:18+08:00 ] 127.0.0.1 /4s/admin.php/Comment/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001356s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001476s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001097s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_comment` [ RunTime:0.076520s ]
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 30 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 31 行.
+NOTIC: [8] Undefined index: model E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 32 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 33 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_comment` LIMIT 1   [ RunTime:0.000335s ]
+SQL: SELECT * FROM `companycms_comment` LIMIT 0,15   [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `companycms_news` [ RunTime:0.010042s ]
+SQL: SELECT * FROM `companycms_news` WHERE id=10 LIMIT 1   [ RunTime:0.000578s ]
+SQL: SELECT * FROM `companycms_news` WHERE id=10 LIMIT 1   [ RunTime:0.000451s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php on line 69 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007205s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.145671s ]
+INFO: [ view_template ] --END-- [ RunTime:0.015657s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 85 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 86 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 87 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 88 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 89 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.161393s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042122s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.203568s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.204380s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.205175s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.205701s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002977s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.206692s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001043s ]
+
+[ 2012-09-19T22:24:19+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:24:19+08:00 ] 127.0.0.1 /4s/admin.php/Tags/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001120s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001237s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_tags` [ RunTime:0.108615s ]
+NOTIC: [8] Undefined index: tagName E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php 第 31 行.
+NOTIC: [8] Undefined index: module E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php 第 32 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php 第 33 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_tags` LIMIT 1   [ RunTime:0.000292s ]
+SQL: SELECT * FROM `companycms_tags` LIMIT 0,15   [ RunTime:0.000343s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php on line 49 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.008323s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.154330s ]
+INFO: [ view_template ] --END-- [ RunTime:0.016561s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 36 行.
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 82 行.
+NOTIC: [8] Undefined index: module E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 83 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 84 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 85 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 86 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.170979s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025047s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.196054s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.196884s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.197669s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.198192s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002950s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.199120s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000979s ]
+
+[ 2012-09-19T22:25:27+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:25:27+08:00 ] 127.0.0.1 /4s/admin.php/Tools/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001631s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001757s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+NOTIC: [8] Undefined variable: data E:\phpworkspace\companycms\Admin\Lib\Action\ToolsAction.class.php 第 20 行.
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\ToolsAction.class.php on line 29 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007146s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.052067s ]
+INFO: [ view_template ] --END-- [ RunTime:0.025449s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\6e51bfd434fb4653f655d3853811a7fd.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\6e51bfd434fb4653f655d3853811a7fd.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\6e51bfd434fb4653f655d3853811a7fd.php 第 36 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.077611s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038682s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.116330s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.117209s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.118054s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.118604s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003099s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.119553s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001232s ]
+
+[ 2012-09-19T22:25:28+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:25:28+08:00 ] 127.0.0.1 /4s/admin.php/AdminLog/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001148s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001264s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007196s ]
+NOTIC: [8] Undefined index: username E:\phpworkspace\companycms\Admin\Lib\Action\AdminLogAction.class.php 第 32 行.
+NOTIC: [8] Undefined index: userId E:\phpworkspace\companycms\Admin\Lib\Action\AdminLogAction.class.php 第 33 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\AdminLogAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: ip E:\phpworkspace\companycms\Admin\Lib\Action\AdminLogAction.class.php 第 35 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\AdminLogAction.class.php 第 36 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\AdminLogAction.class.php 第 38 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_admin_log` LIMIT 1   [ RunTime:0.000305s ]
+SQL: SELECT * FROM `companycms_admin_log` LIMIT 0,15   [ RunTime:0.000534s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\AdminLogAction.class.php on line 52 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.054825s ]
+INFO: [ view_template ] --END-- [ RunTime:0.017449s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\6b81a8d535682b04a27f509d010381e4.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\6b81a8d535682b04a27f509d010381e4.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\6b81a8d535682b04a27f509d010381e4.php 第 36 行.
+NOTIC: [8] Undefined index: username E:\phpworkspace\companycms\Admin\Runtime\Cache\6b81a8d535682b04a27f509d010381e4.php 第 73 行.
+NOTIC: [8] Undefined index: userId E:\phpworkspace\companycms\Admin\Runtime\Cache\6b81a8d535682b04a27f509d010381e4.php 第 74 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\6b81a8d535682b04a27f509d010381e4.php 第 75 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\6b81a8d535682b04a27f509d010381e4.php 第 76 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\6b81a8d535682b04a27f509d010381e4.php 第 77 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.072384s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043903s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.116300s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.117145s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.117942s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.118520s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003046s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.119465s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001300s ]
+
+[ 2012-09-19T22:25:31+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:25:31+08:00 ] 127.0.0.1 /4s/admin.php/Comment/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001213s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001354s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000917s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_comment` [ RunTime:0.015647s ]
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 30 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 31 行.
+NOTIC: [8] Undefined index: model E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 32 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 33 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_comment` LIMIT 1   [ RunTime:0.000295s ]
+SQL: SELECT * FROM `companycms_comment` LIMIT 0,15   [ RunTime:0.000443s ]
+SQL: SHOW COLUMNS FROM `companycms_news` [ RunTime:0.009293s ]
+SQL: SELECT * FROM `companycms_news` WHERE id=10 LIMIT 1   [ RunTime:0.000556s ]
+SQL: SELECT * FROM `companycms_news` WHERE id=10 LIMIT 1   [ RunTime:0.000586s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php on line 69 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007204s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.083428s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001772s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 85 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 86 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 87 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 88 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 89 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.085276s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027979s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.113305s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.114255s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.115061s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.115583s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003164s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.116619s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001060s ]
+
+[ 2012-09-19T22:25:33+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:25:33+08:00 ] 127.0.0.1 /4s/admin.php/Tags/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001124s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001241s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_tags` [ RunTime:0.007442s ]
+NOTIC: [8] Undefined index: tagName E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php 第 31 行.
+NOTIC: [8] Undefined index: module E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php 第 32 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php 第 33 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_tags` LIMIT 1   [ RunTime:0.000427s ]
+SQL: SELECT * FROM `companycms_tags` LIMIT 0,15   [ RunTime:0.000439s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\TagsAction.class.php on line 49 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007406s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.062706s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001304s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 36 行.
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 82 行.
+NOTIC: [8] Undefined index: module E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 83 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 84 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 85 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\091a8a777b9c034f3dd64a175135e2de.php 第 86 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.064111s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027451s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.091626s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.092599s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.093419s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.093950s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003229s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.094969s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001221s ]
+
+[ 2012-09-19T22:25:33+08:00 ] 127.0.0.1 /4s/admin.php/Company/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001213s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001332s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.017947s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002103s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\dc1883257e88802bf0e854b4b1ce8784.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\dc1883257e88802bf0e854b4b1ce8784.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\dc1883257e88802bf0e854b4b1ce8784.php 第 36 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.020115s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052533s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.072716s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.073785s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.074624s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.075154s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003288s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.076114s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001045s ]
+
+[ 2012-09-19T22:25:34+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:25:34+08:00 ] 127.0.0.1 /4s/admin.php/Ad/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001289s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001455s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_category` [ RunTime:0.007696s ]
+SQL: SELECT * FROM `companycms_category` ORDER BY id  [ RunTime:0.000727s ]
+NOTIC: [2] Missing argument 4 for getCategoryTree(), called in E:\phpworkspace\companycms\company\common\HtmlUtils.php on line 163 and defined E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 175 行.
+SQL: SHOW COLUMNS FROM `companycms_ad` [ RunTime:0.010671s ]
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Lib\Action\AdAction.class.php 第 35 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\AdAction.class.php 第 36 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\AdAction.class.php 第 37 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\AdAction.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_ad` LIMIT 1   [ RunTime:0.000310s ]
+SQL: SELECT * FROM `companycms_ad` LIMIT 0,15   [ RunTime:0.000460s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\AdAction.class.php on line 51 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007107s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.114736s ]
+INFO: [ view_template ] --END-- [ RunTime:0.061460s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\842d299b679a8de7c2d4ba217ba6c5bc.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\842d299b679a8de7c2d4ba217ba6c5bc.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\842d299b679a8de7c2d4ba217ba6c5bc.php 第 36 行.
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Runtime\Cache\842d299b679a8de7c2d4ba217ba6c5bc.php 第 71 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\842d299b679a8de7c2d4ba217ba6c5bc.php 第 72 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\842d299b679a8de7c2d4ba217ba6c5bc.php 第 73 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\842d299b679a8de7c2d4ba217ba6c5bc.php 第 74 行.
+NOTIC: [8] Undefined index: attach_image E:\phpworkspace\companycms\Admin\Runtime\Cache\842d299b679a8de7c2d4ba217ba6c5bc.php 第 97 行.
+NOTIC: [8] Undefined index: attach_image E:\phpworkspace\companycms\Admin\Runtime\Cache\842d299b679a8de7c2d4ba217ba6c5bc.php 第 97 行.
+NOTIC: [8] Undefined index: attach_image E:\phpworkspace\companycms\Admin\Runtime\Cache\842d299b679a8de7c2d4ba217ba6c5bc.php 第 97 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.176260s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037914s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.214228s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.215248s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.216216s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.216923s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003786s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.218152s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001411s ]
+
+[ 2012-09-19T22:25:36+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:25:36+08:00 ] 127.0.0.1 /4s/admin.php/Feedback/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001293s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001408s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000807s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001077s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_feedback` [ RunTime:0.073110s ]
+NOTIC: [8] Undefined index: username E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 31 行.
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 32 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 33 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 36 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_feedback` LIMIT 1   [ RunTime:0.000314s ]
+SQL: SELECT * FROM `companycms_feedback` ORDER BY id DESC LIMIT 0,15   [ RunTime:0.000372s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php on line 53 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007314s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.128357s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001670s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 36 行.
+NOTIC: [8] Undefined index: username E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 77 行.
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 78 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 79 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 80 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 81 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 82 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.130110s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041583s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.171750s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.172580s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.173342s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.173878s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002939s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.174807s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000975s ]
+
+[ 2012-09-19T22:25:38+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:25:38+08:00 ] 127.0.0.1 /4s/admin.php/Comment/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001118s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001235s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000956s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_comment` [ RunTime:0.008246s ]
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 30 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 31 行.
+NOTIC: [8] Undefined index: model E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 32 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 33 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_comment` LIMIT 1   [ RunTime:0.000312s ]
+SQL: SELECT * FROM `companycms_comment` LIMIT 0,15   [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `companycms_news` [ RunTime:0.009696s ]
+SQL: SELECT * FROM `companycms_news` WHERE id=10 LIMIT 1   [ RunTime:0.000560s ]
+SQL: SELECT * FROM `companycms_news` WHERE id=10 LIMIT 1   [ RunTime:0.000460s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php on line 69 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007199s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.075999s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001275s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 85 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 86 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 87 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 88 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 89 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.077345s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029224s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.106606s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.107480s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.108274s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.108914s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003382s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.110136s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001094s ]
+
+[ 2012-09-19T22:25:51+08:00 ] 127.0.0.1 /4s/admin.php/Comment/modify/id/1.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001158s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001277s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_comment` [ RunTime:0.007769s ]
+SQL: SELECT * FROM `companycms_comment` WHERE id=1 LIMIT 1   [ RunTime:0.000458s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.053321s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001330s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\4101ee19460de88fe86a366f6d9f1d90.php 第 37 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\4101ee19460de88fe86a366f6d9f1d90.php 第 37 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\4101ee19460de88fe86a366f6d9f1d90.php 第 37 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.054749s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051904s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.106678s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.107448s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.108222s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.108755s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002887s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.109678s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2012-09-19T22:25:59+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:25:59+08:00 ] 127.0.0.1 /4s/admin.php/Comment
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001230s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001360s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000990s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_comment` [ RunTime:0.008699s ]
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 30 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 31 行.
+NOTIC: [8] Undefined index: model E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 32 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 33 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_comment` LIMIT 1   [ RunTime:0.000297s ]
+SQL: SELECT * FROM `companycms_comment` LIMIT 0,15   [ RunTime:0.000391s ]
+SQL: SHOW COLUMNS FROM `companycms_news` [ RunTime:0.009367s ]
+SQL: SELECT * FROM `companycms_news` WHERE id=10 LIMIT 1   [ RunTime:0.000713s ]
+SQL: SELECT * FROM `companycms_news` WHERE id=10 LIMIT 1   [ RunTime:0.000528s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\CommentAction.class.php on line 69 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007651s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.077126s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001291s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 36 行.
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 85 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 86 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 87 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 88 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\66e48792a0004e312d511a09e73fdf0b.php 第 89 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpworkspace\companycms\company\common\HtmlUtils.php 第 193 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.078471s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029724s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.108251s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.109093s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.109898s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.110434s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003097s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.111497s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001053s ]
+
+[ 2012-09-19T22:26:03+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:26:03+08:00 ] 127.0.0.1 /4s/admin.php/Feedback/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001165s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001284s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_feedback` [ RunTime:0.008134s ]
+NOTIC: [8] Undefined index: username E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 31 行.
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 32 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 33 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 36 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_feedback` LIMIT 1   [ RunTime:0.000354s ]
+SQL: SELECT * FROM `companycms_feedback` ORDER BY id DESC LIMIT 0,15   [ RunTime:0.000373s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\FeedbackAction.class.php on line 53 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007189s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.062962s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001692s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 36 行.
+NOTIC: [8] Undefined index: username E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 77 行.
+NOTIC: [8] Undefined index: title E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 78 行.
+NOTIC: [8] Undefined index: rcontent E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 79 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 80 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 81 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\51534dbe6d2eb026a9ef73444975299d.php 第 82 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.064733s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026951s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.091738s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.092518s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.093380s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.094142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003254s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.095111s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000968s ]
+
+[ 2012-09-19T22:26:06+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:26:06+08:00 ] 127.0.0.1 /4s/admin.php/Admin/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001120s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001236s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000995s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_admin` [ RunTime:0.008025s ]
+NOTIC: [8] Undefined index: username E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 31 行.
+NOTIC: [8] Undefined index: userId E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 32 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 33 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 34 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 36 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_admin` LIMIT 1   [ RunTime:0.000304s ]
+SQL: SELECT a.*,b.role_name as role_name FROM companycms_admin a LEFT JOIN companycms_admin_role b on a.role_id=b.id LIMIT 0,15   [ RunTime:0.000555s ]
+NOTIC: [8] Undefined variable: adminRoleList E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php 第 45 行.
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\AdminAction.class.php on line 49 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007909s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.054254s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001308s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 36 行.
+NOTIC: [8] Undefined index: username E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 78 行.
+NOTIC: [8] Undefined index: userId E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 79 行.
+NOTIC: [8] Undefined index: orderType E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 80 行.
+NOTIC: [8] Undefined index: orderBy E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 81 行.
+NOTIC: [8] Undefined index: pageSize E:\phpworkspace\companycms\Admin\Runtime\Cache\48839f6bd6491360a5868d2b89ee14b4.php 第 82 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.055592s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027175s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.082843s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.083804s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.084697s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.085469s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003480s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.086432s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001006s ]
+
+[ 2012-09-19T22:26:07+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:26:07+08:00 ] 127.0.0.1 /4s/admin.php/AdminRole/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001126s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001241s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_role` [ RunTime:0.007716s ]
+NOTIC: [8] Undefined variable: condition E:\phpworkspace\companycms\Admin\Lib\Action\AdminRoleAction.class.php 第 30 行.
+SQL: SELECT * FROM `companycms_admin_role` ORDER BY id DESC  [ RunTime:0.000462s ]
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\AdminRoleAction.class.php on line 35 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007297s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.062133s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001686s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\472fb801930b76d5ae2ef4c9e71d576a.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\472fb801930b76d5ae2ef4c9e71d576a.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\472fb801930b76d5ae2ef4c9e71d576a.php 第 36 行.
+NOTIC: [8] Undefined variable: moduleName E:\phpworkspace\companycms\Admin\Runtime\Cache\472fb801930b76d5ae2ef4c9e71d576a.php 第 45 行.
+NOTIC: [8] Undefined variable: pageBar E:\phpworkspace\companycms\Admin\Runtime\Cache\472fb801930b76d5ae2ef4c9e71d576a.php 第 84 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.063877s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025197s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.089126s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.089921s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.090703s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.091225s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002935s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.092174s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001014s ]
+
+[ 2012-09-19T22:26:08+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:26:08+08:00 ] 127.0.0.1 /4s/admin.php/Theme/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001177s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001303s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000943s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+NOTIC: [2] htmlspecialchars() expects parameter 1 to be string, array given E:\phpworkspace\companycms\Admin\Lib\Action\ThemeAction.class.php 第 32 行.
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\ThemeAction.class.php on line 59 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007293s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.053823s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001663s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\d7cb1a242385039a5c8d3e187533cc97.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\d7cb1a242385039a5c8d3e187533cc97.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\d7cb1a242385039a5c8d3e187533cc97.php 第 36 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.055232s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024854s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.080139s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.080911s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.081610s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.082136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002798s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.083053s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000973s ]
+
+[ 2012-09-19T22:26:08+08:00 ] ERR: 管理员操作日志记录错误！
+[ 2012-09-19T22:26:08+08:00 ] 127.0.0.1 /4s/admin.php/Module/index.html
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001139s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001260s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+NOTIC: [8] Undefined variable: security E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `companycms_module` [ RunTime:0.010618s ]
+NOTIC: [8] Undefined variable: condition E:\phpworkspace\companycms\Admin\Lib\Action\ModuleAction.class.php 第 31 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `companycms_module` LIMIT 1   [ RunTime:0.000315s ]
+NOTIC: [8] Undefined variable: condition E:\phpworkspace\companycms\Admin\Lib\Action\ModuleAction.class.php 第 32 行.
+SQL: SELECT * FROM `companycms_module` ORDER BY id DESC  [ RunTime:0.000665s ]
+NOTIC: [8] Undefined variable: disble E:\phpworkspace\companycms\Admin\Lib\Action\ModuleAction.class.php 第 44 行.
+NOTIC: [2] Missing argument 2 for CommonAction::_sysLog(), called in E:\phpworkspace\companycms\Admin\Lib\Action\ModuleAction.class.php on line 46 and defined E:\phpworkspace\companycms\Admin\Lib\Action\CommonAction.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `companycms_admin_log` [ RunTime:0.007126s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.064282s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001274s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant menunames - assumed 'menunames' E:\phpworkspace\companycms\Admin\Runtime\Cache\e82d4e778e9fae13ea3e79352e5d1d87.php 第 36 行.
+NOTIC: [8] Undefined variable: _TPL E:\phpworkspace\companycms\Admin\Runtime\Cache\e82d4e778e9fae13ea3e79352e5d1d87.php 第 36 行.
+NOTIC: [8] Undefined variable: value E:\phpworkspace\companycms\Admin\Runtime\Cache\e82d4e778e9fae13ea3e79352e5d1d87.php 第 36 行.
+NOTIC: [8] Undefined variable: moduleName E:\phpworkspace\companycms\Admin\Runtime\Cache\e82d4e778e9fae13ea3e79352e5d1d87.php 第 45 行.
+NOTIC: [8] Undefined variable: disble E:\phpworkspace\companycms\Admin\Runtime\Cache\e82d4e778e9fae13ea3e79352e5d1d87.php 第 88 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.065607s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030713s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.096376s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.097263s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.098097s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.098660s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003120s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.099617s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001018s ]
+

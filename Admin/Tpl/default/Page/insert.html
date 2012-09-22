@@ -1,0 +1,100 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                title: "required",
+                content: "fckeditor",
+                link_label: {
+                    required: true,
+                    english: true
+                }
+            },
+            messages: {
+                title: "标题必须填写",
+                content: "内容必须填写",
+                link_label: {
+                    required: "标识必须填写",
+                    english: '标识必须为英文字母或数字的组合'
+                }
+            }
+        });
+    });
+</script>
+<div class="block style4">
+  <table cellspacing="3" cellpadding="3">
+    <tr>
+      <th style="width:50px; text-align:center"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+        帮助</a></th>
+      <td>1.单页标识必须填写，并且只能为英言语字母或数字的组合。<br />
+        2.若不上传图片附件，请不要选择文件和填写宽和高。指定宽和高则系统会按照指定的尺寸生成缩略图</td>
+    </tr>
+    </table>
+</div>
+<form method="post" action="{:U("Page/doInsert")}" enctype="multipart/form-data" id="mainFrom">
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">返回列表</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:8em;"><label for="title">标　　题</label></th>
+		<td><input name="title" id="title" size="60"></td></tr>
+		
+        <tr>
+		  <th style="width:8em;">链接标识</th>
+		<td><input name="link_label" type="text"   id="link_label" size="10"/></td></tr>
+        
+        
+        
+        <tr>
+		  <th style="width:8em;">单页内容</th>
+		<td> </td></tr>
+        
+        <tr>
+		  <th colspan="2" >
+		   <textarea name="content" cols="50" rows="4" id="content"></textarea>
+<script src="__PUBLIC__/Admin/js/FCKeditor/fckeditor.js"></script>
+<script>
+	var oFCKeditor = new FCKeditor('content') ;
+	oFCKeditor.BasePath = '__PUBLIC__/Admin/js/FCKeditor/';
+	oFCKeditor.Width = '100%';
+	oFCKeditor.Height = '400';
+	oFCKeditor.ToolbarSet = 'Default';
+	oFCKeditor.ReplaceTextarea();
+</script></th>
+		</tr>
+        
+         <tr>
+		  <th colspan="2" style="width:8em;">以下为选填内容</th>
+		</tr>
+        <tr>
+          <th style="width:8em;">图　　片</th>
+          <td> <input name="attach_file" type="file" id="attach_file" /></td></tr>
+          <tr>
+            <th style="width:8em;">关 键 字</th>
+          <td><input name="keyword" id="keyword" size="60"></td></tr>
+         <tr>
+           <th style="width:8em;"><label for="template">模　　板</label></th>
+           <td><input name="template" id="template" value="" />没定义请留空，默认为 detail 不需要填写<span style="color:#F00">.html</span></td>
+         </tr>
+         <tr>
+		  <th style="width:8em;">内容摘要</th>
+		<td><textarea name="description" cols="60" rows="5"  id="description"></textarea></td></tr>
+		<td></td>
+		  </tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="foot_action">
+		<input type="submit" name="submit" value="提交录入" class="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+	</div>
+	</form>
+</div>
+</div>
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

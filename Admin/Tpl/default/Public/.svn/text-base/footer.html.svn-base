@@ -1,0 +1,18 @@
+</div>
+<div id="footer">
+	<p>Powered by 藤陟网络软件有限公司  Copyright 2011-2013 藤陟网络软件有限公司
+</p>
+</div>
+</div>
+<script type="text/javascript">
+$(function(){ 
+    var moduleName = "{$Think.MODULE_NAME }";
+    $("." + moduleName).addClass("active");
+    $(".confirmSubmit").click(function() {
+        return confirm('本操作不可恢复，确定继续？');
+    });
+}); 
+</script>
+</body>
+</html>
+

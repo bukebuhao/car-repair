@@ -1,0 +1,114 @@
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                title: "required"
+                /*,
+			code_body: "required"*/
+            },
+            messages: {
+                title: "名称必须填写"
+                /*,
+			code_body: "广告代码必须填写"*/
+            }
+        });
+    });
+
+    function style_show(theobj) {
+        var styles, key;
+        styles = new Array('0');
+        for (key in styles) {
+            var obj = $doc('root_' + styles[key]);
+            obj.style.display = styles[key] == theobj.options[theobj.selectedIndex].value ? '': 'none';
+        }
+    }
+</script>
+	<form method="post" action="{:U("Category/doModify")}"  id="mainFrom">
+	
+	<div class="body_content">
+		
+		<div class="top_action"><a href="__URL__">返回分类</a> | <a href="{:U("Category/insert")}">录入分类</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:12em;">分类名称</th>
+		<td><input name="title" id="title" value="{$vo.title}"></td></tr>
+		<tr>
+		  <th style="width:12em;">上级分类</th>
+		  <td><select name="parent_id" id="parent_id" onchange="style_show(this)">
+		   <option value="0">■■根分类■■</option>
+         {$dataList|buildSelect=0,$vo['parent_id']}
+          </select></td>
+		  </tr>
+           <tbody id="root_0" <if condition="$vo['parent_id'] eq 0">style="display:"<else />style="display:none"</if>>
+        <tr>
+		  <th style="width:12em;">所属模块</th>
+		  <td><select name="module" id="module">
+           <option value="">选择模块</option>
+          <volist name="module" id="row">
+		    <option value="{$row.module_name}" <neq name="row['module_name']" value="">{$row.module_name|selected=$vo['module']}</neq>>{$row.module_title}</option>
+            </volist>
+		  </select></td>
+		  </tr>
+           </tbody>
+		<tr>
+		  <th style="width:12em;">关 键 字</th>
+		  <td><input name="keyword" id="keyword" value="{$vo.keyword}" /></td>
+		  </tr>
+		<tr>
+		  <th style="width:12em;">排　　序</th>
+		  <td><input name="display_order" id="display_order" value="{$vo.display_order}" /></td>
+		  </tr>
+		<tr>
+		  <th style="width:12em;">简单描述</th>
+		  <td><textarea name="description" cols="40" rows="4" id="description">{$vo.description}</textarea></td>
+		  </tr>
+		<tr>
+		  <th style="width:12em;">状　　态</th>
+		  <td><label>
+		    <select name="status" id="status">
+		      <option value="0" {$vo.status|selected=0}>正常</option>
+		      <option value="1" {$vo.status|selected=1}>隐藏</option>
+		      </select>
+		    </label></td>
+		  </tr>
+           <tr>
+		  <th style="width:12em;">保　　护</th>
+		  <td><label>
+		    <select name="protected" id="protected">
+		      <option value="0" {$vo.protected|selected=0}>默认不保护</option>
+		      <option value="1" {$vo.protected|selected=1}>保护分类</option>
+		      </select>
+		    </label></td>
+		  </tr>
+		<tr>
+		  <th style="width:12em;">录入时间</th>
+		  <td>{$vo.create_time|date="Y-m-d H:i:s",###}</td>
+		  </tr>
+		<tr>
+		  <th style="width:12em;">更新时间</th>
+		  <td>{$vo.update_time|date="Y-m-d H:i:s",###}</td>
+		  </tr>
+	
+		</tbody>
+		
+		</table>
+</div>
+		
+	<div class="foot_action">
+		<input type="submit" name="submit" value="提交更新" class="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+       <input name="id" type="hidden" id="id" value="{$vo.id}" />
+	</div>
+	
+	</form>
+
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

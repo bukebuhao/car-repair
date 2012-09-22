@@ -1,0 +1,129 @@
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+
+	<div class="block style4">
+		<table cellspacing="3" cellpadding="3" id="search-table"><form method="get" action="__URL__">
+		<tr>
+		  <th>岗位名称</th><td><input type="text" name="title" id="title"></td>
+		  </tr>
+		<tr><th>查看数</th><td colspan="3">
+			<input type="text" name="viewCount" size="10" id="viewCount"> ~
+			<input type="text" name="viewCount1" size="10" id="viewCount1">
+		</td></tr>
+        <tr>
+		  <th>其它参数</th><td><select name="status" id="status">
+		        <option value="0" selected="selected">正常招聘</option>
+		        <option value="1">暂不招聘</option>
+		        </select> <select name="istop" id="istop">
+		          <option value="0">未置顶</option>
+		          <option value="1">已置顶</option>
+		          </select>
+	      </td></tr>
+	
+		<tr><th>结果排序</th>
+	  <td>
+	    <select name="orderBy" id="orderBy">
+	      <option value="id" selected="selected">默认排序</option>
+          <option value="viewCount">点击数排序</option>
+	      </select>
+	    <select name="orderType" id="orderType">
+	      <option value="DESC">递减</option>
+	      <option value="ASC">递增</option>
+	      </select>
+	    <select name="pageSize" id="pageSize">
+	      <option value="15">默认15个</option>
+	      <option value="20">每页显示20个</option>
+	      <option value="50">每页显示50个</option>
+	      <option value="100">每页显示100个</option>
+	      </select>
+	    <input type="submit" name="submit" value="搜索" class="submit" id="submit">
+	    <a href="__URL__" >默认</a>
+	    
+  <script type="text/javascript">
+/*
+	设定选择值
+*/
+	$("#title").val('{$Think.get.title|formatQuery}');
+	$("#categoryId").val('{$Think.get.categoryId}');
+	$("#userId").val('{$Think.get.userId}');
+	$("#createTime").val('{$Think.get.createTime}');
+	$("#createTime1").val('{$Think.get.createTime1}');
+	$("#recommend").val('{$Think.get.recommend}');
+	$("#istop").val('{$Think.get.istop}');
+	$("#status").val('{$Think.get.status}');
+	$("#viewCount").val('{$Think.get.viewCount}');
+	$("#viewCount1").val('{$Think.get.viewCount1}');
+	$("#orderType").val('{$Think.get.orderType}');
+	$("#orderBy").val('{$Think.get.orderBy}');
+	$("#pageSize").val('{$Think.get.pageSize}');
+</script>
+	    
+	    </td>
+	  </tr>
+		</form></table>
+	</div>
+
+
+	<form method="post" action="{:U('Job/doCommand')}">
+	<div class="body_content">
+    <div class="top_action"><a href="{:U('Job/insert')}">录入招聘</a> <a href="{:U('Job/resume')}" >应聘管理</a></div>
+	<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+        <th class="th-id">&nbsp;</th>
+		<th>岗位名称</th>
+		<th width="100">招聘人数</th>
+		<th width="100">招聘状态</th>
+		<th width="100">提交时间</th>
+		<th width="80">操作</th>
+		</tr>
+        <present name="dataList">
+		<volist name="dataList" id="vo">
+        
+		<tr>
+        <td><input type="checkbox" name="id[]" value="{$vo.id}">{$vo.id}</td>
+        
+		<td><input name="title[]" id="title[]" value="{$vo.title}" class="input-style" style="{$vo.title_style}">
+		  {$vo.status|statusIcon=1,$frontUrl,'hidden.gif','隐藏'}{$vo.istop|statusIcon=1,$frontUrl,'istop.gif','置顶'}<span style="text-align:left">{$vo.attach|attachStatus=1,$frontUrl,'attach.png','附件'} </span></td>
+		<td><input name="number[]" id="number[]" value="{$vo.number}" size="5" /></td>
+		<td>
+		  <select name="status[]" id="status[]">
+		    <option value="0" {$vo.status|selected=0}>正常招聘</option>
+		    <option value="1" {$vo.status|selected=1}>暂不招聘</option>
+		    </select>
+		 </td>
+		<td>{$vo.create_time|date="Y-m-d",###}</td>
+		<td><a href="{:U('Job/resume',array('id'=>$vo['id']))}"><img src="__PUBLIC__/Admin/images/search.gif" alt="查看应聘人员" align="absmiddle" /></a>　<a href="{:U('Job/modify',array('id'=>$vo['id']))}"><img src="__PUBLIC__/Admin/images/modify22px.gif" alt="编辑" align="absmiddle" /></a></td>
+		</tr>
+		</volist>
+        <else />
+        <tr>
+		  <td colspan="6" style="color:#F00; font-weight:bold">暂无数据</td>
+		  </tr>
+    </present>
+		</table>
+	</div>
+    <present name="dataList">
+	<div class="foot_action">
+    <div class="bat">
+	 <input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'id')">全选
+		<select name="operate" id="operate">
+        <option value="update" selected="selected">更新</option>
+        <option value="setTop">置顶</option>
+        <option value="unSetTop">取消置顶</option>
+         <option value="setStatus">正常招聘</option>
+        <option value="unSetStatus">暂不招聘</option>
+         <option value="delete">删除</option>
+      </select> 
+		<input type="submit" name="submit" value="提交操作"  class="submit"></div>
+	  <div class="pages">{$pageBar}</div>
+	</div>
+     </present>
+	</form>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

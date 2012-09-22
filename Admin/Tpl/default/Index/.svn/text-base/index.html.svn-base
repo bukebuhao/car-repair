@@ -1,0 +1,110 @@
+<include file="Public:header" />
+<tagLib name="html,cx" />
+<div class="mainarea">
+<div class="maininner">
+<div class="body_content">
+<div class="title">
+<h3>管理备忘录(最多2000字)</h3>
+</div>
+<div><textarea name="notepad" id="notepad"
+	style="width: 500px; height: 100px">{$notepad.notepad}</textarea>
+<div><a href="javascript:updateNotepad()" class="text_bg">更新备忘录</a></div>
+<div id="msg"></div>
+</div>
+<br />
+<div class="title">
+<h3>版本信息</h3>
+</div>
+<div>当前系统版本：{$sys_version}</div>
+<br />
+
+<div class="title">
+<h3>系统信息</h3>
+</div>
+<ul class="listcol list2col">
+	<li>主机域名: {$serverUri}</li>
+	<li>操作系统: {$serverSoft}</li>
+	<li>数据库版本: {$mysqlVersion}</li>
+	<li>PHP版本: {$phpVersion}</li>
+	<li>全局变量: {$phpGpc}</li>
+	<li>上传许可: {$phpUploadSize}</li>
+	<li>最大执行时间: {$maxExcuteTime}</li>
+	<li>最大使用内存: {$maxExcuteMemory}</li>
+	<li>当前使用内存: {$excuteUseMemory}</li>
+</ul>
+<br />
+<div class="title">
+<h3>藤陟网络软件有限公司</h3>
+</div>
+<table id="maintable" class="formtable">
+	<tr>
+		<td style="width: 100px">版权所有</td>
+		<td>藤陟网络软件有限公司</td>
+	</tr>
+	<tr>
+		<td>程序开发</td>
+		<td>tianren</td>
+	</tr>
+	<tr>
+		<td>模板设计</td>
+		<td>YXH</td>
+	</tr>
+	<tr>
+		<th colspan="2">联系方式</th>
+	</tr>
+	<tr>
+		<td>MAIL</td>
+		<td>ayay-990@163.com</td>
+	</tr>
+	<tr>
+		<td>QQ</td>
+		<td>396774497</td>
+	</tr>
+	<tr>
+		<td>产品网站</td>
+		<td><a href="http://www.tengzhiinfo.cn" target="_blank">http://www.tengzhiinfo.cn</a></td>
+	</tr>
+</table>
+
+
+</div>
+
+</div>
+</div>
+
+<div class="side"><include file="Public:sider" /></div>
+<include file="Public:footer" />
+<script language="javascript"> 
+<!-- 
+function killerrors() { 
+	return true; 
+} 
+window.onerror = killerrors; 
+
+function updateNotepad()
+{
+   $.ajax({   
+		  type:"POST",   
+			  url:"{:U('Index/updateNotepad')}",
+			  data:{
+				  notepad: $('#notepad').val()
+				  },   
+			  beforeSend:function(){
+				  	$("#msg").html('<span style="color:#FF0000"><img src="__PUBLIC__/Admin/images/loading.gif" align="absmiddle">正在提交数据...</span>'); 
+				  },                
+			  success:function(data){
+				switch(data)
+				{
+					case 'ok':
+						$("#msg").html('<span style="color:#FF0000">更新完成</span>'); 
+						break
+					default:
+						$("#msg").html('<span style="color:#FF0000">'+data+'</span>');
+				}
+				return false;			
+			}               
+      });   
+}
+
+//--> 
+</script>

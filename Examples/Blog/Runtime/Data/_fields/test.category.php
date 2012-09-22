@@ -1,0 +1,1 @@
+{"0":"id","1":"name","2":"title","3":"remark","4":"status","_autoinc":true,"_pk":"id","_type":{"id":"mediumint(5) unsigned","name":"varchar(30)","title":"varchar(50)","remark":"varchar(255)","status":"tinyint(1) unsigned"}}

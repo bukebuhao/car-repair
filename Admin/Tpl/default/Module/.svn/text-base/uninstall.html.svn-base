@@ -1,0 +1,71 @@
+<include file="Public:header" />
+<script type="text/javascript">
+    function uninstall() {
+        $.ajax({
+            type: "POST",
+            url: "{:U('Module/doUninstall')}",
+            data: {
+                moduleName: $('#module_name').val()
+            },
+            beforeSend: function() {
+                $("#msg").html('<img src="__PUBLIC__/Admin/images/loading.gif" align="absmiddle">卸载中，请稍后...');
+            },
+            success: function(data) {
+                $("#msg").html(data);
+                return false;
+            }
+        });
+
+    }
+</script>
+<div class="mainarea">
+  <div class="maininner">
+    <div class="block style4">
+      <table cellspacing="3" cellpadding="3">
+        <tr>
+          <th style="width:50px; text-align:center"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+            帮助</a></th>
+          <td>卸载后此模块所有数据被删除且不可恢复</td>
+        </tr>
+      </table>
+    </div>
+    <form method="post" action="{:U("Module/doInsert")}" id="form">
+      <div class="body_content">
+        <div class="top_action"><a href="{:U("Module/index")}">浏览模块</a> | <a href="{:U("Module/install")}">安装模块</a></div>
+        <table cellspacing="0" cellpadding="0" id="" class="formtable">
+          <tbody>
+          <tr>
+            <th style="width:70px">卸载模块</th>
+            <td>{$vo.module_name}({$vo.module_title})</td>
+          </tr>
+          <tr>
+            <th style="width:100px">&nbsp;</th>
+            <th>卸载程序会执行以下操作</th>
+          </tr>
+          <tr>
+            <th style="width:100px">&nbsp;</th>
+            <td>1.删除控制器 ./AdminApp/Lib/Action/{$vo.module_name}Action.class.php<br />
+2.删除模型 ./AdminApp/Lib/Action/{$vo.module_name}Model.class.php<br />
+3.删除视图(模板) ./AdminApp/Tpl/{$vo.module_name}<br />
+4.执行表结构清理 ./CmsData/Module/{$vo.module_name}/uninstall.sql (如果存在则执行)</td>
+          </tr>
+          <tr>
+            <th style="width:100px">安装时间</th>
+            <td>{$vo.create_time|date="Y-m-d H:i:s",###}</td>
+          </tr>
+          </tbody>
+         
+        </table>
+      </div>
+      <div class="foot_action">
+       
+        <input type="button" name="submit" value="执行卸载" class="submit" id="submit" onclick="uninstall()">
+        <input name="module_name" type="hidden" id="module_name" value="{$vo.module_name}" />
+<div id="msg" style="color:#360; margin-top:10px;line-height:25px;"></div>
+       </div>
+     
+    </form>
+  </div>
+</div>
+<div class="side"> <include file="Public:sider" /> </div>
+<include file="Public:footer" />

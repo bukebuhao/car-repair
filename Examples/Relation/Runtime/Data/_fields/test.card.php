@@ -1,0 +1,1 @@
+{"0":"id","1":"member_id","2":"card","_autoinc":true,"_pk":"id","_type":{"id":"mediumint(6)","member_id":"mediumint(6)","card":"varchar(25)"}}

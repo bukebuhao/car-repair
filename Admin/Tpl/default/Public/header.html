@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>companyCMS 企业网站管理中心</title>
+<link id="mastercss" rel="stylesheet" href="__PUBLIC__/Admin/style/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/js/colorpicker/colorpicker.css" type="text/css">
+<link type="image/x-icon" href="__PUBLIC__/Images/company.ico" rel="shortcut icon">
+<script type="text/javascript">
+<!--
+//指定当前组模块URL地址
+var URL = '__URL__';
+var APP	 =	 '__APP__';
+var PUBLIC = '__PUBLIC__';
+var ROOT = '__ROOT__';
+//-->
+</script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/Jquery/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/Jquery/jquery.validate.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Admin/js/script_common.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Admin/js/colorpicker/colorpicker.js"/></script>
+
+</head>
+<body>
+<div id='loader' style='color:#ffffff;font-size:12px;background-color: #0099CC; width:140px; padding:2px 4px; height:20px; position: fixed;right:0px;top:2px; display:none'>提交中，请稍后...</div>
+	<div id="wrap">
+		<div id="header">
+			<h2><a href="__APP__" title="companyCMS"><img src="__PUBLIC__/Admin/images/logo.gif" alt="companyCMS" /></a></h2>
+			
+			<div id="topmenu" class="gray">
+			<span style="font-weight:bold">当前用户：<img src="__PUBLIC__/Admin/images/user.gif" alt="companyCMS" align="absmiddle"/>{$username}</span> 　 
+				<a href="{:U('Admin/modify',array('id'=>$adminId, 'jumpUri'=>'run' ))}"><img src="__PUBLIC__/Admin/images/user_modify.gif" alt="companyCMS" align="absmiddle"/>我的帐户</a>&nbsp;&nbsp;&nbsp;<a href="{:U('Public/logout')}"><img src="__PUBLIC__/Admin/images/logout.gif" alt="companyCMS" align="absmiddle"/>退出系统</a>&nbsp;&nbsp;&nbsp;<a href="{$frontUrl}" target="_blank"><img src="__PUBLIC__/Admin/images/home_25.gif" alt="companyCMS" align="absmiddle"/>前台首页</a>
+			</div>
+			<ul id="menu" style="display:none" >
+				<li><a href="Admin.php">管理平台</a></li>
+				<li><a href="Admin.php?ac=$value">{$_TPL[menunames][$value]}</a></li>
+			</ul><div id="later" style="position:fixed"></div>
+		</div>
+		<div id="content">

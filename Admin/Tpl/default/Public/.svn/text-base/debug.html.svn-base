@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+<head>
+<title>companyCMS 提示信息</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css" media="screen,print" >
+#content{width:500px;height:500;background:#F5FFF7;border:1px solid #69BA26;margin:40px;padding:35px;font-size:14px;text-align:left;color:#888;}
+a{color:#61C422;}
+a:link,a:visited{text-decoration:none;}
+a:hover,a:active{text-decoration:none;}
+</style>
+</head>
+<body>
+<center>
+<div id="content">
+
+        
+        <h3><a  style="background:transparent url(__PUBLIC__/Admin/images/success.gif) no-repeat scroll left center;padding:15px 0px 15px 60px;">这是一个调试信息显示页。使用方式 ：$this->_debug()</a></h3>     
+       
+     
+</div>
+</center>
+</body>
+</html>

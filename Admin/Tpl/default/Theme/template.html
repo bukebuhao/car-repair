@@ -1,0 +1,77 @@
+<include file="Public:header" />
+<div class="mainarea">
+  <div class="maininner">
+  <div class="block style4">
+		
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+		 <th align="center" style="width:50px"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+帮助</a></th>
+		  <td valign="top">文件、目录名称只能为英文字母或数字且长度为26个字符以内，不能包含中文</td>
+		  </tr>
+		</table>
+	</div>
+  
+    <div class="body_content">
+      <div class="top_action"> <span style="float:left"><a href="{:U('Theme/template')}">模板管理</a> | <a href="{:U('Theme/index')}">风格选择</a></span><span style="float:right">
+        <select name="theme" id="theme" onchange="MM_jumpMenu('parent',this,0)">
+          <option value="{:U('Theme/template')}">风格列表</option>
+          <volist name="themeList" id="vo">
+            <option value="{:U('Theme/template', array('theme'=>$vo))}">{$vo}</option>
+          </volist>
+        </select>
+        </span>
+<script type="text/javascript">
+	$("#theme").val('{$theme}');
+</script>
+      </div>
+      <table cellspacing="0" cellpadding="0" id="maintable" class="formtable" style="clear:both">
+        <tr>
+          <th class="th-id" style="width:50px">　</th>
+          <th>模块</th>
+          <th style="width:20%">操作</th>
+        </tr>
+        <present name="fileList">
+          <volist name="fileList" id="vo" key="k">
+            <tr>
+              <td><img src="__PUBLIC__/Admin/images/folder.gif" alt="打开文件夹" align="absmiddle"/></td>
+              <td>{$vo.fileName}</td>
+              <td><a href="{:U('Theme/templateInsert', array('folder' => base64_encode($folder.$vo['fileName'])))}"><img src="__PUBLIC__/Admin/images/insert.gif" alt="创建文件" border="0" align="absmiddle"/></a>　<a href="{:U('Theme/doCommand', array('operate'=>'dirDelete', 'dirPath'=>base64_encode($folder.$vo['fileName'])))}" onclick="return confirm('确定删除吗，此操作会删除此文件夹及文件且不可恢复');"><img src="__PUBLIC__/Admin/images/delete.gif" alt="删除" border="0" align="absmiddle" /></a></td>
+            </tr>
+            <volist name="vo.subFileList" key="subKey" id="subFile">
+              <tr>
+                <td></td>
+                <td>{$subFile}</td>
+                <td><a href="{:U('Theme/templateModify', array('file'=>base64_encode($folder.$vo['fileName'].'/'.$subFile)))}"><img src="__PUBLIC__/Admin/images/modify22px.gif" alt="编辑" border="0" align="absmiddle" /></a>　<a href="{:U('Theme/doCommand', array('operate'=>'deleteTemplate', 'fileName'=>base64_encode($folder.$vo['fileName'].'/'.$subFile)))}" onclick="return confirm('确定删除吗，此操作不可恢复');"><img src="__PUBLIC__/Admin/images/delete_page.gif" alt="删除" border="0" align="absmiddle" /></a></td>
+              </tr>
+            </volist>
+          </volist>
+          <else />
+          <tr >
+            <td colspan="3" style="text-align:center; color:#F00">当前风格 {$theme} 无模板文件</td>
+          </tr>
+        </present>
+      </table>
+    </div>
+
+   <div class="body_content" style="margin-top:20px">
+
+   <form action="{:U("Theme/themeCreateFolder")}" method="post" enctype="multipart/form-data" name="upload" id="upload" onsubmit="return checkFile()">
+        <table  border="0" cellspacing="0" cellpadding="0" >
+          <tr>
+            <td>风格:<span style="color:#F00; font-weight:bold">{$theme}</span> 创建文件夹:   </td>
+            <td>
+              <input name="folderName" type="text" id="folderName" size="15" maxlength="20" />
+              <input name="folderPath" type="hidden" id="folderPath" value="{$folder|base64_encode}" />
+<input type="submit" name="button" id="button" value="提交操作" /> 
+首字母大写</td>
+          </tr>
+        </table>
+   </form>
+    </div>
+  </div>
+</div>
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

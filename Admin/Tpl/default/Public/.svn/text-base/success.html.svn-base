@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+<head>
+<title>companyCMS 提示信息</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+function jumpUrl(){
+	 window.location.href = '{$jumpUrl}';
+}
+document.onload = setTimeout("jumpUrl()" , {$waitSecond} * 1000);
+</script>
+<base target="_self" />
+<style type="text/css" media="screen,print" >
+#content{width:50%;height:500;background:#F5FFF7;border:1px solid #69BA26;margin:40px;padding:35px;font-size:14px;text-align:left;color:#888;}
+a{color:#61C422;}
+a:link,a:visited{text-decoration:none;}
+a:hover,a:active{text-decoration:none;}
+</style>
+</head>
+<body>
+<center>
+<div id="content">
+
+<!-- 成功-->
+<eq name="status" value="1">
+    <present name="message" >
+    <h3><a style="background:transparent url(__PUBLIC__/Admin/images/success.gif) no-repeat scroll left center;padding:15px 0px 15px 60px;">{$msgTitle}</a></h3>
+    <h4><a style="padding:15px 0px 15px 60px;">{$message}</a></h4>    
+    </present>
+</eq>
+
+<!--失败-->
+<eq name="status" value="0">
+    <present name="error" >
+    <h3><a  style="background:transparent url(__PUBLIC__/Admin/images/error.gif) no-repeat scroll left center;color:#E26000;padding:15px 0px 15px 60px;">{$msgTitle}</a></h3>   
+    <h4><a style="padding:15px 0px 15px 60px;">{$message}</a></h4>    
+    </present>
+</eq>    
+   
+<present name="closeWin" >
+  <p>系统将在 <span style="color:#F87F15;font-weight:bold">{$waitSecond}</span> 秒后自动关闭，如果不想等待,直接点击 <A HREF="{$jumpUrl}">关闭</A></p>
+</present>
+        
+<notpresent name="closeWin">
+<p>
+系统将在 <span style="color:#F87F15;font-weight:bold">{$waitSecond}</span> 秒后自动跳转,如果不想等待,直接点击 <A HREF="{$jumpUrl}">这里</A> 跳转</>
+</p>
+</notpresent>
+</div>
+</center>
+</body>
+</html>

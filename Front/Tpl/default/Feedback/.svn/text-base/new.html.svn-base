@@ -1,0 +1,77 @@
+<include file="Public:header" />
+<link href="__PUBLIC__/Front/style/cmxform.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Js/Jquery/jquery.validate.min.js"></script>
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Js/Jquery/jquery.validate.messages_cn.js"></script>
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Front/js/leaveword.js"></script>
+<script type="text/javascript" language="javascript" >
+$(function(){
+//验证码
+$("#verifyImage").click(function(){
+	$("#verifyImage").attr('src', "{:U('Index/verify')}?r="+ Math.random());					
+})
+
+});
+</script>
+
+  <!-- leftstat -->
+  <div class="dt_page_left">
+    <ul class="dt_page_left_bt font14px fontbold">栏目</ul>
+    <ul>
+      <li><a href="{:U('Feedback/new')}">我要留言</a></li>
+      <li><a href="{:U('Feedback/index')}">留言列表</a></li>
+    </ul>
+  </div>
+  <!-- leftend -->
+  <!-- prostart -->
+  <div class="dt_page_right">
+    <ul class="dt_page_right_bt">
+      <li class="font14px fontbold dt_page_right_zt">我要留言</li>
+    </ul>
+    <ul class="dt_page_right_con">
+      <!-- leave maessages start -->
+      <form method="post" id="leavewordForm" action="{:U('Feedback/insert')}" onsubmit="return false">
+		<div class="leavewords_right">
+		  <table width="700" border="0" cellpadding="2" cellspacing="1">
+		    <tr>
+		      <td width="150" bgcolor="#edefeb" class="fontright"><span class="fontred">*</span>标题:</td>
+		      <td><input name="title" type="text" /></td>
+		    </tr>
+		    <tr>
+		      <td width="150" bgcolor="#edefeb" class="fontright"><span class="fontred">*</span>内容:</td>
+		      <td><textarea name="content" cols="60" rows="10"></textarea></td>
+		    </tr>
+		    <tr>
+		      <td width="150" bgcolor="#edefeb" class="fontright"><span class="fontred">*</span>姓名:</td>
+		      <td><input name="username" type="text" /></td>
+		    </tr>
+		    <tr>
+		      <td width="150" bgcolor="#edefeb" class="fontright"><span class="fontred">*</span>联系电话:</td>
+		      <td><input name="telephone" type="text" /></td>
+		    </tr>
+		    <tr>
+		      <td width="150" bgcolor="#edefeb" class="fontright"><span class="fontred">*</span>手机号码:</td>
+		      <td><input name="mobile_tel" type="text" /><span>联系电话和手机至少有一个</span></td>
+		    </tr>
+		    <tr>
+		      <td width="150" bgcolor="#edefeb" class="fontright">邮箱地址:</td>
+		      <td><input name="email" type="text" /></td>
+		    </tr>
+		    <tr>
+		      <td width="150" bgcolor="#edefeb" class="fontright"><span class="fontred">*</span>验证码:</td>
+		      <td><input name="verifyCode" type="text" id="verifyCode" style="margin-right:5px;width:55px;" value="" maxlength="5" /> <img src="{:U('Index/verify')}" title="如果您无法识别验证码，请点图片更换" id="verifyImage"/></td>
+		      
+		      
+		      
+		    </tr>
+		    <tr>
+		      <td width="150" bgcolor="#edefeb"></td>
+		      <td><label><input type="submit" id="leavewordSumbit" value="发送" /></label></td>
+		    </tr>
+		  </table>
+		</div>
+	</form>
+<!-- leave maessages end -->
+    </ul>
+  </div>
+  <!-- proend -->
+<include file="Public:footer" />

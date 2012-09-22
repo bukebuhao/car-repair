@@ -1,0 +1,55 @@
+<include file="Public:header" />
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                role_name: "required"
+            },
+            messages: {
+                role_name: "角色组名称必须填写"
+            }
+        });
+    });
+</script>
+<div class="mainarea">
+<div class="maininner">
+	<form method="post" action="{:U("AdminRole/doModify")}" enctype="multipart/form-data" id="mainFrom">
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">返回角色</a> | <a href="{:U("AdminRole/insert")}">录入角色</a> | <a href="{:U("Admin/index")}">管理员管理</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:7em;">角色组名称</th>
+		<td><input name="role_name" id="role_name" value="{$vo.role_name}"></td></tr>
+		
+       <volist name="dataList" id="dataVo">
+        <tr>
+        <td>{$dataVo.module_title}</td>
+          <td>
+            {$dataVo.module_permission|explodeRole=$vo['role_permission']}
+            </td>
+		</tr>
+        </volist>
+        
+		<tr><th colspan="2"><input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'role_permission')">全选(不选择表示拥有全部权限)</th>
+		</tr>
+
+		</tbody>
+		
+		</table>
+	</div>
+		
+	<div class="foot_action">
+		<input type="submit" name="submit" value="提交编辑" class="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+        <input name="id" type="hidden" id="id" value="{$vo.id}" />
+	</div>
+	
+	</form>
+
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

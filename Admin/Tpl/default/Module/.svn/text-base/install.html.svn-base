@@ -1,0 +1,56 @@
+<include file="Public:header" />
+<script type="text/javascript">
+    function installCheck() {
+        $.ajax({
+            type: "POST",
+            url: "{:U('Module/doInstall')}",
+            data: {
+                moduleName: $('#module_name').val()
+            },
+            beforeSend: function() {
+                $("#msg").html('<img src="__PUBLIC__/Admin/images/loading.gif" align="absmiddle">安装中，请稍后...');
+            },
+            success: function(data) {
+                $("#msg").html(data);
+                return false;
+            }
+        });
+    }
+</script>
+<div class="mainarea">
+  <div class="maininner">
+    <div class="block style4">
+      <table cellspacing="3" cellpadding="3">
+        <tr>
+          <th style="width:50px; text-align:center"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+            帮助</a></th>
+          <td>安装之前请检查模块安装文件是否完整，包括:<br />
+<strong>1.</strong>config.php 模块安装配置文件 <strong>2.</strong>install.sql 数据表结构 <strong>3.</strong>模块Action.class.php 控制器 <strong>4.</strong>模块Model.class.php 模型 <strong>5.</strong>视图(模板)目录</td>
+        </tr>
+      </table>
+    </div>
+    <form method="post" action="{:U("Module/doInstall")}" id="form">
+      <div class="body_content">
+        <div class="top_action"><a href="{:U("Module/index")}">浏览模块</a> | <a href="{:U("Module/install")}">安装模块</a></div>
+        <table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+          <tbody>
+          <tr>
+            <th style="width:100px">模块名称</th>
+            <td><input name="module_name" id="module_name"></td>
+          </tr>
+          </tbody>
+         
+        </table>
+      </div>
+      <div class="foot_action">
+       
+        <input type="button" name="submit" value="安装模块" class="submit" id="submit" onclick="installCheck()">
+        <input type="reset" name="button" id="button" value="清除重填" class="submit"/>
+       <div id="msg" style="color:#360; margin-top:10px;line-height:25px;"></div>
+       </div>
+     
+    </form>
+  </div>
+</div>
+<div class="side"> <include file="Public:sider" /> </div>
+<include file="Public:footer" />

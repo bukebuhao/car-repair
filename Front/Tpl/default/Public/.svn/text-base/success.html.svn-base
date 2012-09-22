@@ -1,0 +1,84 @@
+<tagLib name="html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv='Refresh' content='{$waitSecond};URL={$jumpUrl}'>
+<title>Shuguang CMS</title>
+<style type="text/css">
+<!--
+*{
+	font-family:"宋体", Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	word-wrap:break-word; outline:none; 
+}
+body{
+	font-family:"宋体", Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color: #555;
+	line-height: 150%;
+}
+a{
+	color:#000;
+	text-decoration: none;
+}
+a img{ border:none; }
+th {
+	padding-top: 5px;
+	padding-right: 0pt;
+	padding-bottom: 5px;
+	padding-left: 0pt;
+	font-weight: 700;
+	text-align: left;
+}
+td {
+	line-height: 150%;
+}
+
+a:hover{
+	color:#FF0000;
+	text-decoration:none;
+}
+/* title */
+h3{ font-size:14px; }
+	h3 .btn{ margin-left:10px; vertical-align:middle; }
+.ajax{ width:360px; border:1px solid #89B3C2; }
+	.ajaxbg{ margin:2px; padding:15px; background:url(bg_repx_hc.gif) repeat-x; }
+	.alert{ padding-left:40px; background:url(bg_repno.gif) no-repeat 0 -500px; }
+		.alert h4{ margin-bottom:3px; font-size:14px; }
+		.alert p{ margin-bottom:12px; color:#09C; }
+		.alert .btn{ vertical-align:middle; }
+		.alert a.abtn{ margin-left:20px; text-decoration:underline; }
+			.alert a.abtn:hover{ text-decoration:none; }
+.rtninfo{ margin:50px auto; width:500px; line-height:180%; }
+	.rtninfo h4{ margin-bottom:10px; padding-left:25px; background:url(bg_repno.gif) no-repeat -275px -98px; font-size:14px; }
+	.rtninfo p{ margin-left:25px; }
+-->
+</style>
+</head>
+<body><div id="append"></div>	<div class="container">
+		<div class="ajax rtninfo">
+			<div class="ajaxbg">
+				<h4>{$msgTitle}</h4>
+				<present name="message" >
+		<p>{$message}</p>
+	</present>
+	<present name="error" >
+	<p><font color="red">{$error}</font></p>
+	</present>
+<p>系统将在 <span style="color:blue;font-weight:bold">{$waitSecond}</span> 秒后自动跳转,如果不想等待,直接点击 <A HREF="{$jumpUrl}">这里</A> 跳转</p>
+					
+							</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+

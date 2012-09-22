@@ -1,0 +1,145 @@
+<include file="Public:header" />
+<script type="text/javascript">
+    //获取选择ID
+    function getItem() {
+        var selectRow = Array();
+        var obj = document.getElementsByName('id');
+        var result = '';
+        var j = 0;
+        for (var i = 0; i < obj.length; i++) {
+            if (obj[i].checked == true) {
+                selectRow[j] = i + 1;
+                result += obj[i].value + ",";
+                j++;
+            }
+        }
+        return result.substring(0, result.length - 1);
+    }
+
+    /*
+优化optimzeTable
+结构showTable
+检查checkTable
+分析analyzeTable
+修复repairTable
+状态statusTable
+清空clearTable
+删除 delTable
+*/
+    function doCommand(command) {
+        var itemValue = getItem();
+        if (itemValue == '') {
+            alert('没有选择数据表');
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url: '{:U("Database/doCommand")}',
+            data: {
+                postData: itemValue,
+                command: command
+            },
+            beforeSend: function() {
+                $("#message").html('<span style="color:#FF0000"><img src="__PUBLIC__/Admin/images/loading.gif" align="absmiddle">正在提交...</span>');
+            },
+            success: function(data) {
+                switch (data) {
+                case 'errorVerifyCode':
+                    break
+                default:
+                    $("#message").html(data);
+                    $('#message').show();
+                    //alert ('未知错误，请联系管理员');
+                }
+
+            }
+        });
+
+    }
+</script>
+<div class="mainarea">
+<div class="maininner">
+	<form method="get" action="__URL__">
+	<div class="block style4" style="display:none">
+		
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+		  <th>标题</th><td><input type="text" name="title" id="title"></td>
+		  </tr>
+		<tr>
+		  <th>标识</th>
+		  <td><input type="text" name="linkLabel" id="linkLabel" /></td>
+		  </tr>
+		<tr><th>结果排序</th>
+		  <td>
+		    <select name="orderBy" id="orderBy">
+	      <option value="id" selected="selected">默认排序</option>
+          <option value="viewCount">点击数排序</option>
+	      </select>
+		    <select name="orderType" id="orderType">
+		      <option value="DESC">递减</option>
+		      <option value="ASC">递增</option>
+		      </select>
+		    <select name="pageSize" id="pageSize">
+		      <option value="15">默认15个</option>
+		      <option value="20">每页显示20个</option>
+		      <option value="50">每页显示50个</option>
+		      <option value="100">每页显示100个</option>
+		      </select>
+		    <input type="submit" name="submit" value="搜索" class="submit" id="submit">
+		    <a href="__URL__" >默认</a>
+ 
+		    </td>
+		  </tr>
+		</table>
+	</div>
+	</form>
+<present name="dataList">
+	<form method="post" action="{:U("Page/doCommand")}">
+	<div class="body_content">
+        <div class="top_action"><a href="{:U("Database/query")}">执行SQL</a> | <a href="{:U("Database/export")}">备份数据库</a> | <a href="{:U("Database/import")}">恢复数据库</a></div>
+        <table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+        <th style="width:5%">&nbsp;</th>
+		 <th>名称</th>
+              <th style="width:12%">大小</th>
+              <th style="width:20%">时间</th>
+            </tr>
+		<volist name="dataList" id="vo">
+		<tr>
+		<td><input type="checkbox" name="id" value="{$vo.Name}"> </td>
+        <td><a href="{:U('Database/doImport', array('fileName' => safe_b64encode($vo['fileName'])))}">{$vo.fileName}</a></td>
+        <td>{$vo.fileSize|byte_format}</td>
+        <td>{$vo.fileTime|date='Y-m-d H:i:s',###}</td>
+        </tr>
+		</volist>
+		</table>
+	</div>
+    <div class="foot_action">
+       <div class="bat">
+	<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'id')">全选
+		<select name="operate" id="operate">
+              <option value="" selected="selected">选择操作</option>
+                <option value="delete">删除</option>
+            </select> 
+		<input type="submit" name="submit" value="提交操作"  class="confirmSubmit submit"></div>
+	</div>
+   
+    <div id="message" style="display:none" ></div>
+   
+	</form>
+<else />
+	<div class="body_content">
+		<p>指定条件下还没有数据</p>
+	</div>
+    
+</present>
+
+    
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

@@ -1,0 +1,56 @@
+<include file="Public:header" />
+<link href="__PUBLIC__/Js/coin-slider/coin-slider-styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Js/coin-slider/coin-slider.min.js"></script>
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Front/js/index.js"></script>
+<div id="coin-slider" class="page_img">
+		<foreach name="adFirstList" item="vo" >
+		<a target="_blank" href="{$vo.link_url}" title="{$vo.title}"><img alt="{$vo.attach_alt}" src="__UPLOAD__/{$vo.attach_file}">
+		<span>{$vo.description}</span>
+		</a>
+		</foreach>
+</div>  
+  
+  
+  
+  
+  <!-- newsstart -->
+  <div class="page_news">
+    <ul class="page_news_bt font14px fontbold">新闻资讯</ul>
+    <ul>
+     <foreach name="newList" item="vo" >
+     <li><a href="{:U('News/detail', array('id'=>$vo['id']))}" title="{$vo.title}" target="_blank" style="{$vo.title_style}">{:mb_substr($vo['title'], 0, 16)}</a></li>
+     </foreach>
+    </ul>
+  </div>
+  <!-- newsend -->
+  <!-- prostart -->
+  <div class="page_pro">
+    <div class="page_news_bt font14px fontbold">最新产品</div>
+    <!-- oneprostart -->
+     <foreach name="productList" item="vo" >
+	    <ul>
+	      <li><a href="{:U('Product/detail', array('id'=>$vo['id']))}" title="{$vo.title}" target="_blank"><img src="__UPLOAD__/{$vo.attach_thumb}" title="{$vo.title}" width="100px" height="100px"/></a></li>
+	      <li class="font14px fontbold"><a href="{:U('Product/detail', array('id'=>$vo['id']))}" title="{$vo.title}" target="_blank" style="{$vo.title_style}">{:mb_substr($vo['title'], 0, 9)}</a></li>
+	      <li class="font14px fontred fontbold">{$vo.sale_price}元</li>
+	    </ul>
+     </foreach>
+      <!-- oneproend -->
+  </div>
+  <!-- proend -->
+  <!-- telstart -->
+  <div class="page_tel">
+    <ul class="page_tel_en1">
+      <li class="font14px fontred fontbold">0279-85188888</li>
+      <li class="font14px fontbold"><a href="{:U('Company/detail',array('itemId'=>'contact'))}">联系我们</a></li>
+    </ul>
+    <ul class="page_tel_en2">
+      <li class="font14px fontred fontbold">&nbsp;</li>
+      <li class="font14px fontbold"><a href="{:U('Feedback/index')}">客户反馈</a></li>
+    </ul>
+    <ul class="page_tel_en3">
+      <li class="font14px fontred fontbold">&nbsp;</li>
+      <li class="font14px fontbold"><a href="{:U('News/index')}">媒体报道</a></li>
+    </ul>
+  </div>
+  <!-- telend -->
+<include file="Public:footer" />

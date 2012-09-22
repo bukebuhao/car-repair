@@ -1,0 +1,21 @@
+<include file="Public:header" />
+  <!-- leftstat -->
+  <div class="dt_page_left">
+    <ul class="dt_page_left_bt font14px fontbold">栏目</ul>
+    <ul>
+	    <li><a href="{:U('Company/detail',array('itemId'=>'about'))}">关于我们</a></li>
+		<li><a href="{:U('Company/detail',array('itemId'=>'honor'))}">公司荣誉</a></li>
+		<li><a href="{:U('Company/detail',array('itemId'=>'contact'))}">联系我们</a></li>
+		<li><a href="{:U('Company/pictrue')}">公司掠影</a></li>
+    </ul>
+  </div>
+  <!-- leftend -->
+  <!-- prostart -->
+  <div class="dt_page_right">
+    <ul class="dt_page_right_bt">
+      <li class="font14px fontbold dt_page_right_zt">{$contentDetail.title}</li>
+    </ul>
+    <ul class="dt_page_right_con">{$contentDetail.content}</ul>
+  </div>
+  <!-- proend -->
+<include file="Public:footer" />

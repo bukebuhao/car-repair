@@ -1,0 +1,276 @@
+<include file="Public:header" />
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#mainFrom").validate({
+		rules: {
+			site_name: "required",
+			company_name: "required",
+			run_system: "required",
+			attach_size: "required",
+			attach_suffix: "required",
+			link_category: "required",
+			global_category: "required"
+		},
+		messages: {
+			site_name: "网站名称须填写",
+			company_name: "公司名称必须填写",
+			run_system: "运行平台(下载)必须填写",
+			attach_size: "允许附件大小必须填写",
+			attach_suffix: "允许附件类型必须指定",
+			link_category: "友情链接类型必须指定，格式如：普通链接=1|合作伙伴=2|其它链接=3",
+			global_category: "模型类别必须指定，格式如：新闻模块=News|产品模块=Product "
+		}
+	});
+});
+
+
+</script>
+<div class="mainarea">
+<div class="maininner">
+	<div class="block style4">
+		
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+		 <th style="width:50px; text-align:center"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+帮助</a></th>
+		  <td>1.系统参数设置会影响到全局，请谨慎设置，详细解释请看官方网站相关教程<br />
+	      2.内核配置会影响系统性能，不清楚请不要随意修改</td>
+		  </tr>
+		</table>
+	</div>
+	<form method="post" action="{:U("Config/doModify")}" id="mainFrom" >
+	<div class="body_content">
+	
+	<div class="title">
+		<h3><a href="{:U('Config/index')}" class="text_bg">系统配置</a> | 	<a href="{:U('Config/core')}" class="text_bg">内核配置</a></h3>
+	</div>
+
+	<table id="maintable" class="formtable">
+	<tr>
+		<th style="width:12em;">网站名称</th>
+		<td><input name="site_name" type="text" value="{$vo.site_name}" size="50" ></td>
+	</tr>
+	<tr>
+		<th>网站网址</th>
+		<td><input type="text" name="site_url" value="{$vo.site_url|default=$frontUrl}" size="50"></td>
+	</tr>
+	<tr>
+		<th>站点联系邮箱</th>
+		<td><input type="text" name="email" value="{$vo.email}"></td>
+	</tr>
+	<tr>
+		<th>联 系 人</th>
+		<td><input type="text" name="contact_name" value="{$vo.contact_name}"> </td>
+	</tr>
+	<tr>
+		<th>公司名称</th>
+		<td><input type="text" name="company_name" value="{$vo.company_name}" size="50"></td>
+	</tr>
+	<tr>
+	  <th>公司地址</th>
+	  <td><input name="address" type="text" id="address" value="{$vo.address}" size="50" /></td>
+	  </tr>
+	<tr>
+		<th>电　　话</th>
+		<td><input type="text" name="telephone" value="{$vo.telephone}"></td>
+	</tr>
+	<tr>
+	  <th>传　　真</th>
+	  <td><input name="fax" type="text" id="fax" value="{$vo.fax}" /></td>
+	  </tr>
+	<tr>
+		<th>手　　机</th>
+		<td><input type="text" name="mobile_telephone" value="{$vo.mobile_telephone}"></td>
+	</tr>
+	<tr>
+		<th>qq</th>
+		<td><input type="text" name="qq" value="{$vo.qq}">
+		
+		</td>
+	</tr>
+	<tr>
+		<th>msn</th>
+		<td><input type="text" name="msn" value="{$vo.msn}"> </td>
+	</tr>
+	<tr>
+		<th>其它即时通讯工具</th>
+		<td><input type="text" name="other_im" value="{$vo.other_im}"> </td>
+	</tr>
+	<tr>
+		<th>ICP备案号</th>
+		<td><input type="text" name="icp" value="{$vo.icp}"> </td>
+	</tr>
+    <tr>
+      <th>网站状态</th>
+      <td><select name="web_status" id="web_status">
+        <option value="0" {$vo.web_status|selected=0}>正常运行</option>
+        <option value="1" {$vo.web_status|selected=1}>暂停访问</option>
+        </select> </td>
+    </tr>
+	<tr>
+		<th>暂停原因</th>
+		<td><textarea name="status_description" cols="50" rows="5"  id="status_description" class="area">{$vo.status_description}</textarea> </td>
+	</tr>
+	<tr>
+		<th>头部附加内容</th>
+		<td><textarea name="header_content" cols="50" rows="5"  id="header_content" class="area">{$vo.header_content}</textarea></td>
+	</tr>
+	<tr>
+		<th>脚部附加内容</th>
+		<td><textarea name="footer_content" cols="50" rows="5"  id="footer_content" class="area">{$vo.footer_content}</textarea></td>
+	</tr>
+	
+	</table>
+    
+<br />
+	<div class="title" id="register">
+		<a name="config" id="config"></a>	<h3>系统参数</h3>
+	</div>
+	<table id="maintable" class="formtable">
+	<tr>
+		<th style="width:12em;">是否开启留言/评论审核</th>
+		<td><select name="comment_verify" id="comment_verify">
+		  <option value="1" {$vo.comment_verify|selected=1}>开启审核</option>
+		  <option value="0" {$vo.comment_verify|selected=0}>关闭审核</option>
+		  </select></td>
+	</tr>
+	<tr>
+		<th style="width:12em;">系统日志</th>
+		<td><select name="sys_log" id="sys_log">
+		  <option value="1" selected="selected">开启日志</option>
+		  <option value="0">关闭日志</option>
+		  </select>
+          <input name="sys_log_ext[]" type="checkbox" id="sys_log_ext[]" value="index" {$vo.sys_log_ext|string2checked='index'}/>
+          浏览
+          <input name="sys_log_ext[]" type="checkbox" id="sys_log_ext[]" value="delete" {$vo.sys_log_ext|string2checked='delete'}/>
+          删除
+          <input name="sys_log_ext[]" type="checkbox" id="sys_log_ext[]" value="modify" {$vo.sys_log_ext|string2checked='modify'}/>
+          编辑
+          <input name="sys_log_ext[]" type="checkbox" id="sys_log_ext[]" value="insert" {$vo.sys_log_ext|string2checked='insert'}/>
+          写入
+          <input name="sys_log_ext[]" type="checkbox" id="sys_log_ext[]" value="update" {$vo.sys_log_ext|string2checked='update'}/>
+          批量操作
+          <input name="sys_log_ext[]" type="checkbox" id="sys_log_ext[]" value="login" {$vo.sys_log_ext|string2checked='login'}/>
+          登录后台</td>
+	</tr>
+	<tr>
+	  <th style="width:12em;">运行平台(下载)</th>
+	  <td><input name="run_system" type="text" id="run_system" value="{$vo.run_system}" />
+	    请用 <span style="color:#F00">，</span>隔开</td>
+	  </tr>
+	<tr>
+	  <th style="width:12em;">水印状态</th>
+	  <td><select name="watermark_status" id="watermark_status">
+	    <option value="1" {$vo.watermark_status|selected=1}>开启</option>
+	    <option value="0" {$vo.watermark_status|selected=0}>关闭</option>
+	    </select>
+	    <span style="width:12em;">默认为：Public/Front/watermark.png</span></td>
+	  </tr>
+	<tr>
+	  <th style="width:12em;">水印图片范围</th>
+	  <td><input name="watermark_size" type="text" id="watermark_size" value="{$vo.watermark_size}" />	    
+	    大于此尺寸的图片才会被打上水印</td>
+	</tr>
+	<tr>
+	  <th style="width:12em;">水印位置</th>
+	  <td><select name='watermark_position' id='watermark_position'>
+      <option value='5' {$vo.watermark_position|selected=5}>随机</option>
+	    <option value="0" {$vo.watermark_position|selected=0}>右下</option>
+	    <option value="3" {$vo.watermark_position|selected=3}>右上</option>
+	    <option value="1" {$vo.watermark_position|selected=1}>左上</option>
+	    <option value="2" {$vo.watermark_position|selected=2}>左下</option>
+	    <option value="4" {$vo.watermark_position|selected=4}>中间</option>
+	  </select></td>
+	  </tr>
+	<tr>
+	  <th style="width:12em;">水印边距</th>
+	  <td><input name="watermark_padding" type="text" id="watermark_padding" value="{$vo.watermark_padding}" size="10"/>
+	    px</td>
+	  </tr>
+	<tr>
+	  <th style="width:12em;">水印透明度</th>
+	  <td><input name="watermark_trans" type="text" id="watermark_trans" value="{$vo.watermark_trans}" size="10" />
+	    1－100的整数,越大透明度越低</td>
+	  </tr>
+	  
+	<tr>
+	  <th style="width:12em;">上传位置</th>
+	  <td>{$vo.global_uploads_path} 请确保该目录存在 </td>
+	</tr>
+	<tr>
+	  <th style="width:12em;">允许附件大小</th>
+	  <td><input name="global_attach_size" type="text" value="{$vo.global_attach_size}" size="20" /> 
+	    KB</td>
+	</tr>
+	<tr>
+	  <th style="width:12em;">允许附件类型</th>
+	  <td><input name="global_attach_suffix" type="text" value="{$vo.global_attach_suffix}" size="50" />
+	    请用 ，隔开</td>
+	  </tr>
+	<tr>
+	  <th style="width:12em;">全局(缩略图)</th>
+	  <td><select name="global_thumb_status" id="global_thumb_status">
+	    <option value="1" {$vo.global_thumb_status|selected=1}>开启</option>
+	    <option value="0" {$vo.global_thumb_status|selected=0}>关闭</option>
+	    </select>	    <input name="global_thumb_size" type="text" id="global_thumb_size" value="{$vo.global_thumb_size}" size="20" />
+	    宽,高(像素)</td>
+	  </tr>
+	<tr>
+	  <th style="width:12em;">新闻(缩略图)</th>
+	  <td><select name="news_thumb_status" id="news_thumb_status">
+	    <option value="1" {$vo.news_thumb_status|selected=1}>开启</option>
+	    <option value="0" {$vo.news_thumb_status|selected=0}>关闭</option>
+	    </select>
+	    <input type="text" name="news_thumb_size" value="{$vo.news_thumb_size}" size="20" />
+	  宽,高(像素)</td>
+	  </tr>
+	<tr>
+	  <th style="width:12em;">产品(缩略图)</th>
+	  <td><select name="product_thumb_status" id="product_thumb_status">
+	    <option value="1" {$vo.product_thumb_status|selected=1}>开启</option>
+	    <option value="0" {$vo.product_thumb_status|selected=0}>关闭</option>
+	    </select>
+	    <input type="text" name="product_thumb_size" value="{$vo.product_thumb_size}" size="20" />
+	    宽,高(像素)</td>
+	  </tr>
+	</table>
+	<br />
+	
+	<div class="title" id="uch">
+			<a name="seo" id="seo"></a><h3>SEO设置</h3>
+
+	</div>
+	<table id="maintable" class="formtable">
+	
+	<tr>
+		<th style="width:12em;">标题附加字</th>
+		<td><input type="text" name="seo_title" value="{$vo.seo_title}" size="50" ></td>
+	</tr>
+	<tr>
+		<th style="width:12em;">seo_keyword</th>
+		<td><input name="seo_keyword" type="text"  id="seo_keyword" value="{$vo.seo_keyword}" size="50" /></td>
+	</tr>
+	<tr>
+		<th style="width:12em;">seo_description</th>
+		<td><textarea name="seo_description" cols="50" rows="5" class="area"  id="seo_description">{$vo.seo_description}</textarea></td>
+	</tr>
+	
+	
+	</table>
+	</div>
+	
+	<div class="foot_action">
+			<input type="submit" name="submit" value="提交更新" class="submit" id="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+        <input name="id" type="hidden" id="id" value="1" />
+	</div>
+	
+	</form>
+</div>
+</div>
+
+<div class="side">
+	<include file="Public:sider" />
+</div>
+
+<include file="Public:footer" />

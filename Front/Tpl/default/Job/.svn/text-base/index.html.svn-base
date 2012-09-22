@@ -1,0 +1,16 @@
+<include file="Public:header"/>
+  <!-- prostart -->
+  <volist name="dataContentList" id="row">
+  <div class="dt_page_right">
+    <ul class="dt_page_right_bt">
+      <li class="font14px fontbold dt_page_right_zt">
+      <if condition="$row['link_url'] neq ''"><a href="{$row.link_url}" target="_blank" style="{$row.title_style}">{$row.title}</a><else/><a href="{:U('Job/detail',array('item'=>$row['id']))}" target="_blank" style="{$row.title_style}">{$row.title}</a></if>
+      <span style="color: #999999;">(<if condition="$row['time_type'] eq 1">长期招聘
+      <else/>限时招聘:{$row.end_time|date='Y-m-d',###}到期 </if> 招聘人数:{$row.number})</span>
+      </li>
+    </ul>
+    <ul class="dt_page_right_con">{$row.description|nl2br}</ul>
+  </div>
+  </volist>
+  <!-- proend -->
+  <include file="Public:footer" />

@@ -1,0 +1,114 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                title: "required",
+                link_url: {
+                    required: true,
+                    url: true
+                }
+            },
+            messages: {
+                title: "网站名称必须填写",
+                link_url: {
+                    required: "网址必须填写",
+                    url: '网址不符合规范。'
+                }
+            }
+        });
+        colorPicker();
+    });
+</script>
+<div class="mainarea">
+<div class="maininner">
+<div class="block style4">
+  <table cellspacing="3" cellpadding="3">
+    <tr>
+      <th style="width:50px; text-align:center"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+帮助</a></th>
+      <td>1.网站名称，网址必须填写<br />
+        2.网址必须填写完整。如：正确的 http://abc.com 或 http://www.abc.com
+        <br />
+        2.若不上传图片附件，请不要选择文件,LOGO默认不进行缩略图</td>
+    </tr>
+    </table>
+</div>
+
+<form method="post" action="{:U("Link/doModify")}" enctype="multipart/form-data" id="mainFrom" >
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">返回列表</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:8em;">链接类型</th>
+		<td>
+       <select name="category_id" id="category_id">
+        <volist name="link_category" id="row">
+		  <option value="{$row.id}" {$row.id|selected=$vo.category_id}>{$row.title}</option>
+        </volist>
+		</select>
+        <a href="{:U('Category/index')}" style="color:#333;" target="_blank"><u>定义类型</u></a></td></tr>
+        
+        <tr>
+          <th style="width:8em;"><label for="title">网站名称</label></th>
+          <td><input name="title" id="title" value="{$vo.title}" size="60" /></td>
+        </tr>
+        <tr>
+		  <th style="width:8em;">标题样式</th>
+		<td><div style=" display:block; float:left" title="点击取颜色" class="color_picker" id="color_picker" onclick="colorPicker()">&nbsp;</div>颜色<input class="input" type="hidden" value="{$vo.title_style_serialize|styleSelected='color'}" name="style_color" id="style_color" size="10"/>&nbsp;
+             <input name="style_bold" type="checkbox" id="style_bold" value="bold" {$vo.title_style_serialize|styleSelected='bold'}/>
+             加粗<input name="style_underline" type="checkbox" id="style_underline" value="underline" {$vo.title_style_serialize|styleSelected='underline'}/>
+           下划线</td></tr>
+        <tr>
+          <th style="width:8em;"><label for="link_url">网站地址</label></th>
+          <td><input name="link_url" id="link_url" value="{$vo.link_url}" size="60" /></td>
+        </tr>
+        
+        <tr>
+          <th colspan="2" style="width:8em;">以下为选填内容</th>
+        </tr>
+        <tr>
+           <th style="width:8em;"><label for="attach_file">LOGO图片</label></th>
+           <td>
+             <input type="file" name="attach_file" id="attach_file" />
+           </td>
+         </tr>
+        <tr>
+          <th style="width:8em;"><label for="description">描　　述</label></th>
+          <td><textarea name="description" cols="60" rows="3" id="description">{$vo.description}</textarea></td>
+        </tr>
+        
+		<tr>
+		  <th >其它参数</th>
+		  <td ><select name="status" id="status">
+		    <option value="0" {$vo.status|selected=0}>显示</option>
+		    <option value="1" {$vo.status|selected=1}>隐藏</option>
+		    </select>
+<label for="display_order">排序</label>
+<input name="display_order" type="text" id="display_order" value="{$vo.display_order}" size="5" maxlength="12"  />
+ <eq name="vo.link_type" value="image"> <input type="radio" name="convertText" id="radio" value="1" />
+  转换成文字链接</eq>
+</td>
+		  </tr>
+		<td></td>
+		</tr>
+		
+		</tbody>
+		
+		</table>
+	</div>
+	<div class="foot_action">
+	<input type="submit" name="submit" value="提交更新" class="submit">
+    <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+	<input name="id" type="hidden" id="id" value="{$vo.id}" />
+	<input name="old_image" type="hidden" id="old_image" value="{$vo.attach_image}" />
+	</div>
+	</form>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

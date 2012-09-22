@@ -1,0 +1,31 @@
+[ 2012-09-19T22:10:02+08:00 ] 127.0.0.1 /4s/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001313s ]
+SQL: SHOW COLUMNS FROM `companycms_menu` [ RunTime:0.076194s ]
+SQL: SELECT * FROM `companycms_menu` ORDER BY id  [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `companycms_news` [ RunTime:0.110025s ]
+SQL: SELECT `id`,`title`,`title_style` FROM `companycms_news` WHERE ( `status` = 0 ) AND ( `recommend` = 1 ) ORDER BY update_time desc, display_order asc LIMIT 10   [ RunTime:0.000505s ]
+SQL: SHOW COLUMNS FROM `companycms_product` [ RunTime:0.103063s ]
+SQL: SELECT `id`,`title`,`title_style`,`attach_image`,`sale_price` FROM `companycms_product` WHERE ( `status` = 0 ) AND ( `recommend` = 1 ) ORDER BY update_time desc, display_order asc LIMIT 10   [ RunTime:0.000428s ]
+NOTIC: [2] Missing argument 1 for GlobalAction::getAd(), called in E:\phpworkspace\companycms\Front\Lib\Action\IndexAction.class.php on line 19 and defined E:\phpworkspace\companycms\Front\Lib\Action\GlobalAction.class.php 第 340 行.
+SQL: SHOW COLUMNS FROM `companycms_ad` [ RunTime:0.110731s ]
+SQL: SELECT * FROM `companycms_ad` ORDER BY id  [ RunTime:0.000501s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.721034s ]
+INFO: [ view_template ] --END-- [ RunTime:0.047391s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: seodescription E:\phpworkspace\companycms\Front\Runtime\Cache\58e59613e371c16f73b9e6ba3b5415d9.php 第 7 行.
+NOTIC: [8] Undefined index: attach_thumb E:\phpworkspace\companycms\Front\Runtime\Cache\58e59613e371c16f73b9e6ba3b5415d9.php 第 76 行.
+INFO: Run ParseTemplate Behavior [ RunTime:-0.768482s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.126393s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.894922s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.895852s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.897082s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.897807s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003938s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.898968s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001197s ]
+

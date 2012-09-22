@@ -1,0 +1,64 @@
+<include file="Public:header" />
+<div class="mainarea">
+  <div class="maininner">
+<div class="block style4">
+		
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+		  <th style="width:50px; text-align:center"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+帮助</a></th>
+		<td>删除分类会同时删除此分类下所有的子类<br />
+		  受保护的类别为其它模块可能在使用中需要用到，尽量不要去删除，否则会导致错误</td>
+		  </tr>
+		</table>
+	</div>
+
+    
+      <form method="post" action="{:u("Category/doCommand")}">
+        <div class="body_content">
+          <div class="top_action"><a href="__URL__">浏览分类</a> | <a href="{:U("Category/insert")}">录入分类</a></div>
+          <table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+            <tr>
+              <th style="width:60px">&nbsp;</th>
+              <th>名称</th>
+              <th style="width:8%">排序</th>
+              <th style="width:15%">录入时间</th>
+              <th style="width:5%">操作</th>
+            </tr>
+            <present name="dataList">
+            <volist name="dataList" id="vo">
+              <tr style="{$vo.parent_id|bgStyle=0,'background:#F5FFF7; font-weight:bold;vertical-align:middle'}">
+                <td><input type="checkbox" name="id[]" value="{$vo.id}">
+                  {$vo.id}
+                  </td>
+                <td>{$vo.str_repeat}{$vo.title} {$vo.status|statusIcon=1,$frontUrl,'hidden.gif','隐藏'} {$vo.protected|statusIcon=1,$frontUrl,'lock.gif','保护中'} <a href="{:U('Category/insert',array('parentId'=>$vo['id']))}"><img src="__PUBLIC__/Admin/images/add.gif" align="absmiddle" /></a></td>
+                <td><input name="display_order[]" type="text" id="display_order[]" value="{$vo.display_order}" class="input-style"/></td>
+                <td>{$vo.create_time|date="Y-m-d",###}</td>
+                <td><a href="{:U('Category/modify',array('id'=>$vo['id']))}"><img src="__PUBLIC__/Admin/images/modify22px.gif" alt="编辑" align="absmiddle" /></a></td>
+              </tr>
+            </volist> 
+            <else />
+            <td colspan="5" style="color:#F00; font-weight:bold">暂无数据</td>
+            </present>
+          </table>
+        </div>
+        <div class="foot_action">
+          <div class="bat">
+            <input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'id')">
+            全选
+            <select name="operate" id="operate">
+              <option value="update" selected="selected">更新</option>
+              <option value="setStatus">显示</option>
+              <option value="unSetStatus">隐藏</option>
+              <option value="delete">删除</option>
+            </select>
+            <input type="submit" name="submit" value="提交操作" class="confirmSubmit submit">
+          </div>
+          <div class="pages">{$pageBar}</div>
+        </div>
+      </form>
+     
+  </div>
+</div>
+<div class="side"> <include file="Public:sider" /> </div>
+<include file="Public:footer" />

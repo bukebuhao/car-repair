@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{$seoinfo.seotitle}</title>
+<meta name="description" content="{$seoinfo.seodescription}"/> 
+<meta name="keywords" content="{$seoinfo.seokeywords}" />
+<link href="__PUBLIC__/Front/style/default.css" rel="stylesheet" type="text/css" />
+<link type="image/x-icon" href="__PUBLIC__/Images/company.ico" rel="shortcut icon">
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/Jquery/jquery.js"></script>
+</head>
+
+<body>
+<div id="frame">
+<!-- topstart -->
+<div class="page_top_title"><img src="__PUBLIC__/Front/images/logo.jpg" title="上海藤陟网络软件有限公司"/></div>
+<!--nav start -->
+<div class="nav_bg">
+<ul>
+<if condition="MODULE_NAME neq 'Index'">
+<li class="center font14px fontbold"><a href="{:U('Index/index')}"><span>网站首页</span></a></li>
+</if>
+
+<if condition="MODULE_NAME eq 'News'">
+<div class="center font14px fontbold en1">新闻资讯</div>
+<else/>
+<li class="center font14px fontbold"><a href="{:U('News/index')}"><span>新闻资讯</span></a></li>
+</if>
+
+<if condition="MODULE_NAME eq 'Product'">
+<div class="center font14px fontbold en1">产品中心</div>
+<else/>
+<li class="center font14px fontbold"><a href="{:U('Product/index')}"><span>产品中心</span></a></li>
+</if>
+
+<if condition="MODULE_NAME eq 'Company'">
+<div class="center font14px fontbold en1">企业介绍</div>
+<else/>
+<li class="center font14px fontbold"><a href="{:U('Company/index')}"><span>企业介绍</span></a></li>
+</if>
+
+<if condition="MODULE_NAME eq 'Job'">
+<div class="center font14px fontbold en1">招贤纳士</div>
+<else/>
+<li class="center font14px fontbold"><a href="{:U('Job/index')}"><span>招贤纳士</span></a></li>
+</if>
+
+<if condition="MODULE_NAME eq 'Feedback'">
+<div class="center font14px fontbold en1">意见反馈</div>
+<else/>
+<li class="center font14px fontbold"><a href="{:U('Feedback/index')}"><span>意见反馈</span></a></li>
+</if>
+
+</ul>
+</div>
+<!--nav end -->
+<!-- topend -->
+<!-- contenstart -->
+<div id="layout_content">
+

@@ -1,0 +1,67 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+
+<form method="post" action="{:U("Ad/doInsert")}" enctype="multipart/form-data">
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">浏览单页</a> | <a href="{:U("Page/insert")}">录入单页</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:8em;">广告类型</th>
+		  <td><select name="category_id" id="category_id">
+		    <option value="1" selected="selected">图片</option>
+		    <option value="2">文本</option>
+		    <option value="3">FLASH</option>
+		    <option value="4">JS</option>
+          </select></td>
+		  </tr>
+		<tr>
+		  <th style="width:8em;">标　　题</th>
+		<td><input name="title" id="title" value="{$vo.title}" size="60"></td></tr>
+		
+        <tr>
+          <th style="width:8em;">链　　接 </th>
+          <td><input name="link_url" type="text"   id="title" size="60"/></td></tr>
+        
+        <tr>
+          <th colspan="2" style="width:8em;">以下为选填内容</th>
+        </tr>
+        <tr>
+          <th style="width:8em;">文件/图片</th>
+          <td> <input name="attach_image" type="file" id="attach_image" /></td></tr>
+          
+         <tr>
+           <th style="width:8em;">状　　态 </th>
+           <td><select name="status" id="status">
+             <option value="1" selected="selected">显示</option>
+             <option value="0">隐藏</option>
+           </select></td></tr>
+        
+         <tr>
+           <th style="width:8em;">排　　序</th>
+           <td><input name="display_order" id="display_order" value="0" size="10" /></td>
+         </tr>
+         <tr>
+		  <th style="width:8em;">描　　述</th>
+		<td><textarea name="description" cols="60" rows="5"  id="description"></textarea></td></tr>
+        
+		<td></td>
+		  </tr>
+		
+		</tbody>
+		
+		</table>
+	</div>
+	<div class="foot_action">
+		<input type="submit" name="submit" value="提交录入" class="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+	</div>
+	</form>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

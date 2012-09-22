@@ -1,0 +1,48 @@
+<include file="Public:header" />
+<div class="mainarea">
+  <div class="maininner">
+   <present name="fileList">
+    <div class="body_content">
+      <div class="top_action"> <a href="{:U('Theme/index')}">风格选择</a> | <a href="{:U('Theme/template')}">模板管理</a> </div>
+      <table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+        <tr>
+        <th class="th-id">&nbsp;</th>
+          <th style="width:25%; text-align:center">预览图片</th>
+          <th>风格名称</th>
+          <th style="width:10%">选择模板</th>
+        </tr>
+       
+        <volist name="fileList" id="vo">
+          
+          <tr>
+          <td style="text-align:center">
+          <eq name="theme" value="$vo.title"><img src="__PUBLIC__/Admin/images/home.gif" align="absmiddle" alt="当前正在使用"/><br />
+            使用中</eq>
+          </td>
+            <td style="text-align:center; height:130px">
+            <ul>
+             <li><if condition="$vo['thumb'] eq ''"><img src="__PUBLIC__/Admin/images/noimage.gif" align="absmiddle" / ><else/><a href="__ROOT__/{$vo.thumb}" target="_blank"><img src="__ROOT__/{$vo.thumb}" width="100" height="130" align="absmiddle" /></a></if> </li>
+           <li style=" font-weight:bold"> {$vo.title}</li></ul></td>
+            <td>
+              <ul>
+                <li><span style="color:#390">{$vo.dev|default='N/A'}</span></li>
+               
+            </ul></td>
+            <td> <neq name="theme" value="$vo.title"><a href="{:U('Theme/applyTheme', array('themeName' => $vo['title']))}"><img src="__PUBLIC__/Admin/images/refresh.gif" align="absmiddle" alt="应用此风格"/></a><br>应用风格</neq></td>
+          </tr>
+        </volist>
+      </table>
+      </div>
+      
+      <else />
+	<div class="body_content">
+		<p>当前没有风格，请通过FTP上传风格后再进行选择。更多风格可通过官方网站下载:<a href="http://www.tengzhiinfo.com" target="_blank">http://www.tengzhiinfo.com</a></p>
+	</div>
+</present>
+
+  </div>
+</div>
+<div class="side"> 
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

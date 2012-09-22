@@ -1,0 +1,24 @@
+<include file="Public:header" />
+  <!-- leftstat -->
+  <div class="dt_page_left">
+    <ul class="dt_page_left_bt font14px fontbold">栏目</ul>
+    <ul>
+	<volist name="newsCategory" id="row">
+	<li class="{$contentDetail.category_id|selected=$row['id'], 'current',''}">{$row.str_repeat}<img src="__ROOT__/Public/Front/icon_arrow04.gif" /> <a href="{:U('News/index', array('category' => $row['id']))}">{$row.title}</a></li>
+	</volist>
+    </ul>
+  </div>
+  <!-- leftend -->
+  <!-- prostart -->
+  <div class="dt_page_right">
+    <ul class="dt_page_right_bt1">您现在的位置：<a href="index.html">首页</a> > <a href="{:U('News/index')}">新闻资讯</a> > <a href="{:U('News/index', array('category' => $contentDetail['category_id']))}">{$contentDetail.categoryName}</a> > 正文</li></ul>
+    <ul class="dt_page_right_con">
+      <li class="news_detail_bt font16px fontbold">{$contentDetail.title}</li>
+      <li class="news_detail_data font999">发布时间：{$contentDetail.create_time|date="Y-m-d",###}&nbsp;&nbsp;&nbsp;&nbsp;来源：<if condition="$contentDetail['from_link'] eq ''">{$contentDetail.copy_from|default='本站'}<else/><a href="{$contentDetail.from_link}" target="_blank"> {$contentDetail.copy_from|default='本站'}</a></if>&nbsp;&nbsp;&nbsp;&nbsp;查看次数：{$contentDetail.view_count}
+    </ul>
+    <ul class="dt_page_right_con">
+    {$contentDetail.content}
+    </ul>
+  </div>
+  <!-- proend -->
+<include file="Public:footer" />

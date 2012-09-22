@@ -1,0 +1,98 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+<form method="post" action="{:U("Job/resumeModify")}" enctype="multipart/form-data">
+	<div class="body_content">
+		<div class="top_action"><a href="{:U("Job/resume")}">返回简历</a> | <a href="{:U("Job/index")}">返回岗位</a> | <a href="{:U("Job/insert")}">录入岗位</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:8em;">应聘岗位</th>
+		<td><input name="title" type="text"  id="title" value="{$vo.title}" size="60" readonly="readonly"></td></tr>
+		
+        <tr>
+		  <th style="width:8em;">真实姓名</th>
+		<td><input name="realname" type="text"  id="realname" value="{$vo.realname}"  />
+		  　性　　别
+            <select name="sex" id="sex">
+  <option value="男" {$vo.sex|selected='男'}>男</option>
+  <option value="女" {$vo.sex|selected='女'}>女</option>
+</select>
+<span style="width:8em;">婚　　否</span>
+<select name="marray" id="marray">
+  <option value="已婚" {$vo.sex|selected='已婚'}>已婚</option>
+  <option value="未婚" {$vo.sex|selected='未婚'}>未婚</option>
+</select>&nbsp;</td></tr>
+        
+        <tr>
+          <th style="width:8em;">出生年月</th>
+          <td><input name="birthday" type="text"  id="birthday" value="{$vo.birthday}"  />
+              　学　　历
+                <input name="degree" type="text"  id="degree" value="{$vo.degree}"  />
+&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <th style="width:8em;">毕业学校</th>
+          <td><input name="school" type="text"  id="school" value="{$vo.school}"  />
+            　毕业时间
+              <input name="gradyear" type="text"  id="gradyear" value="{$vo.gradyear}"  /></td>
+        </tr>
+        <tr>
+          <th style="width:8em;">详细简介</th>
+          <td><label>
+            <textarea name="introduction" id="contents" cols="80" rows="8">{$vo.introduction}</textarea>
+          </label></td>
+        </tr>
+        <neq name="vo['attach_file']" value="">
+        <tr>
+          <th style="width:8em;">包含附件</th>
+          <td><a href="__ROOT__/Uploads/{$vo.attach_file}" target="_blank"><img src="__PUBLIC__/Admin/images/folder.gif" /> 点击打开</a></td>
+        </tr>
+        </neq>
+        <tr>
+		  <th colspan="2" style="width:8em;">联系方式</th>
+		</tr>
+        
+        <tr>
+		  <th style="width:8em;">电　　话</th>
+		<td> <input name="telephone" type="text" id="telephone" value="{$vo.telephone}" /></td></tr>
+        
+         <tr>
+           <th style="width:8em;">提交 IP</th>
+          <td><input name="ip" type="text" id="ip" value="{$vo.ip}" readonly="readonly" class="input-nostyle"/></td></tr>
+        
+         <tr>
+		  <th colspan="2" style="width:8em; color:#00F">简历备注</th>
+		</tr>
+        
+        <tr>
+		  <th style="width:8em;">&nbsp;</th>
+		<td><label>
+		  <textarea name="remark" id="remark" cols="80" rows="8">{$vo.remark}</textarea>
+		  </label></td></tr>
+        <tr>
+          <th style="width:8em;">状　态</th>
+          <td><select name="status" id="status">
+            <option value="1" {$vo.status|selected=1}>状态选择</option>
+            <option value="2" {$vo.status|selected=2}>录用</option>
+            <option value="3" {$vo.status|selected=3}>不录用</option>
+          </select></td>
+        </tr>
+		<td></td>
+		  </tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="foot_action">
+	<input type="submit" name="submit" value="提交更新" class="submit">
+	<input type="reset" name="reset" value="还原重填" class="submit" id="reset" />
+	<input name="id" type="hidden" id="id" value="{$vo.id}" />
+	</div>
+	</form>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

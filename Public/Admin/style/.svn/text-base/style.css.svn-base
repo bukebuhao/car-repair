@@ -1,0 +1,152 @@
+* { word-break: break-all; word-wrap: break-word; }
+body { background: #FFF; color: #000; text-align: center; line-height: 1.5em; }
+	body, h1, h2, h3, h4, h5, p, ul, dl, ol, form, fieldset { margin: 0; padding: 0; }
+	body, td, input, textarea, select, button { font-size: 12px; font-family: Verdana,Arial,Helvetica,sans-serif; }
+ul { list-style: none; }
+cite { font-style: normal; }
+a { color: #006600; text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	a img { border: none; }
+
+/*布局*/
+#wrap { margin: 0 auto; padding: 0 10px; max-width: 960px; min-width: 760px; text-align: left; }
+	* html #wrap { width: expression( documentElement.clientWidth > 960 ? 960 : "auto" || documentElement.clientWidth < 760 ? 760 : "auto" ); }
+#header { position: relative; height: 80px; border-bottom: 5px solid #37A137; }
+	#header h2, #topmenu, #menu { position: absolute; }
+		#header h2 { left: 0; bottom: 10px; }
+		#topmenu { right: 1em; bottom: 3.5em; }
+		#menu { right: 1em; bottom: -5px; line-height: 28px; }
+			#menu li { float: left; padding: 2px 1em; }
+				#menu li.active { padding-top: 0; border: solid #B7C6F5; border-width: 2px 1px 0; background: #FFF; }
+.mainarea { float: right; width: 100%; margin-left: -130px; }
+	.maininner { margin-left: 140px; }
+.side { float: left; width: 130px; }
+
+#content { margin: 1em 0;}
+
+/*搜索区域*/
+#search-table{}
+#search-table th{text-align:left;}
+
+
+/*细线边框区域*/
+.body_content { padding: 1em; border: 1px solid #69BA26; zoom: 1; }
+.body_content .th-id{ width:12%}
+.body_content .trbg{ background:#F5FFF7}
+/*表格变色*/
+.body_content  tr.over td{background: #D7FFD7; font-weight: bold; }    
+/*.body_content  tr.double td{ background: #DAFFC7;}  */  
+
+.border-red{border:1px #69BA26 solid} 
+
+/*粗边框区域*/
+.block { margin-bottom: 10px; padding: 0.5em 1em; border: 1px solid #EBE6C9; }
+	.block h2 { margin: 0.5em 0; color: #363636; font-size: 1.17em; }
+	.block p { margin: 0.5em 0; }
+	.side .block li { margin: 0.2em 0; }
+				
+/*多列的列表*/
+.listcol { overflow: hidden; zoom: 1; }
+	.list2col li { float: left; width: 49.9%; }
+	.list3col li { float: left; width: 33.3%; }
+	.list4col li { float: left; width: 24.9%; }
+	.list5col li { float: left; width: 19.9%; }
+	.list6col li { float: left; width: 16.6%; }
+					
+/*标签页*/
+.tabs { height: 30px; line-height: 29px; }
+	.tabs li { float: left; margin-right: 2px; padding: 0 1em; background: ; }
+		.tabs li.active { line-height: 30px; }
+		.tabs li h1 { font-size: 1em; font-weight: normal; }
+		
+/*分页float: left;*/
+.pages {font-weight:bold;color:#999}
+	.pages * {  padding: 0 4px; border: 0px solid #CDCDCD; margin-right: 1px; background: #FFF; font-style: normal; }
+	
+	
+	
+.top_action { margin-bottom: 10px; padding-top: 0.4em; padding-bottom: 0.2em; border-bottom: 1px solid #69BA26;height:30px }
+	.top_action a { color:#FFF;font-size: 14px; padding:2px; background:#69BA26; font-weight:bold}
+	.top_action a:hover { color:#FFF;font-size: 14px; padding:2px; background:#F00; font-weight:bold }
+
+.foot_action { margin: 0 0 1em; padding: 0.5em; border: 1px solid #69BA26; border-top: 0px; }
+	/*\*/ * html .foot_action { height: 1%; } /**/ * > .foot_action { overflow: hidden; }
+	.foot_action .pages { float: right; }
+	.foot_action .bat { float: left; }
+	
+.submit { padding: 0.2em 1em 0; width: 1px; overflow: visible; border: 1px solid; border-color: #69BA26; background: #69BA26; color: #FFFFFF; cursor: pointer; }
+	* > .submit { width: auto; padding: 0.3em 1em; }
+	
+
+/*按钮*/
+.submit_action { margin: 0 0 1em; padding: 0.5em; border-top: 0px; }
+	/*\*/ * html .submit_action { height: 1%; } /**/ * > .submit_action { overflow: hidden; }
+
+	
+/*标题右浮动 Digg 按钮*/
+.titlel { float: left; margin-right: 0.83em; margin-top: 0.5em; }
+.titler { position: absolute; right: 1em; top: 0.5em; z-index: 1; }
+
+/*各种区域样式*/
+.style1 {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:#F5FFF7 none repeat scroll 0 0;
+border-color:#69BA26;
+}
+
+/*文本背景*/
+.text_bg{background:#69BA26 none repeat scroll 0 0; padding:5px; color:#FFF}
+
+
+.style2 { border-color: #EAF6D2; }
+.style3 { border-color: #EDEDED; }
+.style3 { border-color: #CDE39C; }
+.style4 { border: none; background: #F5FFF7; zoom: 1; border: 1px solid #69BA26; }
+.style5 { padding: 10px; border: 1px solid #CDCDCD; background:#EAF6D2; }
+.style6 { border: none; background: #DDF3FD; }
+
+.gray { color: #999; font-weight: normal; }
+.sfont { font-size: 10px; }
+.underline { text-decoration: underline; }
+.noline { text-decoration: none !important; border: none; }
+	.noline a { text-decoration: none !important; border: none; }
+.footmargin { margin-bottom: 10px; }
+
+/*用于表单的表格*/
+.formtable { width: 100%; table-layout: fixed; }
+	.formtable th { width:80px; text-align: left; font-weight: bold; color: #333333; }
+	.formtable th, .formtable td { padding: 0.5em 0; border-bottom: 1px solid #F2F2F2; /*vertical-align: top; debug*/ line-height:1.5em; }
+		.formtable td th, .formtable td{ /*border: none;*/ }
+		.formtable .input-style { width:80%}
+		.formtable .input-nostyle { border:none}
+
+
+.title { margin-bottom: 10px; padding-bottom: 0.5em; border-bottom: 1px solid #69BA26;}
+	.title h1, .title h3 { padding: 0.6em 0 0.2em 0; font-size: 1.17em; }
+
+#footer { clear: both; padding: 1em 0; color: #939393; text-align: center; }
+	#footer p { font-size: 0.83em; }
+	#footer .menu a { padding: 0 1em; }
+
+/*目录列表*/
+.folder li { padding-left: 1em; }
+	.folder .active {font-weight:bold;padding-left: 1em;background-image:url(../images/select.gif);background-repeat: no-repeat;background-position: 80px;
+}
+
+/*jquery from*/
+#mainFrom {}
+#mainFrom label.error {margin-left: 10px;width: auto;display: inline;
+}
+input.error,textarea.error{ border: 1px solid red; }
+label.error, label.error {color: red;}
+/*搜索表单*/
+#search-table{}
+#search-table th{width:60px}
+
+
+/*提示信息*/
+#message { margin: 0 0 1em; padding: 0.5em; border: 1px solid #69BA26; }
+	/*\*/ * html #message { height: 1%; } /**/ * > #message { overflow: hidden; }
+

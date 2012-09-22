@@ -1,0 +1,108 @@
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+
+	<div class="block style4">
+		<table cellspacing="3" cellpadding="3" id="search-table"><form method="get" action="__URL__">
+		<tr>
+		  <th>标　　题</th><td><input type="text" name="title" id="title"></td>
+		  </tr>
+		<tr>
+		  <th>其它参数</th><td><select name="status" id="status">
+		        <option value="0" selected="selected">显示中</option>
+		        <option value="1">隐藏中</option>
+		        </select></td></tr>
+	
+		<tr><th>结果排序</th>
+	  <td>
+	    <select name="orderBy" id="orderBy">
+	      <option value="id" selected="selected">默认排序</option>
+          <option value="viewCount">点击数排序</option>
+	      </select>
+	    <select name="orderType" id="orderType">
+	      <option value="DESC">递减</option>
+	      <option value="ASC">递增</option>
+	      </select>
+	    <select name="pageSize" id="pageSize">
+	      <option value="15">默认15个</option>
+	      <option value="20">每页显示20个</option>
+	      <option value="50">每页显示50个</option>
+	      <option value="100">每页显示100个</option>
+	      </select>
+	    <input type="submit" name="submit" value="搜索" class="submit" id="submit">
+	    <a href="__URL__" >默认</a>
+	    
+  <script type="text/javascript">
+/*
+	设定选择值
+*/
+	$("#title").val('{$Think.get.title|formatQuery}');
+	$("#status").val('{$Think.get.status}');
+	$("#orderType").val('{$Think.get.orderType}');
+	$("#orderBy").val('{$Think.get.orderBy}');
+	$("#pageSize").val('{$Think.get.pageSize}');
+</script>
+	    
+	    </td>
+	  </tr>
+		</form></table>
+	</div>
+
+
+	<form method="post" action="{:U('Link/doCommand')}">
+	<div class="body_content">
+    <div class="top_action"><a href="{:U('Link/insert')}">录入链接</a></div>
+	<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+        <th class="th-id">&nbsp;</th>
+		<th style="width:100px">名称</th>
+		<th style="width:100px">网址</th>
+		<th style="width:10%">排序</th>
+		<th style="width:12%">提交时间</th>
+		<th style="width:5%">操作</th>
+		</tr>
+        <present name="dataList">
+		<volist name="dataList" id="vo">
+        
+		<tr>
+        <td><input type="checkbox" name="id[]" value="{$vo.id}">{$vo.id}</td>
+        
+		<td><input name="title[]" id="title[]" value="{$vo.title}" size="20" >
+		  <span style="text-align:left">{$vo.status|statusIcon=1,$frontUrl,'hidden.gif','隐藏'}</span><span style="text-align:left">{$vo.link_type|attachStatus='image',$frontUrl,'image.gif','图片'} </span></td>
+		<td><input name="link_url[]" id="link_url[]" value="{$vo.link_url}" class="input-style"/></td>
+		<td><input name="display_order[]" id="display_order[]" value="{$vo.display_order}" size="3"/></td>
+		<td>{$vo.create_time|date="Y-m-d",###}</td>
+		<td><a href="{:U('Link/modify',array('id'=>$vo['id']))}"><img src="__PUBLIC__/Admin/images/modify22px.gif" alt="编辑" align="absmiddle" /></a></td>
+		</tr>
+		</volist>
+         <else />
+        <tr>
+		  <td colspan="6" style="color:#F00; font-weight:bold">暂无数据</td>
+		  </tr>
+    </present>
+		</table>
+	</div>
+    <present name="dataList">
+	<div class="foot_action">
+    <div class="bat">
+	<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'id')">全选
+		<select name="operate" id="operate">
+        <option value="update" selected="selected">更新</option>
+         <option value="setStatus">显示</option>
+        <option value="unSetStatus">隐藏</option>
+         <option value="delete">删除</option>
+       
+      </select> 
+		<input type="submit" name="submit" value="提交操作"  class="submit"></div>
+	  <div class="pages">{$pageBar}</div>
+	</div></present>
+	</form>
+
+
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

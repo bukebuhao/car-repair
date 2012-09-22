@@ -1,0 +1,1 @@
+{"0":"id","1":"name","2":"dept_id","_autoinc":true,"_pk":"id","_type":{"id":"mediumint(6)","name":"varchar(25)","dept_id":"smallint(3)"}}

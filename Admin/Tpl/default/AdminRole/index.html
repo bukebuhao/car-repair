@@ -1,0 +1,62 @@
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+	<div class="block style4">
+  <table cellspacing="3" cellpadding="3">
+    <tr>
+      <th style="width:50px; text-align:center"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+        帮助</a></th>
+      <td>1.默认超级用户及禁止访问角色组不允许编辑或删除。<br />
+        2.角色组被删除后，组内用户自动移至禁止访问组，用户将不能进入后台管理</td>
+    </tr>
+    </table>
+</div>
+	<form method="post" action="">
+	<div class="body_content">
+    <div class="top_action"><a href="{:U("AdminRole/insert")}">录入角色</a>　<a href="{:U("Admin/index")}">管理员管理</a></div>
+	<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th class="th-id">ID</th>
+		<th>角色组</th>
+		<th style="width:20%">操作</th>
+		</tr>
+        <present name="dataList">
+		<volist name="dataList" id="vo">
+		<tr>
+		  <td>{$vo.id}</td>
+		<td><strong>{$vo.role_name}</strong></td>
+		<td>   <if condition="$vo['id'] eq 1">
+<img src="__PUBLIC__/Admin/images/lock.gif" alt="锁定" align="absmiddle" />
+			<elseif condition="$vo['id'] eq 2" />
+<img src="__PUBLIC__/Admin/images/lock.gif" alt="锁定" align="absmiddle" />
+              <else />
+              <a href="{:U("AdminRole/modify",array('id'=>$vo['id']))}"><img src="__PUBLIC__/Admin/images/modify22px.gif" alt="编辑" align="absmiddle" /></a>　<neq name="vo['id']" value="3"><a href="{:U("AdminRole/doCommand",array('operate'=>'delete','id'=>$vo['id']))}" class="confirmSubmit"><img src="__PUBLIC__/Admin/images/delete.gif" alt="删除" align="absmiddle" /></a></neq>
+              </a>
+              </if></td>
+		</tr>
+		</volist>
+         <else />
+        <tr>
+		  <td colspan="3" style="color:#F00; font-weight:bold">暂无数据</td>
+		  </tr>
+    </present>
+		</table>
+	</div>
+	<div class="foot_action" style="display:none">
+	<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'id')">全选
+		<select name="operate" id="operate">
+                <option value="update" selected="selected">更新</option>
+                <option value="delete">删除</option>
+              </select> 
+		<input type="submit" name="submit" value="提交" class="confirmSubmit submit">
+	  <div class="pages">{$pageBar}</div>
+	</div>
+	</form>
+
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

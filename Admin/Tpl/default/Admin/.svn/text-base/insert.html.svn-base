@@ -1,0 +1,104 @@
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mainFrom").validate({
+            rules: {
+                username: {
+                    required: true,
+                    english: true,
+                    minlength: 3,
+                    maxlength: 20
+                }
+            },
+            messages: {
+                username: {
+                    required: '用户名必须填写',
+                    english: '用户名必须为英文字母或数字的组合',
+                    minlength: '用户名最小3个字符',
+                    maxlength: '用户名最长20个字符'
+                }
+            }
+        });
+    });
+</script>
+	
+	<form method="post" action="{:U("Admin/doInsert")}" id="mainFrom">
+	
+	<div class="body_content">
+		
+		<div class="top_action"><a href="__URL__">浏览管理员</a> | <a href="{:U("AdminRole/index")}">角色管理</a></div>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+		  <th style="width:12em;">用 户 名</th>
+		<td><input name="username" id="username" value="{$vo.username}"></td></tr>
+		
+        <tr>
+		  <th style="width:12em;">密　　码</th>
+		<td><input name="password" type="password" id="password" value="{$vo.password}"></td></tr>
+        
+        <tr>
+          <th style="width:12em;">角色组</th>
+          <td>  <select name="role_id" id="select">
+            <volist name="roleList" id="vo">
+              <option value="{$vo.id}" {$vo.id|selected=3}>{$vo.role_name}</option>
+              </volist>
+          </select></td></tr>
+        
+        <tr>
+		  <th style="width:12em;">真实姓名</th>
+		<td><input name="realname" id="realname" value="{$vo.realname}"></td></tr>
+        
+         <tr>
+		  <th style="width:12em;">性　　别</th>
+		<td> 
+                  <input name="sex" type="radio" value="男" checked="checked" class="checkbox"/>男
+<input type="radio" name="sex" value="女" class="checkbox"/>
+女</td></tr>
+        
+         <tr>
+		  <th style="width:12em;">地　　址</th>
+		<td><input name="address" id="address" value="{$vo.address}"></td></tr>
+        
+         <tr>
+		  <th style="width:12em;">移动电话</th>
+		<td><input name="mobile_telephone" id="mobile_telephone" value="{$vo.mobile_telephone}"></td></tr>
+        
+         <tr>
+		  <th style="width:12em;">电　　话</th>
+		<td><input name="telephone" id="telephone" value="{$vo.telephone}"></td></tr>
+        
+        <tr>
+		  <th style="width:12em;">邮　　箱</th>
+		<td><input name="email" id="email" value="{$vo.email}"></td></tr>
+        <tr>
+		  <th style="width:12em;">网　　址</th>
+		<td><input name="web_url" id="web_url" value="{$vo.web_url}"></td></tr>
+        
+		<tr>
+		  <th style="width:12em;">qq</th>
+		<td><input name="qq" id="qq" value="{$vo.qq}"></td></tr>
+		<td></td>
+		</tr>
+		
+		</tbody>
+		
+		</table>
+	</div>
+		
+	<div class="foot_action">
+		<input type="submit" name="submit" value="提交录入" class="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+	</div>
+	
+	</form>
+
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

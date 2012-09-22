@@ -1,0 +1,2 @@
+[ 2012-09-11T22:03:44+08:00 ] SQL: 调试的SQL语句：SELECT `id`,`title`,`content` FROM `think_form` ORDER BY id desc 
+[ 2012-09-11T22:03:44+08:00 ] ERR: 模拟写入的错误信息

@@ -1,0 +1,41 @@
+<include file="Public:header" />
+  <!-- leftstat -->
+  <div class="dt_page_left">
+    <ul class="dt_page_left_bt font14px fontbold">产品分类</ul>
+    <ul>
+     <volist name="productCategory" id="row">
+	 <li class="{$Think.get.category|selected=$row['id'], 'current',''}">{$row.str_repeat}<a href="{:U('Product/index', array('category' => $row['id']))}">{$row.title}</a></li>
+	 </volist>
+    </ul>
+  </div>
+  <!-- leftend -->
+  <!-- prostart -->
+  <div class="dt_page_right">
+    <form action="{:U('Product/index')}" method="get">
+    <ul class="dt_page_right_bt">
+      <li class="font14px fontbold dt_page_right_zt"><a href="{:U('Product/index')}" title="产品">产品列表</a></li>
+      <li class="dt_page_right_search">关键字：
+        <label>
+        <input type="text" name="keyword" id="keyword" size="16" maxlength="20" value="{$Think.get.keyword}"/>
+        </label>
+        <label>
+        <input type="submit" name="button" id="button" value="搜索" />
+        </label>
+      </li>
+    </ul>
+    </form>
+    <!-- oneprostart -->
+    <volist name="dataContentList" id="row">
+     <ul class="dt_page_pro">
+      <li><a href="{:U('Product/detail', array('id' => $row['id']))}" title="{$row.title}" target="_blank"><img src="__UPLOAD__/{$row.attach_image}" alt="{$row.title}" width="100px" height="100px"/></a></li>
+      <li class="font12px"><a href="{:U('Product/detail', array('id' => $row['id']))}" title="{$row.title}" target="_blank">{$row.title}</a></li>
+      <li class="font14px fontred fontbold">{$row.sale_price}</li>
+    </ul>
+    </volist>
+    <div class="clr"></div>
+    <ul class="fenye1">
+    {$pageContentBar}
+    </ul>
+  </div>
+  <!-- proend -->
+<include file="Public:footer" />

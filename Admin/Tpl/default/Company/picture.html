@@ -1,0 +1,147 @@
+<include file="Public:header" />
+<script type="text/css" src="__PUBLIC__/Js/uploadify-v2.1.4/uploadify.css"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/uploadify-v2.1.4/swfobject.js"></script>
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Js/uploadify-v2.1.4/jquery.uploadify.v2.1.4.js"></script>
+<script type="text/javascript">
+$(function() {
+	 var scriptData = {"file": "company"};
+	 scriptData.sessionId = "{$sessionId }";
+	 $('#custom_file_upload').uploadify({
+				  'uploader'  : '__PUBLIC__/Js/uploadify-v2.1.4/uploadify.swf',
+				  'script' : '{:U('Uploads/uploadImage')}',
+				  'scriptData' : scriptData,
+				  'cancelImg' : '__PUBLIC__/Js/uploadify-v2.1.4/cancel.png', 
+				  'folder'         : '/uploads',
+				  'multi'          : true,
+				  // 'buttonImg' : '__PUBLIC__/Admin/images/uploadPicture.jpg',
+				  'fileExt'        : '*.jpg;*.gif;*.png',
+				  'fileDesc'       : 'Image Files (.JPG, .GIF, .PNG)',
+				  'queueID'        : 'custom-queue',
+				  'queueSizeLimit' : 4,
+				  'simUploadLimit' : 4,
+				  'removeCompleted': false,
+				  'onSelectOnce'   : function(event,data) {
+				      $('#status-message').text(data.filesSelected + ' files have been added to the queue.');
+				    },
+				   'onOpen'  : function(event,ID,fileObj) {
+				        $('#status-message').text('The upload is beginning for ' + fileObj.name);
+				        //scriptData.queueNo = $(".uploadifyQueueItem").index($("#custom_file_upload" + ID));
+				        //var scriptData = {"queueNo": "1"};
+				    	//$('#custom_file_upload').uploadifySettings('scriptData',scriptData);
+					 },
+				    'onComplete'  : function(event, ID, fileObj, response, data) {
+						 alert(response);
+				         var index = $(".uploadifyQueueItem").index($("#custom_file_upload" + ID));
+				         index = parseInt(index) + 1;
+				         var obj = jQuery.parseJSON(response);
+				         $('#status-message').html(obj.info);
+				         if (obj.status=='1') {
+				        	  var imagePath = '__UPLOAD__/';
+				        	  var timenow = new Date().getTime();
+						         $('#imgsrc_'+index).attr("src", imagePath + obj.data+"?t=" + timenow);
+				         }
+				     },
+				   'onAllComplete'  : function(event, data) {
+				      $('#status-message').text(data.filesUploaded + ' files uploaded, ' + data.errors + ' errors.');
+                      
+				    }
+				});		
+
+	 /**
+	 * 
+	 * 上传
+	 */
+     $("#uploadImage").click(function() {
+    	 $('#custom_file_upload').uploadifyUpload();
+     });
+
+
+		
+});
+
+function selectFile(index) {
+	var index = parseInt(index) - 1;
+	var id = $($(".uploadifyQueueItem").get(index)).attr('id').replace('custom_file_upload','');
+	var scriptData = {"queueNo": index};
+	$('#custom_file_upload').uploadifySettings('scriptData',scriptData);
+	$('#custom_file_upload').uploadifyUpload(id);
+}
+
+</script>
+<style type="text/css">
+#custom-demo .uploadifyQueueItem {
+	background-color: #FFFFFF;
+	border: none;
+	border-bottom: 1px solid #E5E5E5;
+	font: 11px Verdana, Geneva, sans-serif;
+	height: 50px;
+	margin-top: 0;
+	padding: 10px;
+	width: 350px;
+}
+
+#custom-demo .uploadifyError {
+	background-color: #FDE5DD !important;
+	border: none !important;
+	border-bottom: 1px solid #FBCBBC !important;
+}
+
+#custom-demo .uploadifyQueueItem .cancel {
+	float: right;
+}
+
+#custom-demo .uploadifyQueue .completed {
+	color: #C5C5C5;
+}
+
+#custom-demo .uploadifyProgress {
+	background-color: #E5E5E5;
+	margin-top: 10px;
+	width: 100%;
+}
+
+#custom-demo .uploadifyProgressBar {
+	background-color: #0099FF;
+	height: 3px;
+	width: 1px;
+}
+
+#custom-demo #custom-queue {
+	border: 1px solid #E5E5E5;
+	height: 284px;
+	margin-bottom: 10px;
+	width: 370px;
+}
+</style>
+<div class="mainarea">
+<div class="maininner">
+	<div class="block style4">
+	<div class="top_action">批量上传图片</div>
+	
+<div class="demo" id="custom-demo">
+
+<div class="demo-box">
+<div id="status-message"></div>
+<div id="custom-queue" class="uploadifyQueue"></div>
+<input width="120" type="file" height="30" name="Filedata" id="custom_file_upload">
+<img alt="上传图片" src="__PUBLIC__/Admin/images/uploadPicture.jpg" id="uploadImage">
+</div>
+</div>
+	
+	
+	
+	
+	</div>
+
+	<div class="body_content">
+    <div class="top_action"><a href="{:U("Page/index")}">单页管理</a></div>
+
+	</div>
+
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

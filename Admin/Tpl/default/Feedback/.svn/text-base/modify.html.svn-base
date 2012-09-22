@@ -1,0 +1,88 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+<form method="post" action="{:U("Feedback/doModify")}" enctype="multipart/form-data">
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">返回列表</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:8em;">留言主题</th>
+		<td><input name="title" type="text"  id="title" value="{$vo.title}" size="60"></td></tr>
+		
+        <tr>
+		  <th style="width:8em;">真实姓名</th>
+		<td><input name="username" type="text"  id="username" value="{$vo.username}"  />
+&nbsp;&nbsp;              &nbsp;性  别:
+<select name="sex" id="sex">
+  <option value="1" {$vo.sex|selected=1}>男</option>
+  <option value="0" {$vo.sex|selected=0}>女</option>
+</select></td></tr>
+        
+        <tr>
+          <th style="width:8em;">留言内容</th>
+          <td><label>
+            <textarea name="content" id="contents" cols="80" rows="8">{$vo.content}</textarea>
+          </label></td>
+        </tr>
+        <tr>
+		  <th colspan="2" style="width:8em;">联系方式</th>
+		</tr>
+        
+        <tr>
+		  <th style="width:8em;">电　　话</th>
+		<td> <input name="telephone" type="text" id="telephone" value="{$vo.telephone}" />传　　真:
+<input name="fax" type="text" id="fax" value="{$vo.fax}" /></td></tr>
+        
+        <tr>
+          <th style="width:8em;">QQ</th>
+          <td> <input name="qq" type="text" id="qq" value="{$vo.qq}" />
+            手　　机
+          <input name="mobile_tel" type="text" id="mobile_tel" value="{$vo.mobile_tel}" /></td></tr>
+        
+        <tr>
+          <th style="width:8em;">网　　址</th>
+          <td><input name="web_url" type="text" id="web_url" value="{$vo.web_url}" />
+            邮　　箱:
+          <input name="email" type="text" id="email" value="{$vo.email}" /></td></tr>
+        
+         <tr>
+		  <th style="width:8em;">留言 IP</th>
+		<td><input name="ip" type="text" id="ip" value="{$vo.ip}" readonly="readonly" class="input-nostyle"/></td></tr>
+        
+         <tr>
+		  <th colspan="2" style="width:8em;">回复内容</th>
+		</tr>
+        
+        <tr>
+		  <th style="width:8em;">&nbsp;</th>
+		<td><label>
+		  <textarea name="reply_content" id="reply_content" cols="80" rows="8">{$vo.reply_content}</textarea>
+		  </label></td></tr>
+        <tr>
+          <th style="width:8em;">前台显示</th>
+          <td>  <select name="status" id="status">
+            <option value="0" {$vo.status|selected=0}>显示</option>
+            <option value="1" {$vo.status|selected=1}>隐藏</option>
+          </select></td></tr>
+        
+		<td></td>
+		  </tr>
+		
+		</tbody>
+		
+		</table>
+	</div>
+	<div class="foot_action">
+	<input type="submit" name="submit" value="提交更新" class="submit">
+	<input type="reset" name="reset" value="还原重填" class="submit" id="reset" />
+	<input name="id" type="hidden" id="id" value="{$vo.id}" />
+	</div>
+	</form>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

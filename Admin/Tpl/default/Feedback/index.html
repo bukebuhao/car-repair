@@ -1,0 +1,104 @@
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+	<form method="get" action="__URL__">
+	<div class="block style4">
+		
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+		  <th>留言用户</th><td><input type="text" name="username" id="username"></td>
+		  </tr>
+		<tr>
+		  <th>留言主题</th>
+		  <td><input type="text" name="title" id="title" /></td>
+		  </tr>
+		<tr>
+		  <th>留言内容</th>
+		  <td><input type="text" name="rcontent" id="rcontent" /></td>
+		  </tr>
+		<tr><th>结果排序</th>
+		<td>
+		<select name="orderBy" id="orderBy">
+		  <option value="id">默认排序</option>
+		  <option value="status">状态</option>
+        </select>
+		<select name="orderType" id="orderType">
+		<option value="DESC">递减</option>
+		<option value="ASC">递增</option>
+		</select>
+		<select name="pageSize" id="pageSize">
+		<option value="20">每页显示20个</option>
+		<option value="50">每页显示50个</option>
+		<option value="100">每页显示100个</option>
+		</select>
+		<input type="submit" name="submit" value="搜索" class="submit" id="submit">
+<script type="text/javascript">
+/*
+	设定选择值
+*/
+	$("#username").val('{$Think.get.username|formatQuery}');
+	$("#title").val('{$Think.get.title|formatQuery}');
+	$("#rcontent").val('{$Think.get.rcontent|formatQuery}');
+	$("#orderType").val('{$Think.get.orderType}');
+	$("#orderBy").val('{$Think.get.orderBy}');
+	$("#pageSize").val('{$Think.get.pageSize}');
+</script>
+<a href="__URL__" >默认</a></td>
+		</tr>
+		</table>
+	</div>
+	</form>
+<present name="dataList">
+	<form method="post" action="{:U('Feedback/doCommand')}">
+	<div class="body_content">
+    <div class="top_action"><a href="{$frontUrl}" target="_blank">前台浏览</a></div>
+	<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<volist name="dataList" id="vo">
+		  <tr class="trbg">
+		    <th width="80" class="th-id"><input type="checkbox" name="id[]" value="{$vo.id}">{$vo.id}
+		      </th>
+		    <th style="font-size:14px;"> {$vo.title|default="<s>N/A</s>"} <a href="{:U('Feedback/modify',array('id'=>$vo['id']))}"><img src="__PUBLIC__/Admin/images/modify22px.gif" alt="编辑/回复" border="0" align="absmiddle" /></a></th>
+		    <th style="width:27%;text-align:right;color:#F00"><select name="status[]" id="status[]">
+		        <option value="0" {$vo.status|selected=0}>显示</option>
+		        <option value="1" {$vo.status|selected=1}>隐藏</option>
+		        </select>
+		    </th>
+		    </tr>
+		  <tr class="trbg">
+		    <th style="text-align:right;"><img src="__PUBLIC__/Admin/images/user.gif" alt="{$vo.username|default='主题'}" align="absmiddle" /></th>
+		    <td style="text-align:left;"> {$vo.username}</td>
+		    <td style="text-align:right">{$vo.create_time|date="Y-m-d H:i:s",###}</td>
+		    </tr>
+		  <tr>
+		    <td colspan="3" valign="top" style="height:80px">{$vo.content|nl2br}</td>
+		    </tr>
+		  <tr>
+		    <td colspan="3" valign="top" style="height:auto;color:#F00">{$vo.reply_content|nl2br}</td>
+		    </tr>
+		  </volist>
+		</table>
+	</div>
+	<div class="foot_action">
+    <div class="bat">
+	 <input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'id')">全选
+		 <select name="operate" id="operate">
+                  <option value="update">更新</option>
+                  <option value="delete">删除</option>
+                </select> 
+
+		<input type="submit" name="submit" value="提交操作" class="confirmSubmit submit"></div>
+	  <div class="pages">{$pageBar}</div>
+	</div>
+	</form>
+<else />
+	<div class="body_content">
+		<p>指定条件下还没有数据</p>
+	</div>
+</present>
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

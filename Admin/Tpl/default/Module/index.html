@@ -1,0 +1,82 @@
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+<div class="block style4">
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+		 <th style="width:50px; text-align:center"><a href="http://www.tengzhiinfo.com/help/{$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/images/help_1.gif" alt="" align="absmiddle" /><br />
+帮助</a></th>
+		  <td>1.禁用：暂时未启用模块，暂时不能管理，可重新启用<br />
+2.卸载：彻底从系统中删除文件，包括(模板，控制器，模型，数据表)。此操作不可恢复</td>
+		  </tr>
+		</table>
+	</div>
+
+	<form method="post" action="Admin.php?ac=profilefield">
+	<div class="body_content">
+
+		<div class="top_action"><a href="{:U("Module/index")}">浏览模块</a> </div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		
+        <tr>
+		<th>模块名称</th>
+		<th>控制器</th>
+		<th>版本</th>
+		<th width="80">操作</th>
+		</tr>
+         <volist name="install" id="vo">
+		
+		<td>{$vo.module_title}(<strong>{$vo.module_name}</strong>) <eq name="vo['system_module']" value="1"><img src="__PUBLIC__/Admin/images/lock.gif" alt="内置模块锁定状态" align="absmiddle" /></eq></td>
+		<td>{$vo.module_name}Action.class.php</td>
+		<td>{$vo.build_version}</td>
+		<td>
+		  <a href="{:U("Module/modify",array('id'=>$vo['id']))}">编辑</a> <!--  <a href="{:U("Module/uninstall",array('id'=>$vo['id']))}" >卸载</a>-->
+		  
+		  </td>
+		</tr>
+		</volist>
+        <tr>
+		  <th colspan="4" class="style1" style="font-size:14px">系统内置</th>
+		  </tr>
+         
+          <volist name="system" id="vo">
+            <td>{$vo.module_title}(<strong>{$vo.module_name}</strong>) <eq name="vo['system_module']" value="1"><img src="__PUBLIC__/Admin/images/lock.gif" alt="内置模块锁定状态" align="absmiddle" /></eq></td>
+              <td>{$vo.module_name}Action.class.php</td>
+              <td>{$vo.build_version}</td>
+              <td><a href="{:U("Module/modify",array('id'=>$vo['id']))}">查看</a> 
+              </td>
+              </tr>
+          </volist>
+          <!--  
+           <tr>
+		  <th colspan="4" class="style1" style="font-size:14px">禁用模块</th>
+		  </tr>
+         
+          <volist name="disble" id="vo">
+            <td>{$vo.module_title}(<strong>{$vo.module_name}</strong>) <eq name="vo['system_module']" value="1"><img src="__PUBLIC__/Admin/images/lock.gif" alt="内置模块锁定状态" align="absmiddle" /></eq></td>
+              <td>{$vo.module_name}Action.class.php</td>
+              <td>{$vo.build_version}</td>
+              <td>
+		  <a href="{:U("Module/modify",array('id'=>$vo['id']))}">编辑</a> <a href="{:U("Module/uninstall",array('id'=>$vo['id']))}" >卸载</a>
+		  
+		  </td>
+              </tr>
+          </volist>
+            -->  
+		</table>
+	</div>
+	
+	<div class="foot_action">
+		<div class="pages">共有模块：{$count} 个</div>
+	</div>
+	
+	</form>
+	
+<!--{else}-->
+</div>
+</div>
+
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />
